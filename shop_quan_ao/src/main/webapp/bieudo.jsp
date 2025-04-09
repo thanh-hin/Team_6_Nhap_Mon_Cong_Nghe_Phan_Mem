@@ -43,7 +43,8 @@
 	rel="stylesheet">
 <link href="assetsquantri/vendor/simple-datatables/style.css"
 	rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <!-- Template Main CSS File -->
 <link href="assetsquantri/css/style.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -104,17 +105,17 @@
 	List<User> listt = (List<User>) session.getAttribute("Ghinhotaikhoan");
 	if(listt == null){
 	%>
-	 <script >
+	<script>
                 alert("Vui lòng đăng nhập để xem thông tin"); // Hiển thị thông báo
                 window.location.href = "login.jsp";
               </script>
-	
+
 	<%} else{
 	for(User u : listt){
 		if(u.getMaQuyen()==3){
 	
 	%>
-	 <script >
+	<script>
                 alert("Bạn không phải là admin vui lòng truy cập tài khoản admin."); // Hiển thị thông báo
                 window.location.href = "login.jsp";
               </script>
@@ -124,8 +125,8 @@
 
 		<div class="d-flex align-items-center justify-content-between">
 			<div class="logo d-flex align-items-center">
-				<img src="assetsquantri/img/logo.png" alt=""> <span
-					class="d-none d-lg-block">T3admin</span>
+				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
+					class="d-none d-lg-block">Admin</span>
 			</div>
 			<i class="bi bi-list toggle-sidebar-btn"></i>
 		</div>
@@ -195,8 +196,8 @@
 		<ul class="sidebar-nav" id="sidebar-nav">
 			<li class="nav-heading">Tổng quan dữ liệu</li>
 			<li class="nav-item"><a class="nav-link"
-				href="<%=projectName%>/Bieudodoanhthu"> <i class="fas fa-tachometer-alt"></i> <span>Biểu đồ
-						thống kê</span>
+				href="<%=projectName%>/Bieudodoanhthu"> <i
+					class="fas fa-tachometer-alt"></i> <span>Biểu đồ thống kê</span>
 			</a></li>
 			<li class="nav-heading">Quản lý bán hàng</li>
 			<li class="nav-item"><a class="nav-link collapsed"
@@ -212,8 +213,8 @@
 					class="bi bi-grid"></i> <span>Sản phẩm</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link collapsed"
-				href="<%=projectName%>/Quanlidanhgia.jsp"> <i
-					class="fa fa-star"></i> <span>Đánh giá</span>
+				href="<%=projectName%>/Quanlidanhgia.jsp"> <i class="fa fa-star"></i>
+					<span>Đánh giá</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/Quantrikhuyenmai.jsp"> <i
@@ -250,11 +251,11 @@
 		<div class="col-lg-12">
 			<div class="card">
 				<div class="card-body">
-				 <h5 class="card-title">Thống kê doanh thu theo tháng</h5>
-<canvas id="revenueChartMonth" width="800" height="400"></canvas>
+					<h5 class="card-title">Thống kê doanh thu theo tháng</h5>
+					<canvas id="revenueChartMonth" width="800" height="400"></canvas>
 
 
-				<%
+					<%
     Map<Integer, Double> doanhThuTheoThang = (Map<Integer, Double>) request.getAttribute("doanhthuthang");
     System.out.println("Doanh thu theo tháng bên JSP: " + doanhThuTheoThang);
 
@@ -275,7 +276,7 @@
     datathang.append("]");
 %>
 
-<script>
+					<script>
     // Gán dữ liệu từ JSP vào JavaScript
     const labelsMonth = <%= labelsthang.toString() %>;
     const dataMonth = <%= datathang.toString() %>;
@@ -350,11 +351,11 @@
         return `rgb(${r}, ${g}, ${b})`;
     }
 </script>
-				
+
 					<!-- End Bar CHart -->
 
 
-					 <h5 class="card-title">Thống kê doanh thu theo ngày</h5>
+					<h5 class="card-title">Thống kê doanh thu theo ngày</h5>
 					<canvas id="revenueChart" width="800" height="400"></canvas>
 
 					<%
@@ -449,12 +450,12 @@
     </script>
 
 
-            <h5 class="card-title">Thống kê số lượng sản phẩm</h5>
+					<h5 class="card-title">Thống kê số lượng sản phẩm</h5>
 
-            <!-- Pie Chart -->
-            <canvas id="pieChart" style="max-height: 400px;"></canvas>
+					<!-- Pie Chart -->
+					<canvas id="pieChart" style="max-height: 400px;"></canvas>
 
-            <script>
+					<script>
                 document.addEventListener("DOMContentLoaded", () => {
                     // Lấy dữ liệu Map từ request.setAttribute (chuỗi JSON từ Servlet)
                     const soLuongsanpham = JSON.parse('${soLuongSanPham}');  // Chuyển chuỗi JSON thành đối tượng JavaScript
@@ -509,12 +510,12 @@
                     });
                 });
             </script>
-     
+
 
 				</div>
 			</div>
 		</div>
-		
+
 		<!-- <div class="row">
 			<div class="col-lg-6">
 				<div class="card">
@@ -559,14 +560,14 @@
 					</div>
 				</div>
 			</div> -->
-			
-			
-			<!-- Bar Chart -->
-			<!--Thống kê mặt hàng bán chạy nhất  -->
-			<h5 class="card-title">Mặt hàng bán chạy nhất</h5>
-			<canvas id="topSellingChart" style="max-height: 400px;"></canvas>
 
-			<%
+
+		<!-- Bar Chart -->
+		<!--Thống kê mặt hàng bán chạy nhất  -->
+		<h5 class="card-title">Mặt hàng bán chạy nhất</h5>
+		<canvas id="topSellingChart" style="max-height: 400px;"></canvas>
+
+		<%
 			// Lấy danh sách mặt hàng bán chạy từ request
 			List<SanPham> banHangList = (List<SanPham>) request.getAttribute("soLuongHangBanChay");
 			System.out.println("Mặt hàng bán chạy nhất bên jsp: " + banHangList);
@@ -590,7 +591,7 @@
 			data1.append("]");
 			%>
 
-			<script>
+		<script>
     document.addEventListener("DOMContentLoaded", () => {
         new Chart(document.querySelector('#topSellingChart'), {
             type: 'bar', // Loại biểu đồ: bar
@@ -640,19 +641,19 @@
     });
 </script>
 
-			<!-- End Bar Chart -->
+		<!-- End Bar Chart -->
 
 
 
-			<div class="col-lg-6">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Biểu đồ cơ cấu giá</h5>
+		<div class="col-lg-6">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title">Biểu đồ cơ cấu giá</h5>
 
-						<!-- Column Chart -->
-						<div id="columnChart"></div>
+					<!-- Column Chart -->
+					<div id="columnChart"></div>
 
-						<script>
+					<script>
                 document.addEventListener("DOMContentLoaded", () => {
                   new ApexCharts(document.querySelector("#columnChart"), {
                     series: [{
@@ -705,11 +706,11 @@
                   }).render();
                 });
               </script>
-						<!-- End Column Chart -->
+					<!-- End Column Chart -->
 
-					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 	</main>
 	<!-- End #main -->
