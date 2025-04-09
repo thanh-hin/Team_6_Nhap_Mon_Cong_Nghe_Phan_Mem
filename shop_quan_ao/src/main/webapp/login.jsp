@@ -18,17 +18,6 @@
                     <h2 class="auth-form-title">
                         Đăng nhập
                     </h2>
-                    <div class="auth-external-container">
-                        <div class="auth-external-list">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-google"></i></a></li>
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            </ul>
-                        </div>
-                        <p class="auth-sgt">or sign in with:</p>
-                    </div>
                     <form class="login-form" action="dang-nhap" method="post">
                         <input type="text" class="auth-form-input" placeholder="Tên đăng nhập" name="tenDangNhap">
                         <div class="input-icon">
@@ -48,6 +37,17 @@
                     <div class="auth-forgot-password">
                         <a href="#">Forgot Password</a>
                     </div>
+                    <div class="auth-external-container">
+                        <p class="auth-sgt">or sign in with:</p>
+                    </div>
+                     <div class="auth-external-list">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-google"></i></a></li>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
                 </div>
             </div>
             <div class="auth-action-right">
