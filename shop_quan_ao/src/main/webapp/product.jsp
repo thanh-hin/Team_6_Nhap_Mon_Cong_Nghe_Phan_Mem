@@ -13,7 +13,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="assetsquantri/img/logo.png"/>
+	<link rel="icon" type="image/png" href="assetsquantri/img/aaaaaaaaaaaaaaaaaaaaa.jpg"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -193,7 +193,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.html"><img src="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
