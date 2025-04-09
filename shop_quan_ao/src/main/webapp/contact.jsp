@@ -95,15 +95,15 @@
 		<!-- Header desktop -->
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
-			<div class="top-bar">
+			<!-- <div class="top-bar">
 				<div class="content-topbar flex-sb-m h-full container">
-					<!-- <div class="left-top-bar">
+					<div class="left-top-bar">
 						Web bán hàng thời trang phong cách 
-					</div> -->
+					</div>
 
 				
 				</div>
-			</div>
+			</div> -->
 
 			<div class="wrap-menu-desktop how-shadow1">
 				<nav class="limiter-menu-desktop container">
