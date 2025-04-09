@@ -50,7 +50,7 @@
                         </div>
                 </div>
             </div>
-            
+      <!--  -->      
             <div class="auth-action-right">
                 <div class="auth-image">
                     <img src="assetsdangnhap/vector.jpg" alt="login">
