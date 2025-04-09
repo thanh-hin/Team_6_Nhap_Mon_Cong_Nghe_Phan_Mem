@@ -13,7 +13,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="assetsquantri/img/aaaaaaaaaaaaaaaaaaaaa.jpg"/>
+	<link rel="icon" type="image/png" href="assetsquantri/img/LOGOTHE5IVE.jpg"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -104,7 +104,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="assetsquantri/img/aaaaaaaaaaaaaaaaaaaaa.jpg" alt="IMG-LOGO">
+						<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -193,7 +193,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg" alt="IMG-LOGO"></a>
+				<a href="index.html"><img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->

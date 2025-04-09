@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.png"/> -->
-	<link rel="icon" type="image/png" href="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg"/>
+	<link rel="icon" type="image/png" href="images/icons/LOGOTHE5IVE.jpg"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -99,7 +99,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg" alt="IMG-LOGO">
+						<img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -185,7 +185,7 @@ if (user != null) {
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.html"><img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -546,7 +546,7 @@ Nhìn chung, website bán hàng thời trang không chỉ là một nơi mua s�
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại 8th floor, 379 Hudson St, New York, NY 10018 hoặc gọi đến số (+84) 96 716 6879
+						Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại 379 Hudson Street, Floor 8, New York, NY 10014, USA 10018 hoặc gọi đến số 18008098.
 					</p>
 
 					<div class="p-t-27">

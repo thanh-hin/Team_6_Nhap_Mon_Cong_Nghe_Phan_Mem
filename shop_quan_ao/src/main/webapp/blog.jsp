@@ -14,7 +14,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.png"/> -->
-	<link rel="icon" type="image/png" href="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg"/>
+	<link rel="icon" type="image/png" href="images/icons/LOGOTHE5IVE.jpg"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 <!--===============================================================================================-->
@@ -72,7 +72,7 @@
 					
 					<!-- Logo desktop -->		
 					<a href="#" class="logo">
-						<img src="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg" alt="IMG-LOGO">
+						<img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -161,7 +161,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg" alt="IMG-LOGO"></a>
+				<a href="index.html"><img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -218,7 +218,7 @@
 
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
-			<ul class="topbar-mobile">
+			<!-- <ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">
 						Miễn phí giao hàng cho đơn từ $100
@@ -245,7 +245,7 @@
 					</div>
 				</li>
 			</ul>
-
+ -->
 			<ul class="main-menu-m">
 				<li>
 					<a href="Laydulieusanpham">Trang chủ</a>
@@ -394,7 +394,7 @@
         <div class="row">
             <!-- Bài viết -->
             <div class="col-lg-6 col-md-12 mb-4">
-                <img src="images/anhbaiviet.jpg" alt="Ảnh minh họa" class="img-fluid rounded">
+                <img src="images/pexels-frendsmans-1926769.jpg" alt="Ảnh minh họa" class="img-fluid rounded">
             </div>
             <div class="col-lg-6 col-md-12 d-flex align-items-center">
             
@@ -406,7 +406,7 @@
             %>
                     <h2 class="mb-3"><%=b.getTenBai() %></h2>
                     <p>
-                        Các mã giảm giá sẽ được chúng tui cung cấp trong bài viết..
+                        Các voucher khuyến mãi sẽ được chúng tôi cung cấp trong bài viết dưới đây 
                     </p>
                     
                     <div id="extra-content" class="d-none">
@@ -501,7 +501,7 @@
 					</h4>
 
 					<p class="stext-107 cl7 size-201">
-						Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại 8th floor, 379 Hudson St, New York, NY 10018 hoặc gọi đến số (+84) 96 716 6879
+						Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại 379 Hudson Street, Floor 8, New York, NY 10014, USA 10018 hoặc gọi đến số 18008098.
 					</p>
 
 					<div class="p-t-27">

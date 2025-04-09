@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="assetsquantri/img/aaaaaaaaaaaaaaaaaaaaa.jpg" />
+<link rel="icon" type="image/png" href="assetsquantri/img/LOGOTHE5IVE.jpg" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="vendor/bootstrap/css/bootstrap.min.css">
@@ -294,7 +294,7 @@ h2 {
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="#" class="logo"> <img src="assetsquantri/img/aaaaaaaaaaaaaaaaaaaaa.jpg"
+					<a href="#" class="logo"> <img src="assetsquantri/img/LOGOTHE5IVE-removebg.png"
 						alt="IMG-LOGO">
 					</a>
 
