@@ -1813,7 +1813,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .wrap-table-shopping-cart {
   overflow: auto;
-  border-left: 1px solid #e6e6e6;
+  border-left: 1px solid rgb(255, 255, 128);
   border-right: 1px solid #e6e6e6;
 }
 
@@ -2171,7 +2171,7 @@ input.num-product::-webkit-inner-spin-button {
 
 .mtext-102 {
   font-family: Poppins-SemiBold;
-  font-size: 16px;
+  font-size: 19px;
   line-height: 1.6;
 }
 
@@ -2277,6 +2277,7 @@ input.num-product::-webkit-inner-spin-button {
   font-family: Poppins-Bold;
   font-size: 50px;
   line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
 
 .ltext-106 {
@@ -2553,7 +2554,7 @@ input.num-product::-webkit-inner-spin-button {
 .bg2 {background-color: #e6e6e6;}
 .bg3 {background-color: #222;}
 .bg5 {background-color: rgba(0,0,0,0.5);}
-.bg6 {background-color: #f2f2f2;}
+.bg6 {background-color: rgb(224, 237, 248);}
 .bg7 {background-color: #333;}
 .bg8 {background-color: #f3f3f3;}
 .bg9 {background-color: rgba(255,255,255,0.9);}

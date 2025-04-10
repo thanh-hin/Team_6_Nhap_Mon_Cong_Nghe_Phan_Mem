@@ -203,7 +203,7 @@
               </script>
                 <%} %>
                 
-                <a href="https://www.facebook.com/profile.php?id=100056228993711"> <button class="btn">Liên hệ</button></a>
+                <a href="https://www.facebook.com/thanhhienitme?locale=vi_VN"> <button class="btn">Liên hệ</button></a>
                 <button class="btn" onclick="goBack()">Quay lại</button>
                 <a href="Doimatkhau.jsp"> <button class="btn">Chỉnh sửa</button></a>
             </div>
