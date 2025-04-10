@@ -123,8 +123,8 @@
 
 		<div class="d-flex align-items-center justify-content-between">
 			<div class="logo d-flex align-items-center">
-				<img src="assetsquantri/img/logo.png" alt=""> <span
-					class="d-none d-lg-block">T3admin</span>
+				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
+					class="d-none d-lg-block">Admin</span>
 			</div>
 			<i class="bi bi-list toggle-sidebar-btn"></i>
 		</div>

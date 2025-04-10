@@ -27,7 +27,7 @@
                         <label class="btn active">
                             <input type="checkbox" name='email1' checked>
                             <i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i> 
-                            <span> Remember password.</span>
+                            <span> Lưu mật khẩu</span>
                         </label>
                         <div class="footer-action">
                             <input type="submit" value="Đăng nhập" class="auth-submit">
@@ -35,10 +35,10 @@
                         </div>
                     </form>
                     <div class="auth-forgot-password">
-                        <a href="#">Forgot Password</a>
+                        <a href="#">Quên mật khẩu</a>
                     </div>
                     <div class="auth-external-container">
-                        <p class="auth-sgt">or sign in with:</p>
+                        <!-- <p class="auth-sgt">or sign in with:</p> -->
                     </div>
                      <div class="auth-external-list">
                             <ul>
@@ -50,6 +50,7 @@
                         </div>
                 </div>
             </div>
+      <!--  -->      
             <div class="auth-action-right">
                 <div class="auth-image">
                     <img src="assetsdangnhap/vector.jpg" alt="login">
