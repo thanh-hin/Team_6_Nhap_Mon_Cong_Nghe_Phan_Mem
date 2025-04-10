@@ -1,4 +1,4 @@
-<%@page import="model.User"%>
+<%-- <%@page import="model.User"%>
 <%@page import="model.BaiViet"%>
 <%@page import="java.util.List"%>
 <%@page import="Reponsitory.LaydulieuReponsitory"%>
@@ -639,4 +639,4 @@ button.add:hover {
 
 </body>
 
-</html>
+</html> --%>

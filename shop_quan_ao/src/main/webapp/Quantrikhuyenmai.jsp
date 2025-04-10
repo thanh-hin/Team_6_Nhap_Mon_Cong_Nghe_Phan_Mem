@@ -225,7 +225,7 @@
                         <td><%=i %></td>
                         <td><%=khuyenMai.getMaKhuyenMai() %></td>
                         <td><%=khuyenMai.getNoiDungKhuyenMai() %></td>
-                        <td><%= khuyenMai.getPhanTramKhuyenMai()*100%>%</td>
+                        <td><%= (int)(khuyenMai.getPhanTramKhuyenMai()) %>%</td>
                         <td><%=khuyenMai.getMaSanpham() %></td>
                         <td text-center>
                         <form action="XoaKhuyenMai" method="post">

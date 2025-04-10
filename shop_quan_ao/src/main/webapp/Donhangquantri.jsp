@@ -178,10 +178,10 @@
 				href="<%=projectName%>/Quantrikhuyenmai.jsp"> <i
 					class="fas fa-gift"></i> <span>Khuyến mãi</span>
 			</a></li>
-			<li class="nav-item"><a class="nav-link collapsed"
+			<%-- <li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/Quanlibaiviet.jsp"> <i
 					class="fa fa-newspaper"></i> <span>Bài viết</span>
-			</a></li>
+			</a></li> --%>
 			<li class="nav-heading">Quản lý tài khoản</li>
 
 			<li class="nav-item"><a class="nav-link collapsed"
