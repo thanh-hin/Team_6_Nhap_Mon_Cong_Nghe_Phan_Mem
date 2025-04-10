@@ -13,7 +13,7 @@
     <title>Quản Lý Khuyến Mãi</title>
     <!-- Thêm Font Awesome từ CDN -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    
+<link href="assetsquantri/img/LOGOTHE5IVE.png" rel="icon">   
     <style>
         * {
             margin: 0;

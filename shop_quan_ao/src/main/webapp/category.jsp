@@ -16,7 +16,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assetsquantri/img/favicon.png" rel="icon">
+  <link href="assetsquantri/img/LOGOTHE5IVE.png" rel="icon">
   <link href="assetsquantri/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
