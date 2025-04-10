@@ -2616,17 +2616,23 @@ input.num-product::-webkit-inner-spin-button {
   border-radius: 15px;
 }
 
-.bor8 {
+/* .bor8 {
   border: 1px solid #e6e6e6;
   border-radius: 2px;
+} */
+
+.bor8 {
+  border: 1px solid #cccccc;
+  border-radius: 3px;
 }
+
 
 .bor9 {
   border-right: 1px solid #e6e6e6;
 }
 
 .bor10 {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #cccccc;
 }
 
 .bor11 {
@@ -2675,6 +2681,8 @@ input.num-product::-webkit-inner-spin-button {
   border: 1px solid #d9d9d9;
   border-radius: 2px;
 }
+
+
 
 
 /*==================================================================
