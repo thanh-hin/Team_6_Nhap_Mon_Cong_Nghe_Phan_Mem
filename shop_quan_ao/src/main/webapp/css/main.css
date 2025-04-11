@@ -504,7 +504,7 @@
 @media (max-width: 575px) {
   .wrap-search-header input,
   .wrap-search-header button {
-    font-size: 20px;
+    font-size: 16px;/*thuyen sua*/
   }
 
   .wrap-search-header button {
@@ -2031,11 +2031,11 @@ input.num-product::-webkit-inner-spin-button {
 ==================================================================*/
 .cl0 {color: #fff;}
 .cl1 {color: #717fe0;}
-.cl2 {color: #333;}
+.cl2 {color: #07044b;}/*thuyen sua*/
 .cl3 {color: #666;}
-.cl4 {color: #999;}
+.cl4 {color: rgb(129 142 182);}
 .cl5 {color: #222;}
-.cl6 {color: #888;}
+.cl6 {color: rgb(129 142 182);}
 .cl7 {color:  #fff;}
 .cl8 {color: #555;}
 .cl9 {color: #aaa;}
@@ -2066,20 +2066,20 @@ input.num-product::-webkit-inner-spin-button {
 
 .stext-104 {
   font-family: Poppins-Regular;
-  font-size: 14px;
+  font-size: 17px;
   line-height: 1.466667;
 }
 
 .stext-105 {
   font-family: Poppins-Regular;
-  font-size: 14px;
+  font-size: 19px;
   line-height: 1.466667;
   letter-spacing: 1px;
 }
 
 .stext-106 {
   font-family: Poppins-Regular;
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.2;
 }
 

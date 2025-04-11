@@ -397,17 +397,11 @@ if (user != null) {
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26">
-							Website bán hàng thời trang - Chọn lựa hoàn hảo cho phong cách của bạn
+							The 5ive là điểm đến lý tưởng dành cho những ai yêu thích phong cách thời trang hiện đại, tinh tế và luôn bắt kịp xu hướng. Tại đây, bạn sẽ dễ dàng khám phá bộ sưu tập đa dạng từ quần áo, giày dép, túi xách cho đến phụ kiện thời trang – tất cả đều được chọn lọc kỹ lưỡng nhằm tôn lên cá tính và gu thẩm mỹ riêng biệt của từng khách hàng.
 
-Website bán hàng thời trang là nơi cung cấp các sản phẩm thời trang đa dạng, từ quần áo, giày dép, túi xách đến phụ kiện, phục vụ nhu cầu làm đẹp và khẳng định phong cách cá nhân của người tiêu dùng. Với giao diện bắt mắt, dễ dàng điều hướng, website này giúp khách hàng tìm kiếm và mua sắm một cách nhanh chóng và tiện lợi.
+Giao diện của The 5ive được thiết kế hiện đại, thân thiện với người dùng, giúp việc mua sắm trực tuyến trở nên đơn giản và thú vị. Mỗi sản phẩm đều được mô tả chi tiết với hình ảnh rõ nét, thông tin chất liệu, size, màu sắc và gợi ý phối đồ độc đáo. Bạn có thể dễ dàng lọc theo danh mục, mức giá, màu sắc hay kích cỡ để nhanh chóng tìm ra item ưng ý.
 
-Trang chủ của website thường được thiết kế hiện đại, với các banner quảng cáo, bộ sưu tập theo mùa hoặc những sản phẩm mới ra mắt. Mỗi sản phẩm được mô tả chi tiết, bao gồm hình ảnh chất lượng cao, thông tin về chất liệu, màu sắc, và các hướng dẫn về cách kết hợp trang phục. Bên cạnh đó, chức năng lọc sản phẩm theo nhiều tiêu chí như size, màu sắc, giá cả giúp người dùng dễ dàng tìm thấy món đồ phù hợp.
-
-Một trong những điểm nổi bật của website bán hàng thời trang chính là khả năng cập nhật các xu hướng thời trang mới nhất. Các bộ sưu tập được phân chia rõ ràng theo các mùa trong năm, từ xuân hè đến thu đông, giúp khách hàng luôn bắt kịp xu hướng.
-
-Chế độ thanh toán linh hoạt, bao gồm thanh toán qua thẻ tín dụng, chuyển khoản ngân hàng hoặc thu tiền khi giao hàng (COD) tạo sự thuận tiện tối đa cho người mua. Chế độ đổi trả hàng cũng là một yếu tố quan trọng, giúp khách hàng yên tâm khi quyết định mua sắm trực tuyến.
-
-Bằng việc cung cấp dịch vụ chăm sóc khách hàng tận tâm, từ hỗ trợ trực tuyến đến tư vấn qua điện thoại, website bán hàng thời trang không chỉ là nơi mua sắm mà còn là người bạn đồng hành đáng tin cậy trong việc tạo dựng phong cách thời trang riêng biệt.
+The 5ive luôn cập nhật các xu hướng thời trang mới nhất theo mùa, mang đến cho bạn những lựa chọn hợp thời và phong cách. Với nhiều phương thức thanh toán linh hoạt và chính sách đổi trả rõ ràng, khách hàng có thể hoàn toàn yên tâm khi mua sắm. Đội ngũ hỗ trợ luôn sẵn sàng tư vấn, đảm bảo bạn có trải nghiệm tuyệt vời nhất khi đồng hành cùng The 5ive – nơi thời trang là tuyên ngôn của chính bạn.
 						</p>
 
 					
@@ -431,20 +425,16 @@ Bằng việc cung cấp dịch vụ chăm sóc khách hàng tận tâm, từ h�
 						</h3>
 
 						<p class="stext-113 cl6 p-b-26">
-							Website bán hàng thời trang - Trải nghiệm mua sắm tuyệt vời cho mọi khách hàng
+							Tại The 5ive, chúng tôi không đơn thuần cung cấp quần áo – chúng tôi mang đến một lối sống, một tuyên ngôn phong cách dành cho những ai dám khác biệt và luôn muốn làm mới bản thân mỗi ngày. Sứ mệnh của chúng tôi là tạo ra một không gian thời trang hiện đại, nơi mọi khách hàng đều có thể tìm thấy bản thể riêng thông qua từng thiết kế.
 
-Website bán hàng thời trang hiện nay không chỉ đơn giản là một kênh mua sắm trực tuyến, mà còn là nơi thể hiện phong cách cá nhân và cập nhật xu hướng thời trang mới nhất. Với thiết kế tinh tế và thân thiện với người sử dụng, website này mang đến cho khách hàng những trải nghiệm mua sắm trực tuyến đầy tiện lợi và thú vị.
+Chúng tôi tin rằng thời trang là công cụ mạnh mẽ để thể hiện cá tính. Dù bạn yêu thích sự tối giản, theo đuổi phong cách đường phố cá tính, hay là một người trẻ luôn nắm bắt xu hướng mới – The 5ive đều sẵn sàng đồng hành cùng bạn. Mỗi sản phẩm tại đây đều được tuyển chọn kỹ lưỡng về chất liệu, thiết kế và tính ứng dụng, nhằm mang đến trải nghiệm mặc tốt nhất – không chỉ đẹp mà còn thoải mái và tự tin.
 
-Trang chủ của website được bố trí khoa học, dễ dàng tìm kiếm các sản phẩm theo các danh mục như áo, quần, giày, túi xách và phụ kiện. Các bộ sưu tập theo mùa được làm nổi bật, giúp khách hàng dễ dàng chọn lựa trang phục phù hợp với thời tiết và phong cách. Mỗi sản phẩm đều có hình ảnh rõ ràng, chi tiết về chất liệu, kích cỡ và thông tin hướng dẫn sử dụng, tạo sự tin tưởng và an tâm cho người mua.
+Không chỉ dừng lại ở sản phẩm, chúng tôi chú trọng vào hành trình mua sắm của bạn. Giao diện trực quan, bộ lọc thông minh, hình ảnh chất lượng cao, cùng dịch vụ hỗ trợ khách hàng nhiệt tình – tất cả đều được xây dựng để giúp bạn có trải nghiệm mua sắm trực tuyến trọn vẹn và dễ dàng nhất.
 
-Một tính năng nổi bật của website là khả năng tìm kiếm nhanh chóng với các bộ lọc theo giá, size, màu sắc, và thương hiệu. Khách hàng có thể dễ dàng tìm được những món đồ yêu thích mà không mất nhiều thời gian. Bên cạnh đó, website cũng thường xuyên cập nhật những xu hướng mới, giúp người tiêu dùng luôn bắt kịp với thời trang hiện đại.
+The 5ive không chỉ là nơi mua sắm – mà là nơi bạn tìm thấy phiên bản thời trang tốt nhất của chính mình.
 
-Website này còn tích hợp các phương thức thanh toán an toàn và tiện lợi như thẻ tín dụng, thanh toán qua ví điện tử, hoặc trả tiền khi nhận hàng (COD), mang lại sự linh hoạt cho khách hàng trong việc lựa chọn phương thức thanh toán phù hợp. Đặc biệt, dịch vụ giao hàng nhanh chóng và chế độ đổi trả hàng dễ dàng càng làm tăng thêm sự hài lòng cho người mua.
 
-Một yếu tố quan trọng nữa là dịch vụ chăm sóc khách hàng của website, với đội ngũ nhân viên nhiệt tình và chuyên nghiệp luôn sẵn sàng hỗ trợ mọi thắc mắc của khách hàng, từ việc chọn size cho đến tư vấn phối đồ sao cho phù hợp.
-
-Nhìn chung, website bán hàng thời trang không chỉ là một nơi mua sắm mà còn là không gian để khách hàng tìm thấy sự đổi mới, phong cách và sự tự tin qua từng sản phẩm.
-						</p>
+</p>
 
 						<div class="bor16 p-l-29 p-b-9 m-t-22">
 							<!-- <p class="stext-114 cl6 p-r-40 p-b-11">

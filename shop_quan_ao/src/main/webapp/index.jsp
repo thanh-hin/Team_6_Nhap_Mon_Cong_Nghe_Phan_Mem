@@ -102,7 +102,8 @@ body {
 .custom-title {
 	font-size: 2.5rem; /* Điều chỉnh kích thước chữ */
 	font-weight: bold; /* Đặt chữ đậm */
-	color: #000000; /* Màu đen */
+	font-family:  'Noto Sans Vietnamese', sans-serif;
+	color: #8d8b98; 
 	text-align: center; /* Căn giữa */
 	margin-top: 20px; /* Thêm khoảng cách phía trên */
 }
@@ -722,7 +723,7 @@ if (user != null) {
 							<div class="block2-txt-child1 flex-col-l ">
 								<a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
 									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> <%=sp.getTenSanPham()%>
-								</a> <span class="stext-105 cl3"> <%=sp.getGia()%>
+								</a> <span class="stext-105 cl3"> <%=sp.getGia()%>đ
 								</span>
 							</div>
 
