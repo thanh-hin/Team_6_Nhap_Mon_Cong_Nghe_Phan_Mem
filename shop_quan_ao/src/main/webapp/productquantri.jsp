@@ -388,10 +388,17 @@
 											data-id="<%=sp.getMaSanpham()%>" onclick="editForm(this)">Sửa</button>
 
 										<!-- Xoá Button -->
-										<form action="Xoasanphamproductqt" method="post" class="ml-3">
+										<!-- <form action="Xoasanphamproductqt" method="post" class="ml-3">
 											<input type="hidden" value="<%=sp.getMaSanpham()%>" name="id">
 											<button class="btn btn-outline-danger" type="submit">Xoá</button>
+										</form> -->
+										<!-- Xoá Button -->
+										<form action="Xoasanphamproductqt" method="post" class="ml-3" 
+										onsubmit="return confirm('Bạn có chắc chắn muốn xóa không?');">
+										<input type="hidden" value="<%=sp.getMaSanpham()%>" name="id">
+										<button class="btn btn-outline-danger" type="submit">Xoá</button>
 										</form>
+
 									</div> <!-- Chi tiết Button on a new line -->
 									<div class="mt-1">
 										<form action="LayidSanPhamquantri" method="post">
