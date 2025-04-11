@@ -407,44 +407,66 @@ public class LaydulieuReponsitory implements Thaotac {
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
 		try {
+		    connectionSql = new ConnectionSql();
+		    conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
-			connectionSql = new ConnectionSql();
-			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
-			// Câu truy vấn SQL
-			String query = "delete from nguoidung where MaNguoiDung=?";
+		    // Xóa đơn hàng của người dùng
+		    String deleteDonHang = "DELETE FROM donhang WHERE MaNguoiDung = ?";
+		    ps = conn.prepareStatement(deleteDonHang);
+		    ps.setInt(1, id);
+		    ps.executeUpdate();
+		    ps.close();
 
-			// Chuẩn bị câu lệnh SQL
+		    // Xóa đánh giá của người dùng
+		    String deleteDanhGia = "DELETE FROM danhgia WHERE MaNguoiDung = ?";
+		    ps = conn.prepareStatement(deleteDanhGia);
+		    ps.setInt(1, id);
+		    ps.executeUpdate();
+		    ps.close();
 
-			ps = conn.prepareStatement(query);
+		    // Xóa giỏ hàng của người dùng
+		    String deleteGioHang = "DELETE FROM giohang WHERE MaNguoiDung = ?";
+		    ps = conn.prepareStatement(deleteGioHang);
+		    ps.setInt(1, id);
+		    ps.executeUpdate();
+		    ps.close();
 
-			ps.setInt(1, id);
-			// Thực thi câu lệnh SQL
+		    // Cuối cùng xóa người dùng
+		    String deleteNguoiDung = "DELETE FROM nguoidung WHERE MaNguoiDung = ?";
+		    ps = conn.prepareStatement(deleteNguoiDung);
+		    ps.setInt(1, id);
+		    if (ps.executeUpdate() > 0) {
+		        bs = true;
+		    }
 
-			if (ps.executeUpdate() > 0) {
-				bs = true;
-			}
+		    // Commit transaction nếu mọi thứ thành công
+		    conn.commit();
 
 		} catch (SQLException e) {
-			System.out.println("Lỗi trong phần xóa phân quyền  LoginReponsitory");
-			e.printStackTrace();
+		    System.out.println("Lỗi trong phần xóa người dùng (LoginRepository)");
+		    e.printStackTrace();
+		    if (conn != null) {
+		        try {
+		            conn.rollback(); // rollback nếu có lỗi
+		        } catch (SQLException ex) {
+		            ex.printStackTrace();
+		        }
+		    }
 		} finally {
-			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
-			try {
-				if (rs != null) {
-					rs.close();
-				}
-				if (ps != null) {
-					ps.close();
-				}
-				// Trả kết nối lại vào pool
-				if (conn != null) {
-
-					connectionSql.releaseConnection(conn); // Trả kết nối về pool
-				}
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
+		    try {
+		        if (rs != null) {
+		            rs.close();
+		        }
+		        if (ps != null) {
+		            ps.close();
+		        }
+		        if (conn != null) {
+		            connectionSql.releaseConnection(conn); // Trả kết nối về pool
+		        }
+		    } catch (SQLException e) {
+		        e.printStackTrace();
+		    }
 		}
 
 		return bs;

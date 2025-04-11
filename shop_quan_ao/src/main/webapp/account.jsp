@@ -1,3 +1,4 @@
+<%@page import="jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput"%>
 <%@page import="model.Quyen"%>
 <%@page import="Reponsitory.LaydulieuReponsitory"%>
 <%@page import="model.User"%>
@@ -274,6 +275,7 @@
             List<User> list = lg.Laythongtinnguoidung();
             List<Quyen> q = lg.Laythongtin();
             for (User l : list) {
+            	System.out.print(l.getHoTen());
             %>
             <tr>
                 <td><%=l.getMaTaiKhoan()%></td>
@@ -333,7 +335,7 @@
                     </form>
                     <!-- Vertical Form -->
                 </div>
-                <td>
+               <%--  <td>
                     <div class="d-flex justify-content-center align-items-center">
                         <form action="suaTaiKhoanAdmin" method="POST">
                             <input type="hidden" name="idMaTaiKhoan" value="<%=l.getMaTaiKhoan()%>">
@@ -342,10 +344,46 @@
 
                         <form action="xoaIdNguoiDungAccount" method="GET">
                             <input type="hidden" name="id" value="<%=l.getMaTaiKhoan()%>">
-                            <button type="submit" class="btn btn-outline-danger bt2-">xoá</button>
+                            <button type="submit" class="btn btn-outline-danger bt2-">Xoá</button>
                         </form>
                     </div>
-                </td>
+                </td> --%>
+                <td>
+    <div class="d-flex justify-content-center align-items-center">
+        <!-- Nút Sửa (giữ nguyên) -->
+        <form action="suaTaiKhoanAdmin" method="POST">
+            <input type="hidden" name="idMaTaiKhoan" value="<%=l.getMaTaiKhoan()%>">
+            <button type="button" class="btn btn-outline-warning" onclick="showEditForm('<%=l.getMaTaiKhoan()%>', '<%=l.getMaTaiKhoan()%>')">Sửa</button>
+        </form>
+
+        <!-- Nút Xóa với modal xác nhận -->
+        <button type="button" class="btn btn-outline-danger ms-2" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal<%=l.getMaTaiKhoan()%>">
+            Xoá
+        </button>
+        
+        <!-- Modal xác nhận xóa -->
+        <div class="modal fade" id="confirmDeleteModal<%=l.getMaTaiKhoan()%>" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="confirmDeleteModalLabel">Xác nhận xóa</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Bạn có chắc chắn muốn xóa tài khoản <%=l.getTenTaiKhoan()%> không?
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                        <form action="xoaIdNguoiDungAccount" method="POST" style="display: inline;">
+                            <input type="hidden" name="id" value="<%=l.getMaTaiKhoan()%>">
+                            <button type="submit" class="btn btn-danger">Xác nhận xóa</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</td>
             </tr>
             <% } %>
         </tbody>
@@ -414,7 +452,10 @@
 	    const editForm = document.getElementById('editForm');
 	    editForm.classList.add('hide');
 	}
+	
   </script>
+  
+  
 
 </body>
 
