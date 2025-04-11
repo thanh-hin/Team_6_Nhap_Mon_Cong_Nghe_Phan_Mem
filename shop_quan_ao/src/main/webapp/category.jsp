@@ -216,19 +216,31 @@
 			  <div class="card">
             <div class="card-body row hide" id="addf" >
               <h5 class="card-title">Thêm danh mục phân loại</h5>
-
+              	<% String msg = request.getParameter("success");
+				   String err = request.getParameter("error");
+				
+				   if ("true".equals(msg)) { %>
+				       <div class="alert alert-success">✅ Thêm danh mục thành công!</div>
+				<% } else if ("fail".equals(err)) { %>
+				       <div class="alert alert-danger">❌ Thêm danh mục thất bại!</div>
+				<% } else if ("empty".equals(err)) { %>
+				       <div class="alert alert-warning">⚠️ Tên danh mục không được để trống.</div>
+				<% } else if ("duplicate".equals(err)) { %>
+				       <div class="alert alert-warning">⚠️ Tên danh mục đã tồn tại!</div>
+				<% } %>
+              
               <!-- Vertical Form -->
-              <form action="Themdanhmuc" method="post">
-                <div class="col-12">
-                  <label for="inputName" class="form-label">Tên danh mục</label>
-                  <input type="text" class="form-control" id="inputName" name="addThemSanPham">
-                </div>
-                
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Thêm</button>
-                  
-                </div>
-              </form><!-- Vertical Form -->
+             	<form action="Themdanhmuc" method="post">
+				  <div class="col-12">
+				    <label for="inputName" class="form-label">Tên danh mục</label>
+				    <input type="text" class="form-control" id="inputName" name="addThemSanPham">
+				  </div>
+				
+				  <div class="text-center">
+				    <button type="submit" class="btn btn-primary">Thêm</button>
+				  </div>
+				</form>
+				<!-- Vertical Form -->
 
             </div>
           </div>
