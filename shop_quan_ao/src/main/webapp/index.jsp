@@ -98,7 +98,7 @@ body {
         .custom-title {
             font-size: 2.5rem; /* Điều chỉnh kích thước chữ */
             font-weight: bold; /* Đặt chữ đậm */
-            /* color: #000000; /* Màu đen */ */
+            color: #000000; /* Màu đen */ 
             text-align: center; /* Căn giữa */
             margin-top: 20px; /* Thêm khoảng cách phía trên */
         }
