@@ -647,7 +647,7 @@ if (user != null) {
 					<div
 						class="wrap-filter flex-w bg6 p-t-30 p-lr-30 ml-auto rounded-md w-full max-w-md" style="width: fit-content;gap: 40px;">
 						<div class="filter-col1col1 p-r-15 p-b-27 pl-4">
-							<div class="mtext-102 cl2 p-b-15 pl-4">Giá</div>
+							<div class="mtext-102 cl2 p-b-15">Giá</div>
 							<ul>
 								<li class="p-b-6"><a href="#"
 									class="filter-link stext-106 trans-04 filter-link-active">
