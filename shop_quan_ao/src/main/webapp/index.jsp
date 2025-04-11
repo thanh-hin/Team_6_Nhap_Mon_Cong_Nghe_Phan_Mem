@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/jpeg" href="assetsquantri/img/LOGOTHE5IVE.jpeg" />
+<link rel="icon" type="image/jpeg" href="assetsquantri/img/LOGOTHE5IVE.png" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="vendor/bootstrap/css/bootstrap.min.css">
@@ -462,14 +462,18 @@ if (user != null) {
 	</section>
 
 
-	<!-- Banner -->
+
+
+
+
+<!-- 	
 	<div class="sec-banner bg0 p-t-80 p-b-50">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
+					Block1
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-01.jpg" alt="IMG-BANNER"> <a
+						<img src="images/icongirl.png" alt="IMG-BANNER"> <a
 							href="Cuahang"
 							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
@@ -485,9 +489,9 @@ if (user != null) {
 				</div>
 
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
+					Block1
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-02.jpg" alt="IMG-BANNER"> <a
+						<img src="images/iconboy.png" alt="IMG-BANNER"> <a
 							href="Cuahang"
 							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
@@ -504,14 +508,32 @@ if (user != null) {
 				</div>
 
 				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					<!-- Block1 -->
+					Block1
 					<div class="block1 wrap-pic-w">
-						<img src="images/banner-03.jpg" alt="IMG-BANNER"> <a
+						<img src="iconshoe.png" alt="IMG-BANNER"> <a
 							href="Cuahang"
 							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8"> Phụ
-									kiện </span> <span class="block1-info stext-102 trans-04"> Xu
+								<span class="block1-name ltext-102 trans-04 p-b-8"> Giày
+								 </span> <span class="block1-info stext-102 trans-04"> Xu
+									hướng mới </span>
+							</div>
+
+							<div class="block1-txt-child2 p-b-4 trans-05">
+								<div class="block1-link stext-101 cl0 trans-09">Cửa hàng</div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
+					Block1
+					<div class="block1 wrap-pic-w">
+						<img src="iconbag.png" alt="IMG-BANNER"> <a
+							href="Cuahang"
+							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+							<div class="block1-txt-child1 flex-col-l">
+								<span class="block1-name ltext-102 trans-04 p-b-8"> Túi Xách
+								 </span> <span class="block1-info stext-102 trans-04"> Xu
 									hướng mới </span>
 							</div>
 
@@ -523,7 +545,7 @@ if (user != null) {
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 	<!-- Product -->
@@ -617,38 +639,9 @@ if (user != null) {
 				<!-- Filter -->
 				<div class="dis-none panel-filter w-full p-t-10">
 					<div
-						class="wrap-filter flex-w bg6 w-full p-lr-40 p-t-27 p-lr-15-sm">
-						<div class="filter-col1 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">Sắp xếp theo</div>
-
-							<ul>
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> Mặc định </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> Sự phổ biến </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> Đánh giá trung bình
-								</a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04 filter-link-active">
-										Sự mới mẻ </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> Giá: Thấp đến Cao </a>
-								</li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> Giá: Cao đến Thấp </a>
-								</li>
-							</ul>
-						</div>
-
-						<div class="filter-col2 p-r-15 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">Giá</div>
-
+						class="wrap-filter flex-w bg6 p-t-30 p-lr-30 ml-auto rounded-md w-full max-w-md" style="width: fit-content;gap: 40px;">
+						<div class="filter-col1col1 p-r-15 p-b-27 pl-4">
+							<div class="mtext-102 cl2 p-b-15 pl-4">Giá</div>
 							<ul>
 								<li class="p-b-6"><a href="#"
 									class="filter-link stext-106 trans-04 filter-link-active">
@@ -673,7 +666,7 @@ if (user != null) {
 							</ul>
 						</div>
 
-						<div class="filter-col3 p-r-15 p-b-27">
+						<div class="filter-col2 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">Màu</div>
 
 							<ul>
@@ -705,24 +698,6 @@ if (user != null) {
 								</span> <a href="#" class="filter-link stext-106 trans-04"> Trắng </a>
 								</li>
 							</ul>
-						</div>
-
-						<div class="filter-col4 p-b-27">
-							<div class="mtext-102 cl2 p-b-15">Tags</div>
-
-							<div class="flex-w p-t-4 m-r--5">
-								<a href="#"
-									class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Fashion </a> <a href="#"
-									class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Lifestyle </a> <a href="#"
-									class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Denim </a> <a href="#"
-									class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Streetstyle </a> <a href="#"
-									class="flex-c-m stext-107 cl6 size-301 bor7 p-lr-15 hov-tag1 trans-04 m-r-5 m-b-5">
-									Crafts </a>
-							</div>
 						</div>
 					</div>
 				</div>

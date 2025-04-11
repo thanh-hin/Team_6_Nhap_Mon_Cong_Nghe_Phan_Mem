@@ -1,4 +1,4 @@
-<%@page import="model.User"%>
+<%-- <%@page import="model.User"%>
 <%@page import="model.BaiViet"%>
 <%@page import="java.util.List"%>
 <%@page import="Reponsitory.LaydulieuReponsitory"%>
@@ -16,7 +16,7 @@
 <meta content="" name="keywords">
 
 <!-- Favicons -->
-<link href="assetsquantri/img/favicon.png" rel="icon">
+<link href="assetsquantri/img/LOGOTHE5IVE.png" rel="icon">
 <link href="assetsquantri/img/apple-touch-icon.png"
 	rel="apple-touch-icon">
 
@@ -639,4 +639,4 @@ button.add:hover {
 
 </body>
 
-</html>
+</html> --%>
