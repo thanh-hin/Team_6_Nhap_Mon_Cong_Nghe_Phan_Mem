@@ -13,7 +13,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/jpeg" href="assetsquantri/img/LOGOTHE5IVE.png" />
+<link rel="icon" type="image/jpeg"
+	href="assetsquantri/img/LOGOTHE5IVE.png" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="vendor/bootstrap/css/bootstrap.min.css">
@@ -51,57 +52,60 @@
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css" href="css/util.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Vietnamese&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+Vietnamese&display=swap"
+	rel="stylesheet">
 <!--===============================================================================================-->
-<style >
+<style>
 .icon-header-dropdown {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 .dropdown-menu {
-    display: none; /* Ẩn menu mặc định */
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px 20px;
-    z-index: 10;
-    border-radius: 5px;
+	display: none; /* Ẩn menu mặc định */
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+	padding: 10px 20px;
+	z-index: 10;
+	border-radius: 5px;
 }
 
 .dropdown-menu ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+	list-style: none;
+	margin: 0;
+	padding: 0;
 }
 
 .dropdown-menu ul li {
-    padding: 8px 0;
+	padding: 8px 0;
 }
 
 .dropdown-menu ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 14px;
+	text-decoration: none;
+	color: #333;
+	font-size: 14px;
 }
 
 .icon-header-dropdown:hover .dropdown-menu {
-    display: block; /* Hiển thị menu khi hover */
+	display: block; /* Hiển thị menu khi hover */
 }
-body {
-            font-family: 'Noto Sans Vietnamese', sans-serif;
-        }
 
-        /* Tùy chỉnh màu và kiểu chữ cho tiêu đề */
-        .custom-title {
-            font-size: 2.5rem; /* Điều chỉnh kích thước chữ */
-            font-weight: bold; /* Đặt chữ đậm */
-            color: #000000; /* Màu đen */ 
-            text-align: center; /* Căn giữa */
-            margin-top: 20px; /* Thêm khoảng cách phía trên */
-        }
+body {
+	font-family: 'Noto Sans Vietnamese', sans-serif;
+}
+
+/* Tùy chỉnh màu và kiểu chữ cho tiêu đề */
+.custom-title {
+	font-size: 2.5rem; /* Điều chỉnh kích thước chữ */
+	font-weight: bold; /* Đặt chữ đậm */
+	color: #000000; /* Màu đen */
+	text-align: center; /* Căn giữa */
+	margin-top: 20px; /* Thêm khoảng cách phía trên */
+}
 </style>
 </head>
 <body class="animsition">
@@ -112,7 +116,7 @@ body {
 		<div class="container-menu-desktop">
 			<!-- Topbar -->
 
-<!-- 			 <div class="top-bar">
+			<!-- 			 <div class="top-bar">
 				
 			 </div>
 
@@ -128,8 +132,8 @@ body {
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="Laydulieusanpham" class="logo"> <img src="assetsquantri/img/LOGOTHE5IVE-removebg.png"
-						alt="IMG-LOGO">
+					<a href="Laydulieusanpham" class="logo"> <img
+						src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO">
 					</a>
 
 					<!-- Menu desktop -->
@@ -193,12 +197,16 @@ if (user != null) {
 									<li><a href="Thongtincanhan.jsp">Thông tin cá nhân</a></li>
 									<li><a href="Thongtindonhangdamua.jsp">Đơn hàng</a></li>
 									<%
-									if(user != null){
+									if (user != null) {
 									%>
 									<li><a href="Dangxuat">Đăng xuất</a></li>
-									<%}else{ %>
+									<%
+									} else {
+									%>
 									<li><a href="Dangxuat">Đăng nhập</a></li>
-									<%} %>
+									<%
+									}
+									%>
 								</ul>
 							</div>
 						</div>
@@ -211,52 +219,52 @@ if (user != null) {
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/LOGOTHE5IVE-removebg.png"
-					alt="IMG-LOGO"></a>
+				<a href="index.html"><img
+					src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
 			<div class="wrap-icon-header flex-w flex-r-m">
-						<div
-							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div>
+				<div
+					class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+					<i class="zmdi zmdi-search"></i>
+				</div>
 
-<%
-if (user != null) {
-	for (GioHang gioHang : gh) {
-		for (User u : user)
-			if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
-				soluong += gioHang.getSoLuong();
-				tongTien += gioHang.getGia();
-			}
-	}
+				<%
+				if (user != null) {
+					for (GioHang gioHang : gh) {
+						for (User u : user)
+					if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
+						soluong += gioHang.getSoLuong();
+						tongTien += gioHang.getGia();
+					}
+					}
 
-}%>
-						<div
-							
-							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
-							data-notify="<%=soluong%>">
-							<i class="zmdi zmdi-shopping-cart"></i>
-						</div>
+				}
+				%>
+				<div
+					class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
+					data-notify="<%=soluong%>">
+					<i class="zmdi zmdi-shopping-cart"></i>
+				</div>
 
 
-						<div class="icon-header-dropdown">
-							<a href="#"
-								class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-								<i class="fa fa-user"></i>
-							</a>
+				<div class="icon-header-dropdown">
+					<a href="#"
+						class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11"> <i
+						class="fa fa-user"></i>
+					</a>
 
-							<!-- Thẻ con chứa thông tin cá nhân và đơn hàng -->
-							<div class="dropdown-menu">
-								<ul>
-									<li><a href="Thongtincanhan.jsp">Thông tin cá nhân</a></li>
-									<li><a href="Thongtindonhangdamua.jsp">Đơn hàng</a></li>
-									<li><a href="Dangxuat">Đăng xuất</a></li>
-								</ul>
-							</div>
-						</div>
+					<!-- Thẻ con chứa thông tin cá nhân và đơn hàng -->
+					<div class="dropdown-menu">
+						<ul>
+							<li><a href="Thongtincanhan.jsp">Thông tin cá nhân</a></li>
+							<li><a href="Thongtindonhangdamua.jsp">Đơn hàng</a></li>
+							<li><a href="Dangxuat">Đăng xuất</a></li>
+						</ul>
 					</div>
+				</div>
+			</div>
 
 			<!-- Button show menu -->
 			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
@@ -468,90 +476,66 @@ if (user != null) {
 	</section>
 
 
-
-
-
-
-<!-- 	
 	<div class="sec-banner bg0 p-t-80 p-b-50">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					Block1
-					<div class="block1 wrap-pic-w">
-						<img src="images/icongirl.png" alt="IMG-BANNER"> <a
-							href="Cuahang"
-							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8"> Nữ </span> <span
-									class="block1-info stext-102 trans-04"> 2024 </span>
-							</div>
+				 <div class="col-lg-3 p-b-30">
+  				<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
+ 	    			<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
+    				<!-- Ảnh bên trái -->
+   						<img src="images/icongirl.jpg" alt="IMG-BANNER"
+     				    			style="width: 60px; height: auto; margin-right: 15px;">
 
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">Cửa hàng</div>
-							</div>
-						</a>
-					</div>
+  					<!-- Text bên phải -->
+   					<div>
+    					<div class="block1-name ltext-102 text-dark">Nữ</div>
+      					<div class="block1-info stext-102 text-secondary">2024</div>
+    				</div>
+					</a>
 				</div>
+				<div class="col-lg-3 p-b-30">
+  				<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
+ 	    			<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
+    				<!-- Ảnh bên trái -->
+   						<img src="images/iconboy.jpg" alt="IMG-BANNER"
+     				    			style="width: 60px; height: auto; margin-right: 15px;">
 
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					Block1
-					<div class="block1 wrap-pic-w">
-						<img src="images/iconboy.png" alt="IMG-BANNER"> <a
-							href="Cuahang"
-							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8"> Nam </span>
-
-								<span class="block1-info stext-102 trans-04"> 2024 </span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">Cửa hàng</div>
-							</div>
-						</a>
-					</div>
+  					<!-- Text bên phải -->
+   					<div>
+    					<div class="block1-name ltext-102 text-dark">Nam</div>
+      					<div class="block1-info stext-102 text-secondary">2024</div>
+    				</div>
+					</a>
 				</div>
-
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					Block1
-					<div class="block1 wrap-pic-w">
-						<img src="iconshoe.png" alt="IMG-BANNER"> <a
-							href="Cuahang"
-							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8"> Giày
-								 </span> <span class="block1-info stext-102 trans-04"> Xu
-									hướng mới </span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">Cửa hàng</div>
-							</div>
-						</a>
+				<div class="col-6 col-lg-3 p-b-30">
+ 					<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
+    				<!-- Ảnh bên trái -->
+    					<img src="images/iconshoe.jpg" alt="IMG-BANNER"
+         							style="width: 60px; height: auto; margin-right: 15px;">
+    
+    				<!-- Text bên phải -->
+    				<div>
+      					<div class="block1-name ltext-102 text-dark">Giày</div>
+      					<div class="block1-info stext-102 text-secondary">Xu hướng mới</div>
+    				</div>
+  					</a>
 					</div>
-				</div>
-				<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
-					Block1
-					<div class="block1 wrap-pic-w">
-						<img src="iconbag.png" alt="IMG-BANNER"> <a
-							href="Cuahang"
-							class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
-							<div class="block1-txt-child1 flex-col-l">
-								<span class="block1-name ltext-102 trans-04 p-b-8"> Túi Xách
-								 </span> <span class="block1-info stext-102 trans-04"> Xu
-									hướng mới </span>
-							</div>
-
-							<div class="block1-txt-child2 p-b-4 trans-05">
-								<div class="block1-link stext-101 cl0 trans-09">Cửa hàng</div>
-							</div>
-						</a>
-					</div>
+				<div class="col-6 col-lg-3 p-b-30">
+  					<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
+   		 			<!-- Ảnh bên trái -->
+    					<img src="images/iconbag.jpg" alt="IMG-BANNER"
+        							style="width: 60px; height: auto; margin-right: 15px;">
+    
+    				<!-- Text bên phải -->
+    				<div>
+      					<div class="block1-name ltext-102 text-dark">Túi Xách</div>
+      					<div class="block1-info stext-102 text-secondary">Xu hướng mới</div>
+    				</div>
+  					</a>
 				</div>
 			</div>
 		</div>
-	</div> -->
+	</div>
 
 
 	<!-- Product -->
@@ -645,7 +629,8 @@ if (user != null) {
 				<!-- Filter -->
 				<div class="dis-none panel-filter w-full p-t-10">
 					<div
-						class="wrap-filter flex-w bg6 p-t-30 p-lr-30 ml-auto rounded-md w-full max-w-md" style="width: fit-content;gap: 40px;">
+						class="wrap-filter flex-w bg6 p-t-30 p-lr-30 ml-auto rounded-md w-full max-w-md"
+						style="width: fit-content; gap: 40px;">
 						<div class="filter-col1col1 p-r-15 p-b-27 pl-4">
 							<div class="mtext-102 cl2 p-b-15">Giá</div>
 							<ul>
@@ -811,7 +796,9 @@ if (user != null) {
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">LIÊN LẠC</h4>
 
-					<p class="stext-107 cl7 size-201">Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại 379 Hudson Street, Floor 8, New York, NY 10014, USA 10018 hoặc gọi đến số 18008098.</p>
+					<p class="stext-107 cl7 size-201">Có bất kì câu hỏi nào? Hãy
+						đến cửa hàng chúng tôi tại 379 Hudson Street, Floor 8, New York,
+						NY 10014, USA 10018 hoặc gọi đến số 18008098.</p>
 
 					<div class="p-t-27">
 						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"> <i
