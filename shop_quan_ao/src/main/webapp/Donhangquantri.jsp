@@ -213,7 +213,7 @@
                     <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm theo tên khách hàng...">
                 </div>
 
-                <div id="editSection" style="display: none;">
+                <!-- <div id="editSection" style="display: none;">
                     <form action="SuavaXoaDonHanQuanTri">
                         <input type="hidden" id="itemId" name="idDonHangCanSua"/>
                         <label for="status">Trạng thái:</label>
@@ -223,9 +223,38 @@
                             <option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
                             <option value="Hoàn thành">Hoàn thành</option>
                         </select>
-                        <button type="submit" class="btn btn-primary" name="Luu" value="Luu">Lưu</button>
+                        <button type="submit" class="btn btn-primary" name="Luu" uu">Lưu</button>
                     </form>
-                </div>
+                </div> -->
+				<!-- Modal chỉnh sửa trạng thái -->
+				<div class="modal fade" id="editStatusModal" tabindex="-1" aria-labelledby="editStatusModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+					  <div class="modal-content">
+						<div class="modal-header">
+						  <h5 class="modal-title" id="editStatusModalLabel">Chỉnh sửa trạng thái đơn hàng</h5>
+						  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						</div>
+						<form action="SuavaXoaDonHanQuanTri">
+						  <div class="modal-body">
+							<input type="hidden" id="itemId" name="idDonHangCanSua"/>
+							<div class="mb-3">
+							  <label for="status" class="form-label">Trạng thái:</label>
+							  <select class="form-select" id="status" name="trangThai">
+								<option value="Đang giao đến bạn">Đang giao đến bạn</option>
+								<option value="Tạm dừng">Tạm dừng</option>
+								<option value="Đang chuẩn bị hàng">Đang chuẩn bị hàng</option>
+								<option value="Hoàn thành">Hoàn thành</option>
+							  </select>
+							</div>
+						  </div>
+						  <div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+							<button type="submit" class="btn btn-primary" name="Luu" value="Luu">Lưu thay đổi</button>
+						  </div>
+						</form>
+					  </div>
+					</div>
+				  </div>
 
                 <table class="table table-bordered">
                     <thead>
@@ -260,13 +289,20 @@
                             <td><%=h.getNgayDatHang()%></td>
                             <td><%=h.getDiaChiGiaoHang()%></td>
                             <td><span class="badge bg-warning"><%=h.getTrangThai()%></span></td>
-                            <td>
+                            <!-- <td>
                                 <button class="btn btn-warning btn-sm" onclick="editStatus('<%=h.getMaDonHang() %>')">Sửa</button>
                                 <form action="SuavaXoaDonHanQuanTri">
                                     <input type="hidden" value="<%=h.getMaDonHang()%>" name="idDonHang">
                                     <button class="btn btn-danger btn-sm" name="Xoa" value="Xoa" onclick="confirmDelete()">Xóa</button>
                                 </form>
-                            </td>
+                            </td> -->
+							<td>
+								<button class="btn btn-warning btn-sm" onclick="editStatus('<%=h.getMaDonHang() %>')">Sửa</button>
+								<form action="SuavaXoaDonHanQuanTri" style="display: inline;">
+								  <input type="hidden" value="<%=h.getMaDonHang()%>" name="idDonHang">
+								  <!-- <button class="btn btn-danger btn-sm" name="Xoa" value="Xoa" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?')">Xóa</button> -->
+								</form>
+							  </td>
                         </tr>
                         <%
                         }
@@ -315,15 +351,28 @@
     }
 
     // Hàm chỉnh sửa trạng thái
-    function editStatus(id) {
-        const editSection = document.getElementById("editSection");
-        editSection.style.display = "block";  // Hiển thị phần sửa
+    // function editStatus(id) {
+    //     const editSection = document.getElementById("editSection");
+    //     editSection.style.display = "block";  // Hiển thị phần sửa
 
-        const idInput = document.getElementById("itemId");
-        idInput.value = id;
+    //     const idInput = document.getElementById("itemId");
+    //     idInput.value = id;
 
-        alert("Bạn chắc chắn muốn sửa chứ?");
-    }
+    //     // alert("Bạn chắc chắn muốn sửa chứ?");
+    // }
+	function editStatus(id) {
+  // Đặt giá trị ID vào hidden input
+  document.getElementById("itemId").value = id;
+  
+  // Hiển thị modal
+  var editModal = new bootstrap.Modal(document.getElementById('editStatusModal'));
+  editModal.show();
+}
+
+function submitEditForm() {
+  // Submit form khi click nút Lưu
+  document.querySelector('#editStatusModal form').submit();
+}
     // xóa tìm kiéme đi để chạy
      document.getElementById('addb').addEventListener('click', () => {toggleUpload();});
 	function toggleUpload() {
