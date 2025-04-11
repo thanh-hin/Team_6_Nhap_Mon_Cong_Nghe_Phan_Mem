@@ -449,9 +449,9 @@
     </script>
 
 
-            <h5 class="card-title">Thống kê số lượng sản phẩm</h5>
+<!--             <h5 class="card-title">Thống kê số lượng sản phẩm</h5>
 
-            <!-- Pie Chart -->
+            Pie Chart
             <canvas id="pieChart" style="max-height: 400px;"></canvas>
 
             <script>
@@ -508,7 +508,7 @@
                         }
                     });
                 });
-            </script>
+            </script> -->
      
 
 				</div>
