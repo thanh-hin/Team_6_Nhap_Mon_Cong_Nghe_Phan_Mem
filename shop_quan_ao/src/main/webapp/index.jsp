@@ -192,7 +192,13 @@ if (user != null) {
 								<ul>
 									<li><a href="Thongtincanhan.jsp">Thông tin cá nhân</a></li>
 									<li><a href="Thongtindonhangdamua.jsp">Đơn hàng</a></li>
+									<%
+									if(user != null){
+									%>
 									<li><a href="Dangxuat">Đăng xuất</a></li>
+									<%}else{ %>
+									<li><a href="Dangxuat">Đăng nhập</a></li>
+									<%} %>
 								</ul>
 							</div>
 						</div>
