@@ -140,16 +140,27 @@
                 <td><%=d.getNoiDung() %></td>
                 <td>
                     <!-- Form phản hồi -->
-                    <form action="Phanhoidanhgia" method="post">
-                        <button type="button" class="feedback-button" onclick="toggleFeedback(<%=d.getMaDanhGia()%>)">Phản hồi</button>
+                    <!-- <form action="Phanhoidanhgia" method="post">
+                        <button type="button" class="feedback-button" onclick="toggleFeedback(<%=d.getMaDanhGia()%>)">Phản hồi</button> -->
                         
                         <!-- Phản hồi container -->
-                        <div class="feedback-container" id="feedback-<%=d.getMaDanhGia()%>">
+                        <!-- <div class="feedback-container" id="feedback-<%=d.getMaDanhGia()%>">
                             <input type="text" name="idDanhGia" value="<%=d.getMaDanhGia()%>">
                             <textarea class="feedback-textarea" name="phanHoi" placeholder="Nhập phản hồi của bạn..."></textarea>
                             <button type="submit" class="submit-feedback">Gửi Phản Hồi</button>
                         </div>
-                    </form>
+                    </form> -->
+                    <!-- Form phản hồi -->
+<form action="Phanhoidanhgia" method="post" onsubmit="return kiemTraPhanHoi(this)">
+    <button type="button" class="feedback-button" onclick="toggleFeedback(<%=d.getMaDanhGia()%>)">Phản hồi</button>
+    
+    <!-- Phản hồi container -->
+    <div class="feedback-container" id="feedback-<%=d.getMaDanhGia()%>">
+        <input type="text" name="idDanhGia" value="<%=d.getMaDanhGia()%>">
+        <textarea class="feedback-textarea" name="phanHoi" placeholder="Nhập phản hồi của bạn..."></textarea>
+        <button type="submit" class="submit-feedback">Gửi Phản Hồi</button>
+    </div>
+</form>
                 </td>
             </tr>
             <%} if(loi != null){%>
@@ -198,7 +209,17 @@
                 feedbackContainer.style.display = "none";
             }
         }
-        
+
+    function kiemTraPhanHoi(form) {
+        const phanHoi = form.phanHoi.value.trim();
+
+        if (phanHoi === "") {
+            alert("Bạn chưa nhập phản hồi!");
+            return false; // chặn submit
+        }
+
+        return confirm("Bạn có chắc chắn muốn gửi phản hồi?");
+    }        
     </script>
 
 </body>

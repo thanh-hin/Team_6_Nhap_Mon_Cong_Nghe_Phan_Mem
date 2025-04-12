@@ -321,7 +321,8 @@
 										</script>
 										<%} %>
 										<div class="text-center">
-											<button type="submit" class="btn btn-primary">Thêm</button>
+											<!-- <button type="submit" class="btn btn-primary">Thêm</button> -->
+											<button type="submit" class="btn btn-primary" onclick="return confirm('Bạn có chắc chắn muốn thêm sản phẩm không?')">Thêm</button>
 										</div>
 									</form>
 									<!-- Vertical Form -->
