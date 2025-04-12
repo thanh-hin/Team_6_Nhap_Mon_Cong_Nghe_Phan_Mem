@@ -689,7 +689,7 @@
                     },
                     yaxis: {
                       title: {
-                        text: '$ (thousands)'
+                        text: '(triệu)'
                       }
                     },
                     fill: {
@@ -698,7 +698,7 @@
                     tooltip: {
                       y: {
                         formatter: function(val) {
-                          return "$ " + val + " thousands"
+                          return val + " triệu"
                         }
                       }
                     }

@@ -454,64 +454,66 @@ function editForm(button) {
 	
   </script>
   
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("form-them-danh-muc");
-  const input = document.getElementById("inputName");
-
-  if (!form || !input) return;
-
-  function xuLyThemDanhMuc() {
-    const tenDanhMuc = input.value.trim();
-
-    if (!tenDanhMuc) {
-      alert("Tên danh mục không được để trống!");
-      return;
-    }
-
-    fetch("Themdanhmuc", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      },
-      body: "addThemSanPham=" + encodeURIComponent(tenDanhMuc)
-    })
-    .then(res => res.text())
-    .then(result => {
-      switch (result.trim()) {
-        case "success":
-          alert("Thêm danh mục thành công!");
-          location.reload();
-          break;
-        case "duplicate":
-          alert("Tên danh mục đã tồn tại!");
-          break;
-        case "empty":
-          alert("Tên danh mục không được để trống!");
-          break;
-        default:
-          alert("Có lỗi xảy ra khi thêm danh mục.");
-      }
-    })
-    .catch(err => {
-      console.error("Lỗi fetch:", err);
-      alert("Không thể kết nối đến server.");
-    });
-  }
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Enter" && document.activeElement === input) {
-      e.preventDefault();
-      xuLyThemDanhMuc();
-    }
-  });
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    xuLyThemDanhMuc();
-  });
-});
-</script>
+	<script>
+	
+	document.addEventListener("DOMContentLoaded", function () {
+	  const form = document.getElementById("form-them-danh-muc");
+	  const input = document.getElementById("inputName");
+	
+	  if (!form || !input) return;
+	
+	  function xuLyThemDanhMuc() {
+	    const tenDanhMuc = input.value.trim();
+	
+	    if (!tenDanhMuc) {
+	      alert("Tên danh mục không được để trống!");
+	      return;
+	    }
+	
+	    fetch("Themdanhmuc", {
+	      method: "POST",
+	      headers: {
+	        "Content-Type": "application/x-www-form-urlencoded"
+	      },
+	      body: "addThemSanPham=" + encodeURIComponent(tenDanhMuc)
+	    })
+	    .then(res => res.text())
+	    .then(result => {
+	      switch (result.trim()) {
+	        case "success":
+	          alert("Thêm danh mục thành công!");
+	          location.reload();
+	          break;
+	        case "duplicate":
+	          alert("Tên danh mục đã tồn tại!");
+	          break;
+	        case "empty":
+	          alert("Tên danh mục không được để trống!");
+	          break;
+	        default:
+	          alert("Có lỗi xảy ra khi thêm danh mục.");
+	      }
+	    })
+	    .catch(err => {
+	      console.error("Lỗi fetch:", err);
+	      alert("Không thể kết nối đến server.");
+	    });
+	  }
+	
+	  document.addEventListener("keydown", function (e) {
+	    if (e.key === "Enter" && document.activeElement === input) {
+	      e.preventDefault();
+	      xuLyThemDanhMuc();
+	    }
+	  });
+	
+	  form.addEventListener("submit", function (e) {
+	    e.preventDefault();
+	    xuLyThemDanhMuc();
+	  });
+	});
+	
+	</script>
 
 </body>
 
