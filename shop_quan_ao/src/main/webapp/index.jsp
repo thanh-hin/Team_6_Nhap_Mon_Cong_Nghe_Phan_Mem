@@ -165,21 +165,21 @@ body {
 
 						<div
 							<%Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
-List<GioHang> gh = lgn.LayHetThongTinGioHang();
-HttpSession tk = request.getSession(false);
-List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
-int soluong = 0;
-float tongTien = 0;
-if (user != null) {
-	for (GioHang gioHang : gh) {
-		for (User u : user)
-			if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
-				soluong += gioHang.getSoLuong();
-				tongTien += gioHang.getGia();
-			}
-	}
-
-}%>
+								List<GioHang> gh = lgn.LayHetThongTinGioHang();
+								HttpSession tk = request.getSession(false);
+								List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
+								int soluong = 0;
+								float tongTien = 0;
+								if (user != null) {
+									for (GioHang gioHang : gh) {
+										for (User u : user)
+											if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
+												soluong += gioHang.getSoLuong();
+												tongTien += gioHang.getGia();
+											}
+									}
+								
+							}%>
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=soluong%>">
 							<i class="zmdi zmdi-shopping-cart"></i>
@@ -439,7 +439,7 @@ if (user != null) {
 
 							<div class="layer-slick1 animated visible-false"
 								data-appear="slideInUp" data-delay="1600">
-								<a href="product.html"
+								<a href="Cuahang"
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Mua ngay </a>
 							</div>
@@ -465,7 +465,7 @@ if (user != null) {
 
 							<div class="layer-slick1 animated visible-false"
 								data-appear="rotateIn" data-delay="1600">
-								<a href="product.html"
+								<a href="Cuahang"
 									class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
 									Mua ngay </a>
 							</div>
