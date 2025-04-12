@@ -12,7 +12,7 @@
 
 body, html {
 	font-family: Arial;
-	font-size: 15px;
+	font-size: 40px;
 	color: #666666;
 
 	height: 100%;
@@ -270,7 +270,7 @@ iframe {border: none;}
 .p-t-7, .p-tb-7, .p-all-7 {padding-top: 7px;}
 .p-t-8, .p-tb-8, .p-all-8 {padding-top: 8px;}
 .p-t-9, .p-tb-9, .p-all-9 {padding-top: 9px;}
-.p-t-10, .p-tb-10, .p-all-10 {padding-top: 10px;}
+.p-t-10, .p-tb-10, .p-all-10 {padding-top: 0px;}
 .p-t-11, .p-tb-11, .p-all-11 {padding-top: 11px;}
 .p-t-12, .p-tb-12, .p-all-12 {padding-top: 12px;}
 .p-t-13, .p-tb-13, .p-all-13 {padding-top: 13px;}
