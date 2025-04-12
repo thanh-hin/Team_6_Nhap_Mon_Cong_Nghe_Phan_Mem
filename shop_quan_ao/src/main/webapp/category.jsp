@@ -455,7 +455,6 @@ function editForm(button) {
   </script>
   
 	<script>
-	
 	document.addEventListener("DOMContentLoaded", function () {
 	  const form = document.getElementById("form-them-danh-muc");
 	  const input = document.getElementById("inputName");
@@ -482,7 +481,7 @@ function editForm(button) {
 	      switch (result.trim()) {
 	        case "success":
 	          alert("Thêm danh mục thành công!");
-	          location.reload();
+	          location.reload(); // tự động reload
 	          break;
 	        case "duplicate":
 	          alert("Tên danh mục đã tồn tại!");
@@ -500,19 +499,18 @@ function editForm(button) {
 	    });
 	  }
 	
-	  document.addEventListener("keydown", function (e) {
-	    if (e.key === "Enter" && document.activeElement === input) {
+	  input.addEventListener("keydown", function(e) {
+	    if (e.key === "Enter") {
 	      e.preventDefault();
-	      xuLyThemDanhMuc();
+	      xuLyThemDanhMuc(); // xử lý giống submit
 	    }
 	  });
 	
-	  form.addEventListener("submit", function (e) {
+	  form.addEventListener("submit", function(e) {
 	    e.preventDefault();
 	    xuLyThemDanhMuc();
 	  });
 	});
-	
 	</script>
 
 </body>
