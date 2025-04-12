@@ -1,4 +1,3 @@
-<%@page import="jdk.internal.org.jline.terminal.TerminalBuilder.SystemOutput"%>
 <%@page import="model.Quyen"%>
 <%@page import="Reponsitory.LaydulieuReponsitory"%>
 <%@page import="model.User"%>
@@ -218,10 +217,10 @@
 			</a></li>
 			<!-- End Profile Page Nav -->
 
-			<li class="nav-item"><a class="nav-link collapsed"
+			<%-- <li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/group.jsp"> <i
 					class="bi bi-question-circle"></i> <span>Phân quyền</span>
-			</a></li>
+			</a></li> --%>
 			<!-- End F.A.Q Page Nav -->
 
 
