@@ -188,7 +188,7 @@
             }
         }
         
-         dialog {
+        dialog {
         border: none;
         border-radius: 12px;
         padding: 20px 30px;
@@ -317,22 +317,16 @@
         <%} %>
     </div>
 
-    <!-- <div class="button-group">
+    <div class="button-group">
         <button class="button confirm-button" onclick="confirmOrder()" name="Xacnhandonhang" value="Xacnhandonhang">Xác Nhận Đơn Hàng</button>
         <button class="button cancel-button" onclick="cancelOrder()" name="Huydonhang" value="Huydonhang">Hủy</button>
-    </div> -->
-    <div class="button-group">
-    <button type="button" class="button confirm-button" onclick="confirmOrder()">Xác Nhận Đơn Hàng</button>
-    <button type="button" class="button cancel-button" onclick="cancelOrder()">Hủy</button>
-	</div>
-    
+    </div>
     </form>
 </div>
 
 <div class="footer">
     <p>© 2024 <a href="#">Cửa Hàng Online</a>. Tất cả các quyền được bảo lưu.</p>
 </div> 
-
 
 <dialog id="successDialog">
     <p>🎉 Đơn hàng của bạn đã được xác nhận thành công!</p>
@@ -341,7 +335,7 @@
 
 <dialog id="cancelDialog">
     <p>❗ Bạn có chắc chắn muốn hủy đơn hàng không?</p>
-    <form method="post">
+    <form method="post" action="XacNhanandHuyDonHang">
         <!-- Hidden fields -->
         <input type="hidden" name="mauSac" value="<%=mauSac %>">
         <input type="hidden" name="kichThuoc" value="<%=kichThuoc %>">
@@ -361,7 +355,6 @@
     </form>
 </dialog>
 
-
 <script>
     // Hàm để hiển thị ngày đặt hàng
     function formatDate(date) {
@@ -376,9 +369,15 @@
     document.getElementById("order-date").innerText = formatDate(today);
 
     // Hàm xác nhận đơn hàng
-    /* function confirmOrder() {
+   /*  function confirmOrder() {
         alert("Đơn hàng của bạn đã được xác nhận thành công!");
-    } */
+    }
+
+    // Hàm hủy đơn hàng
+    function cancelOrder() {
+    	 alert("Bạn có muốn hủy đơn hàng không!"); */
+    /* } */
+    
     function confirmOrder() {
         event.preventDefault(); 
         document.getElementById("successDialog").showModal();
