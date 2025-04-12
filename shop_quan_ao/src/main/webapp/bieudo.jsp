@@ -19,7 +19,7 @@
 <meta content="" name="keywords">
 
 <!-- Favicons -->
-<link href="assetsquantri/img/favicon.png" rel="icon">
+<link href="assetsquantri/img/LOGOTHE5IVE.png" rel="icon">
 <link href="assetsquantri/img/apple-touch-icon.png"
 	rel="apple-touch-icon">
 
@@ -124,8 +124,8 @@
 
 		<div class="d-flex align-items-center justify-content-between">
 			<div class="logo d-flex align-items-center">
-				<img src="assetsquantri/img/logo.png" alt=""> <span
-					class="d-none d-lg-block">T3admin</span>
+				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
+					class="d-none d-lg-block">Admin</span>
 			</div>
 			<i class="bi bi-list toggle-sidebar-btn"></i>
 		</div>
@@ -231,10 +231,10 @@
 			</a></li>
 			<!-- End Profile Page Nav -->
 
-			<li class="nav-item"><a class="nav-link collapsed"
+			<%-- <li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/group.jsp"> <i
 					class="bi bi-question-circle"></i> <span>Phân quyền</span>
-			</a></li>
+			</a></li> --%>
 			<!-- End F.A.Q Page Nav -->
 
 
