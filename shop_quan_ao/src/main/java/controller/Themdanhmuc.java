@@ -29,14 +29,25 @@ public class Themdanhmuc extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String tenDanhMuc = request.getParameter("addThemSanPham");
-		boolean ktra = lg.addThemDanhMuc(tenDanhMuc);
-		if(ktra) {
-			response.sendRedirect("category.jsp");
-		}else {
-			response.sendRedirect("category.jsp");
+
+		    if (tenDanhMuc == null || tenDanhMuc.trim().isEmpty()) {
+		        response.getWriter().write("empty"); //Lỗi: trống
+		        return;
+		    }
+
+			/*
+			 * if (lg.kiemTraTrungTenDanhMuc(tenDanhMuc.trim())) {
+			 * response.getWriter().write("duplicate"); //Lỗi: trùng return; }
+			 */
+		    
+		    boolean kq = lg.addThemDanhMuc(tenDanhMuc.trim());
+
+		    if (kq) {
+		        response.getWriter().write("success"); //Thành công
+		    } else {
+		        response.getWriter().write("fail"); //Lỗi: thêm thất bại
+		    }
 		}
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
