@@ -19,7 +19,7 @@
 <meta content="" name="keywords">
 
 <!-- Favicons -->
-<link href="assetsquantri/img/LOGOTHE5IVE.png" rel="icon">
+<link href="assetsquantri/img/favicon.png" rel="icon">
 <link href="assetsquantri/img/apple-touch-icon.png"
 	rel="apple-touch-icon">
 
@@ -124,8 +124,8 @@
 
 		<div class="d-flex align-items-center justify-content-between">
 			<div class="logo d-flex align-items-center">
-				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
-					class="d-none d-lg-block">Admin</span>
+				<img src="assetsquantri/img/logo.png" alt=""> <span
+					class="d-none d-lg-block">T3admin</span>
 			</div>
 			<i class="bi bi-list toggle-sidebar-btn"></i>
 		</div>
@@ -219,10 +219,10 @@
 				href="<%=projectName%>/Quantrikhuyenmai.jsp"> <i
 					class="fas fa-gift"></i> <span>Khuyến mãi</span>
 			</a></li>
-			<%-- <li class="nav-item"><a class="nav-link collapsed"
+			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/Quanlibaiviet.jsp"> <i
 					class="fa fa-newspaper"></i> <span>Bài viết</span>
-			</a></li> --%>
+			</a></li>
 			<li class="nav-heading">Quản lý tài khoản</li>
 
 			<li class="nav-item"><a class="nav-link collapsed"
@@ -231,10 +231,10 @@
 			</a></li>
 			<!-- End Profile Page Nav -->
 
-			<%-- <li class="nav-item"><a class="nav-link collapsed"
+			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/group.jsp"> <i
 					class="bi bi-question-circle"></i> <span>Phân quyền</span>
-			</a></li> --%>
+			</a></li>
 			<!-- End F.A.Q Page Nav -->
 
 
@@ -289,7 +289,7 @@
         data: {
             labels: labelsMonth,
             datasets: [{
-                label: 'Doanh thu theo tháng (VNĐ)',
+                label: 'Doanh thu theo tháng',
                 data: dataMonth,
                 backgroundColor: [
                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
@@ -334,7 +334,7 @@
                 y: {
                     title: {
                         display: true,
-                        text: 'Doanh thu (VNĐ)'
+                        text: 'Doanh thu '
                     },
                     beginAtZero: true
                 }
@@ -394,7 +394,7 @@
             data: {
                 labels: labels,
                 datasets: [{
-                    label: 'Doanh thu (VNĐ)',
+                    label: 'Doanh thu ',
                     data: data,
                     backgroundColor: [
                     	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
@@ -439,7 +439,7 @@
                     y: {
                         title: {
                             display: true,
-                            text: 'Doanh thu (VNĐ)'
+                            text: 'Doanh thu '
                         },
                         beginAtZero: true
                     }
@@ -449,9 +449,9 @@
     </script>
 
 
-<!--             <h5 class="card-title">Thống kê số lượng sản phẩm</h5>
+            <h5 class="card-title">Thống kê số lượng sản phẩm</h5>
 
-            Pie Chart
+            <!-- Pie Chart -->
             <canvas id="pieChart" style="max-height: 400px;"></canvas>
 
             <script>
@@ -508,7 +508,7 @@
                         }
                     });
                 });
-            </script> -->
+            </script>
      
 
 				</div>
@@ -644,12 +644,12 @@
 
 
 
-			<div class="col-lg-6">
+			<!-- <div class="col-lg-6">
 				<div class="card">
 					<div class="card-body">
 						<h5 class="card-title">Biểu đồ cơ cấu giá</h5>
 
-						<!-- Column Chart -->
+						Column Chart
 						<div id="columnChart"></div>
 
 						<script>
@@ -689,7 +689,7 @@
                     },
                     yaxis: {
                       title: {
-                        text: '(triệu)'
+                        text: '$ (thousands)'
                       }
                     },
                     fill: {
@@ -698,18 +698,18 @@
                     tooltip: {
                       y: {
                         formatter: function(val) {
-                          return val + " triệu"
+                          return "$ " + val + " thousands"
                         }
                       }
                     }
                   }).render();
                 });
               </script>
-						<!-- End Column Chart -->
+						End Column Chart
 
 					</div>
 				</div>
-			</div>
+			</div> -->
 		</div>
 	</main>
 	<!-- End #main -->

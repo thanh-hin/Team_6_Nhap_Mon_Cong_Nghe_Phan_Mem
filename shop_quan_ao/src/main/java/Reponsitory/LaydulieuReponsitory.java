@@ -1635,4 +1635,34 @@ public class LaydulieuReponsitory implements Thaotac {
 
 		return bs;
 	}
+	
+	public boolean daTonTaiTenDanhMuc(String tenDanhMuc) {
+	    boolean tonTai = false;
+	    Connection conn = null;
+	    PreparedStatement ps = null;
+	    ResultSet rs = null;
+	    ConnectionSql connectionSql = null;
+
+	    try {
+	        connectionSql = new ConnectionSql();
+	        conn = connectionSql.getConnection();
+	        String query = "SELECT 1 FROM danhmucsanpham WHERE TenDanhMuc = ?";
+	        ps = conn.prepareStatement(query);
+	        ps.setString(1, tenDanhMuc);
+	        rs = ps.executeQuery();
+	        tonTai = rs.next(); // true nếu có kết quả
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (rs != null) rs.close();
+	            if (ps != null) ps.close();
+	            if (conn != null) connectionSql.releaseConnection(conn);
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+	    return tonTai;
+	}
+
 }

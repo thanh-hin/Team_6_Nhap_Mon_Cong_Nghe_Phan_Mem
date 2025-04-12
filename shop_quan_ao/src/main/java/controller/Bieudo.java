@@ -10,6 +10,7 @@ import model.DonHang;
 import model.SanPham;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -37,13 +38,26 @@ public class Bieudo extends HttpServlet {
     	        request.setAttribute("doanhThuMap", null); 
     	    } else {
     	        // Tạo map từ danh sách theo ngày huhu
-    	        Map<String, Double> doanhThuMap = donHangList.stream()
-    	            .filter(dh -> dh.getNgayDatHang() != null) // Loại bỏ null
-    	            .filter(dh -> "Hoàn thành".equalsIgnoreCase(dh.getTrangThai())) 
-    	            .collect(Collectors.groupingBy(
-    	                DonHang::getNgayDatHang,
-    	                Collectors.summingDouble(dh -> dh.getGia())
-    	            ));
+    	    	Map<String, Double> doanhThuUnsortedMap = donHangList.stream()
+    	    		    .filter(dh -> dh.getNgayDatHang() != null)
+    	    		    .filter(dh -> "Hoàn thành".equalsIgnoreCase(dh.getTrangThai()))
+    	    		    .collect(Collectors.groupingBy(
+    	    		        DonHang::getNgayDatHang,
+    	    		        Collectors.summingDouble(DonHang::getGia)
+    	    		    ));
+
+    	    		// Sắp xếp theo ngày (định dạng dd/MM/yyyy)
+    	    		Map<String, Double> doanhThuMap = new TreeMap<>((d1, d2) -> {
+    	    		    try {
+    	    		        Date date1 = new SimpleDateFormat("dd/MM/yyyy").parse(d1);
+    	    		        Date date2 = new SimpleDateFormat("dd/MM/yyyy").parse(d2);
+    	    		        return date1.compareTo(date2);
+    	    		    } catch (Exception e) {
+    	    		        return d1.compareTo(d2); // fallback
+    	    		    }
+    	    		});
+    	    		doanhThuMap.putAll(doanhThuUnsortedMap);
+
     	        System.out.println("doanh thu là: "+ doanhThuMap);
     	        // theo tháng
     	        Map<Integer, Double> doanhThuTheoThang = getDoanhThuTheoThang(doanhThuMap);
