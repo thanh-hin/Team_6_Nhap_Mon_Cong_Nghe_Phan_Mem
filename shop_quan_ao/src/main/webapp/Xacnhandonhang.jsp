@@ -187,6 +187,69 @@
                 font-size: 14px;
             }
         }
+        
+         dialog {
+        border: none;
+        border-radius: 12px;
+        padding: 20px 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        text-align: center;
+        font-size: 18px;
+        animation: fadeIn 0.3s ease;
+    }
+
+    dialog::backdrop {
+        background: rgba(0, 0, 0, 0.4);
+    }
+
+    dialog button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease;
+    }
+
+    dialog button:hover {
+        opacity: 0.9;
+    }
+
+    #successDialog button {
+        background-color: #2ecc71;
+        color: white;
+    }
+
+    #cancelDialog form {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+    #cancelDialog button[type="submit"] {
+        background-color: #e74c3c;
+        color: white;
+    }
+
+    #cancelDialog button[type="button"] {
+        background-color: #bdc3c7;
+        color: #2c3e50;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
     </style>
 </head>
 <body>
@@ -254,16 +317,50 @@
         <%} %>
     </div>
 
-    <div class="button-group">
+    <!-- <div class="button-group">
         <button class="button confirm-button" onclick="confirmOrder()" name="Xacnhandonhang" value="Xacnhandonhang">Xác Nhận Đơn Hàng</button>
         <button class="button cancel-button" onclick="cancelOrder()" name="Huydonhang" value="Huydonhang">Hủy</button>
-    </div>
+    </div> -->
+    <div class="button-group">
+    <button type="button" class="button confirm-button" onclick="confirmOrder()">Xác Nhận Đơn Hàng</button>
+    <button type="button" class="button cancel-button" onclick="cancelOrder()">Hủy</button>
+	</div>
+    
     </form>
 </div>
 
 <div class="footer">
     <p>© 2024 <a href="#">Cửa Hàng Online</a>. Tất cả các quyền được bảo lưu.</p>
 </div> 
+
+
+<dialog id="successDialog">
+    <p>🎉 Đơn hàng của bạn đã được xác nhận thành công!</p>
+    <button onclick="submitForm()">OK</button>
+</dialog>
+
+<dialog id="cancelDialog">
+    <p>❗ Bạn có chắc chắn muốn hủy đơn hàng không?</p>
+    <form method="post">
+        <!-- Hidden fields -->
+        <input type="hidden" name="mauSac" value="<%=mauSac %>">
+        <input type="hidden" name="kichThuoc" value="<%=kichThuoc %>">
+        <input type="hidden" name="soLuong" value="<%=soLuong %>">
+        <input type="hidden" name="id" value="<%=id %>">
+        <input type="hidden" name="soDienThoai" value="<%=soDienThoai %>">
+        <input type="hidden" name="hoTen" value="<%=hoTen %>">
+        <input type="hidden" name="diaChi" value="<%=diaChi %>">
+        <input type="hidden" name="time" value="<%=time %>">
+        <input type="hidden" name="maTaiKhoanUser" value="<%=maTaiKhoanUser %>">
+        <input type="hidden" name="tenSanPham" value="<%=tenSanPham %>">
+        <input type="hidden" name="gia" value="<%= giaSauKhiGiam != 0 ? giaSauKhiGiam : giaCU %>">
+        <input type="hidden" name="Huydonhang" value="Huydonhang">
+
+        <button type="submit">Có, hủy đơn</button>
+        <button type="button" onclick="document.getElementById('cancelDialog').close()">Không</button>
+    </form>
+</dialog>
+
 
 <script>
     // Hàm để hiển thị ngày đặt hàng
@@ -279,13 +376,21 @@
     document.getElementById("order-date").innerText = formatDate(today);
 
     // Hàm xác nhận đơn hàng
-    function confirmOrder() {
+    /* function confirmOrder() {
         alert("Đơn hàng của bạn đã được xác nhận thành công!");
+    } */
+    function confirmOrder() {
+        event.preventDefault(); 
+        document.getElementById("successDialog").showModal();
     }
 
-    // Hàm hủy đơn hàng
+    function submitForm() {
+        document.querySelector("form").submit();
+    }
+
     function cancelOrder() {
-    	 alert("Bạn có muốn hủy đơn hàng không!");
+        event.preventDefault();
+        document.getElementById("cancelDialog").showModal();
     }
 </script>
 

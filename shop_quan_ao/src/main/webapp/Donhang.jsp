@@ -288,20 +288,14 @@
             <!-- Nút Quay lại và Đặt hàng -->
             <div class="buttons">
                 <button class="button button-secondary" onclick="window.history.back()">Quay lại</button>
-                <button class="button" onclick="placeOrder()">Đặt hàng</button>
+                <!-- <button class="button" onclick="placeOrder()">Đặt hàng</button> -->
+                <button type="submit" class="button">Đặt hàng</button>
             </div>
         </div>
          </form>
     </div>
 
-    <!-- Thêm JavaScript -->
-   <script>
-   function placeOrder() {
-	   alert("Đơn hàng của bạn đã được xác nhận thành công!");
-	}
-
-
-</script>
+   
 
 
 </body>
