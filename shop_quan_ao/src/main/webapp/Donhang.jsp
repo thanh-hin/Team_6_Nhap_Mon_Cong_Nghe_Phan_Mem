@@ -226,73 +226,100 @@
     <div class="container">
         <h1>Xác Nhận Đơn Hàng</h1>
         <form action="Xacnhandathang" method="post"> 
-        <div class="order-details">
-            <h2>Thông Tin Đơn Hàng</h2>
+            <div class="order-details">
+                <h2>Thông Tin Đơn Hàng</h2>
 
-            <!-- Thông tin khách hàng -->
-            <div class="customer-info">
-                <h3>Thông Tin Khách Hàng</h3>
-                <% LaydulieuReponsitory lg = new LaydulieuReponsitory();
-                HttpSession s = request.getSession(false);
-                List<User> listUser = (List<User>) session.getAttribute("Ghinhotaikhoan");
-                for(User u : listUser){
-                %>
-                <input type="text" placeholder="Họ và tên" value="<%=u.getHoTen() %>" name="hoTen" required>
-                <input type="text" placeholder="Số điện thoại" value="<%=u.getSoDienThoai()%>" name="soDienThoai" required>
-                <input type="text" placeholder="Địa chỉ giao hàng" value="<%=u.getDiaChi() %>" name="diaChiGiaoHang" required>
-                 <input type="hidden" placeholder="Địa chỉ giao hàng" value="<%=u.getMaTaiKhoan() %>" name="maTaiKhoanUser" required>
-                <%} %>
-            </div>
-
-            <!-- Thông tin sản phẩm -->
-            <div class="product-info">
-                <h3>Thông Tin Sản Phẩm</h3>
-                <div class="product-list">
-                    <div class="product-item">
+                <!-- Thông tin khách hàng -->
+                <div class="customer-info">
+                    <h3>Thông Tin Khách Hàng</h3>
                     <%
-                        int idSanPham = (int) request.getAttribute("idSanPham");
-                        String kichThuoc = (String) request.getAttribute("kichCo");
-                        String mauSac = (String) request.getAttribute("mauSac");
-                        int soLuong = (int) request.getAttribute("soLuong");
-                        List<SanPham> ss = lg.Laythongtinsanpham();
-                        for(SanPham sp : ss){
-                        	if(sp.getMaSanpham()==idSanPham){
-                        %>
-                        <img src="<%=sp.getDuongDanAnh() %>" alt="Sản phẩm" class="product-img">
-                        <div class="product-details">
-                        
-                            <p><strong>Tên sản phẩm:</strong> <%=sp.getTenSanPham()%></p>
-                            
-                            <p><strong>Kích cỡ:</strong> <%=kichThuoc %></p>
-                            <p><strong>Màu sắc:</strong> <%=mauSac %></p>
-                            <p><strong>Số lượng:</strong> <%=soLuong %></p>
-                            <p><strong>Giá:</strong>$<%=sp.getGia() %></p>
-                            <input type="hidden" name="giaSanPham" value="<%=sp.getGia()%>">
-                            <input type="hidden" name="tenSanPham" value="<%=sp.getTenSanPham()%>">
-                            <input type="hidden" name="idSanPham" value="<%=idSanPham%>">
-                            <input type="hidden" name="kichThuoc" value="<%=kichThuoc%>">
-                            <input type="hidden" name="mauSac" value="<%=mauSac%>">
-                            <input type="hidden" name="soLuong" value="<%=soLuong%>">
-                            <%}} %>
+                        LaydulieuReponsitory lg = new LaydulieuReponsitory();
+                        HttpSession s = request.getSession(false);
+                        List<User> listUser = (List<User>) session.getAttribute("Ghinhotaikhoan");
+                        User user = null;
+                        if (listUser != null && !listUser.isEmpty()) {
+                            user = listUser.get(0); // Lấy người dùng đầu tiên (giả định chỉ có 1 người dùng trong danh sách)
+                    %>
+                    <input type="text" placeholder="Họ và tên" value="<%=user.getHoTen()%>" name="hoTen" required>
+                    <input type="text" placeholder="Số điện thoại" value="<%=user.getSoDienThoai()%>" name="soDienThoai" required>
+                    <input type="text" placeholder="Địa chỉ giao hàng" value="<%=user.getDiaChi()%>" name="diaChiGiaoHang" required>
+                    <input type="hidden" name="maTaiKhoanUser" value="<%=user.getMaTaiKhoan()%>" required>
+                    <%
+                        } else {
+                            // Nếu không có thông tin người dùng, hiển thị thông báo lỗi hoặc chuyển hướng
+                            out.println("<p style='color: red;'>Không tìm thấy thông tin người dùng. Vui lòng đăng nhập lại.</p>");
+                            return;
+                        }
+                    %>
+                </div>
+
+                <!-- Thông tin sản phẩm -->
+                <div class="product-info">
+                    <h3>Thông Tin Sản Phẩm</h3>
+                    <div class="product-list">
+                        <div class="product-item">
+                            <%
+                                int idSanPham = (int) request.getAttribute("idSanPham");
+                                String kichThuoc = (String) request.getAttribute("kichCo");
+                                String mauSac = (String) request.getAttribute("mauSac");
+                                int soLuong = (int) request.getAttribute("soLuong");
+                                List<SanPham> ss = lg.Laythongtinsanpham();
+                                SanPham sanPham = null;
+                                for (SanPham sp : ss) {
+                                    if (sp.getMaSanpham() == idSanPham) {
+                                        sanPham = sp;
+                                        break;
+                                    }
+                                }
+                                if (sanPham != null) {
+                            %>
+                            <img src="<%=sanPham.getDuongDanAnh()%>" alt="Sản phẩm" class="product-img">
+                            <div class="product-details">
+                                <p><strong>Tên sản phẩm:</strong> <%=sanPham.getTenSanPham()%></p>
+                                <p><strong>Kích cỡ:</strong> <%=kichThuoc%></p>
+                                <p><strong>Màu sắc:</strong> <%=mauSac%></p>
+                                <p><strong>Số lượng:</strong> <%=soLuong%></p>
+                                <p><strong>Giá:</strong>$<%=sanPham.getGia()%></p>
+                                <input type="hidden" name="giaSanPham" value="<%=sanPham.getGia()%>">
+                                <input type="hidden" name="tenSanPham" value="<%=sanPham.getTenSanPham()%>">
+                                <input type="hidden" name="idSanPham" value="<%=idSanPham%>">
+                                <input type="hidden" name="kichThuoc" value="<%=kichThuoc%>">
+                                <input type="hidden" name="mauSac" value="<%=mauSac%>">
+                                <input type="hidden" name="soLuong" value="<%=soLuong%>">
+                            </div>
+                            <%
+                                } else {
+                                    // Nếu không tìm thấy sản phẩm, hiển thị thông báo lỗi
+                                    out.println("<p style='color: red;'>Không tìm thấy sản phẩm.</p>");
+                                    return;
+                                }
+                            %>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Nhập mã khuyến mãi -->
-            <div class="promo-code">
-                <h3>Mã Khuyến Mãi</h3>
-                <input type="text" placeholder="Nhập mã khuyến mãi (nếu có)" name="maKhuyenMai">
-            </div>
+                <!-- Nhập mã khuyến mãi -->
+                <div class="promo-code">
+                    <h3>Mã Khuyến Mãi</h3>
+                    <input type="text" placeholder="Nhập mã khuyến mãi (nếu có)" name="maKhuyenMai">
+                </div>
 
-            <!-- Nút Quay lại và Đặt hàng -->
-            <div class="buttons">
-                <button class="button button-secondary" onclick="window.history.back()">Quay lại</button>
-                <!-- <button class="button" onclick="placeOrder()">Đặt hàng</button> -->
-                <button type="submit" class="button">Đặt hàng</button>
+                <!-- Nút Quay lại và Đặt hàng -->
+                <div class="buttons">
+                    <%
+                        // Đảm bảo user và sanPham không null trước khi tạo URL
+                        if (user != null && sanPham != null) {
+                    %>
+                    <a href="XacNhanandHuyDonHang?id=<%=idSanPham%>&mauSac=<%=mauSac%>&kichThuoc=<%=kichThuoc%>&soLuong=<%=soLuong%>&hoTen=<%=user.getHoTen()%>&soDienThoai=<%=user.getSoDienThoai()%>&diaChi=<%=user.getDiaChi()%>&maTaiKhoanUser=<%=user.getMaTaiKhoan()%>&gia=<%=sanPham.getGia()%>&time=<%=System.currentTimeMillis()%>&Huydonhang=HuyDonHang" class="button button-secondary">Quay lại</a>
+                    <%
+                        } else {
+                            out.println("<a href='error.jsp?message=MissingUserOrProductInfo' class='button button-secondary'>Quay lại</a>");
+                        }
+                    %>
+                    <button type="submit" class="button">Đặt hàng</button>
+                </div>
             </div>
-        </div>
-         </form>
+        </form>
     </div>
 
    
