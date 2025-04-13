@@ -196,7 +196,7 @@
 
 							<li><a href="blog.jsp">Blog</a></li>
 
-							<li><a href="Giới thiệu.jsp">Giới thiệu</a></li>
+							<li><a href="about.jsp">Giới thiệu</a></li>
 
 							<li><a href="contact.jsp">Liên hệ</a></li>
 						</ul>
