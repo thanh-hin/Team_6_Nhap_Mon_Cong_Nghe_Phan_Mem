@@ -27,20 +27,35 @@ public class UpdateDanhMuc extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("product-id"));
-		String tenDanhMuc = request.getParameter("updateDanhMuc");
-		System.out.println("id danh mục cần sửa là: "+ id);
-		System.out.println("tên danh mục cần sửa là: "+ tenDanhMuc);
-		boolean ktra = lg.updateDanhMuc(id, tenDanhMuc);
-		System.out.println("cơ sở dữ liệu danh mục cần sửa là: "+ ktra);
-		if(ktra) {
-			response.sendRedirect("category.jsp");
-		}else {
-			response.sendRedirect("category.jsp");
-		}
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/plain; charset=UTF-8");
+        request.setCharacterEncoding("UTF-8");
+
+        String tenMoi = request.getParameter("updateDanhMuc");
+        String idStr = request.getParameter("product-id");
+
+        if (tenMoi == null || tenMoi.trim().isEmpty()) {
+            response.getWriter().write("empty");
+            return;
+        }
+
+        int id = Integer.parseInt(idStr);
+        LaydulieuReponsitory repo = new LaydulieuReponsitory();
+
+        // check tên bị trùng với tên của danh mục khác
+        if (repo.kiemTraTrungTenDanhMuc(tenMoi, id)) {
+            response.getWriter().write("duplicate");
+            return;
+        }
+
+        boolean thanhCong = repo.updateDanhMuc(id, tenMoi);
+        if (thanhCong) {
+            response.getWriter().write("success");
+        } else {
+            response.getWriter().write("fail");
+        }
+    }
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

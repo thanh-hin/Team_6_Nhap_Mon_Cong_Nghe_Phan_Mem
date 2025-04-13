@@ -1,3 +1,4 @@
+
 <%@page import="model.User"%>
 <%@page import="model.DanhMuc"%>
 <%@page import="java.util.List"%>
@@ -268,12 +269,10 @@
                     <td class="small-column"><%=danhmuc.getSoluong()%></td>
                     <td>
                     <div class="d-flex justify-content-center mb-1">
-                    <form>
-					<button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
-					</form>
-					<form action="Xoadanhmuc" method="get">
-					<input type="hidden" value=<%=danhmuc.getMaDanhmuc()%> name="id">
-					<button class="btn btn-outline-danger" type="submit">Xoá</button>
+					<form onsubmit="return false;">
+					  <button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
+					  <input type="hidden" id="id-danhmuc-<%=danhmuc.getMaDanhmuc()%>" value="<%=danhmuc.getMaDanhmuc()%>">
+					  <button type="button" class="btn btn-outline-danger" onclick="confirmDelete(<%=danhmuc.getMaDanhmuc()%>)">Xoá</button>
 					</form>
                     </div>
 					<%-- <form>
@@ -511,6 +510,14 @@ function editForm(button) {
 	    xuLyThemDanhMuc();
 	  });
 	});
+	</script>
+	
+	<script>
+	function confirmDelete(id) {
+	  if (confirm("Bạn có chắc chắn muốn xoá danh mục này không?")) {
+	    window.location.href = "Xoadanhmuc?id=" + id;
+	  }
+	}
 	</script>
 
 </body>
