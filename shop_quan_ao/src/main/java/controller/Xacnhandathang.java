@@ -40,6 +40,8 @@ public class Xacnhandathang extends HttpServlet {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 		String formattedDate = currentDate.format(formatter);
 
+		int soLuongInt = Integer.parseInt(soLuong);
+		float tongGia = gia*soLuongInt;
 		float giaSauKhiGiam = gia; // Mặc định là chưa giảm giá
 
 		if (maKhuyenMai != null && !maKhuyenMai.trim().isEmpty()) {
@@ -47,7 +49,7 @@ public class Xacnhandathang extends HttpServlet {
 			for (KhuyenMai km : listKhuyenMai) {
 				if (km.getMaKhuyenMai().equals(maKhuyenMai) && km.getMaSanpham() == id) {
 					float phanTramKhuyenMai = km.getPhanTramKhuyenMai();
-					giaSauKhiGiam = gia * (1 - (phanTramKhuyenMai / 100));
+					giaSauKhiGiam = tongGia * (1 - (phanTramKhuyenMai / 100));
 					break;
 				}
 			}
@@ -63,7 +65,7 @@ public class Xacnhandathang extends HttpServlet {
 		request.setAttribute("giaSauKhiGiam", giaSauKhiGiam);
 		request.setAttribute("idSanPham", id);
 		request.setAttribute("maKhuyenMai", maKhuyenMai);
-		request.setAttribute("gia", gia);
+		request.setAttribute("gia", tongGia);
 		request.setAttribute("tenSanPham", tenSanPham);
 		request.setAttribute("thoiGian", formattedDate);
 
