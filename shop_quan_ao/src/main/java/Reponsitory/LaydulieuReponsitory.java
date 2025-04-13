@@ -1624,8 +1624,9 @@ public class LaydulieuReponsitory implements Thaotac {
 
 		return bs;
 	}
-
+	
 	// check trùng khi thêm mới
+
 	public boolean daTonTaiTenDanhMuc(String tenDanhMuc) {
 		boolean tonTai = false;
 		Connection conn = null;
