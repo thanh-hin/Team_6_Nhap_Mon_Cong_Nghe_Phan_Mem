@@ -432,16 +432,20 @@
   z-index: 2000;
   display: flex;
   justify-content: flex-end;
+
+  /* Trạng thái ẩn */
   opacity: 0;
   pointer-events: none;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
- 
 
 .modal-search-header.show-modal-search {
+  /* Trạng thái hiển thị */
   opacity: 1;
   pointer-events: auto;
+  visibility: visible;
 }
 
 .container-search-header {
