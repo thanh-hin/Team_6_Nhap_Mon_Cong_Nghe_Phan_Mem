@@ -19,7 +19,7 @@ public class Xacnhandathang extends HttpServlet {
 	private Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
 
 	public Xacnhandathang() {
-		super();
+		super();	
 	}
 
 	// Được dùng chung bởi cả doGet và doPost

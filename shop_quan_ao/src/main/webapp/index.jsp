@@ -100,7 +100,7 @@ body {
 
 /* Tùy chỉnh màu và kiểu chữ cho tiêu đề */
 .custom-title {
-	font-size: 2.5rem; /* Điều chỉnh kích thước chữ */
+	font-size: 1rem; /* Điều chỉnh kích thước chữ */
 	font-weight: bold; /* Đặt chữ đậm */
 	font-family:  'Noto Sans Vietnamese', sans-serif;
 	color: #8d8b98; 
