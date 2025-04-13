@@ -386,14 +386,18 @@
 					List<DanhMuc> listDanhMuc = (List<DanhMuc>) request.getAttribute("listDanhMuc");
 					%>
  					<div class="flex-w flex-l-m filter-tope-group m-tb-10">
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 how-active1" data-filter="*">
-						Tất cả
-					</button>
-					<%for(DanhMuc d : listDanhMuc){ %>
-					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5" data-filter=".<%=d.getTenDanhMuc()%>">
-						<%=d.getTenDanhMuc()%>
-					</button>
-					<%} %>
+					<a href="Cuahang" class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <%= "".equals(request.getAttribute("currentLoai")) ? "how-active1" : "" %>">
+				        Tất cả
+				    </a>
+				    <% for (DanhMuc d : listDanhMuc) { %>
+				        <a href="Cuahang?loai=<%= d.getTenDanhMuc().equals("Nữ") ? "nu" : d.getTenDanhMuc().equals("Nam") ? "nam" : d.getTenDanhMuc().equals("Túi") ? "tui" : "giay" %>" 
+				           class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5 <%= (d.getTenDanhMuc().equals("Nữ") && "nu".equals(request.getAttribute("currentLoai"))) || 
+				                                                                       (d.getTenDanhMuc().equals("Nam") && "nam".equals(request.getAttribute("currentLoai"))) || 
+				                                                                       (d.getTenDanhMuc().equals("Túi") && "tui".equals(request.getAttribute("currentLoai"))) || 
+				                                                                       (d.getTenDanhMuc().equals("Giày") && "giay".equals(request.getAttribute("currentLoai"))) ? "how-active1" : "" %>">
+				            <%= d.getTenDanhMuc() %>
+				        </a>
+				    <% } %>
 				</div>
 
 				<div class="flex-w flex-c-m m-tb-10">

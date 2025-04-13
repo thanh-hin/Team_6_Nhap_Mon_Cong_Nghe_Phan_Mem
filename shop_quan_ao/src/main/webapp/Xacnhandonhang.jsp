@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -47,12 +46,6 @@
             font-weight: bold;
             color: #2ecc71;
             margin: 0;
-        }
-
-        .order-date span {
-            font-size: 22px;
-            color: #27ae60;
-            font-weight: 600;
         }
 
         .order-summary {
@@ -143,151 +136,185 @@
             text-decoration: none;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header h1 {
-                font-size: 28px;
-            }
-
-            .order-item span {
-                font-size: 16px;
-            }
-
-            .order-item {
-                flex-direction: column;
-                padding: 15px;
-            }
-
-            .total {
-                font-size: 18px;
-            }
-
-            .button {
-                padding: 12px;
-                font-size: 16px;
-            }
+        dialog {
+            border: none;
+            border-radius: 12px;
+            padding: 20px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 400px;
+            text-align: center;
+            font-size: 18px;
+            animation: fadeIn 0.3s ease;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                width: 90%;
-                padding: 15px;
-            }
+        dialog::backdrop {
+            background: rgba(0, 0, 0, 0.4);
+        }
 
-            .header h1 {
-                font-size: 24px;
-            }
+        dialog button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
 
-            .order-item {
-                padding: 10px;
-            }
+        dialog button:hover {
+            opacity: 0.9;
+        }
 
-            .button {
-                padding: 10px;
-                font-size: 14px;
+        #successDialog button {
+            background-color: #2ecc71;
+            color: white;
+        }
+
+        #cancelDialog form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        #cancelDialog button[type="submit"] {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        #cancelDialog button[type="button"] {
+            background-color: #bdc3c7;
+            color: #2c3e50;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
             }
         }
     </style>
 </head>
 <body>
-
 <div class="container">
-<form action="XacNhanandHuyDonHang" method="post">
-
-
-    <div class="header">
-        <h1>Xác Nhận Đơn Hàng</h1>
-    </div>
-    <%
-    String hoTen = (String) request.getAttribute("hoTen");
-    String soDienThoai = (String) request.getAttribute("soDienThoai");
-    String diaChi = (String) request.getAttribute("diaChi"); 
-    String maTaiKhoanUser = (String) request.getAttribute("maTaiKhoanUser"); 
-    
-    String kichThuoc = (String) request.getAttribute("kichThuoc");
-    String mauSac = (String) request.getAttribute("mauSac");
-    String soLuong = (String) request.getAttribute("soLuong");
-    int id = (int) request.getAttribute("idSanPham");
-    float giaCU = (float) request.getAttribute("gia");
-    String tenSanPham = (String) request.getAttribute("tenSanPham");
-    String time = (String) request.getAttribute("thoiGian");
-    float giaSauKhiGiam = (float) request.getAttribute("giaSauKhiGiam");
-    %>
-    <!-- Hiển thị ngày đặt hàng -->
-    <div class="order-date">
-        <p><strong>Ngày Đặt Hàng: <%=time %></strong></p>
-    </div>
-    <input type="hidden" name="mauSac" value="<%=mauSac %>">
-    <input type="hidden" name="kichThuoc" value="<%=kichThuoc %>">
-    <input type="hidden" name="soLuong" value="<%=soLuong %>">
-    <input type="hidden" name="id" value="<%=id %>">
-    <input type="hidden" name="soDienThoai" value="<%=soDienThoai %>">
-    <input type="hidden" name="hoTen" value="<%=hoTen %>">
-    <input type="hidden" name="diaChi" value="<%=diaChi %>">
-    <input type="hidden" name="time" value="<%=time %>">
-     <input type="hidden" name="maTaiKhoanUser" value="<%=maTaiKhoanUser %>">
-    <div class="order-summary">
-        <!-- Mỗi mục đơn hàng sẽ được hiển thị như sau -->
-        <div class="order-item">
-            <span><%=tenSanPham %></span>
-            <input type="hidden" name="tenSanPham" value="<%=tenSanPham %>">
-            <span class="price original-price"><%=giaCU %></span>
+    <form action="XacNhanandHuyDonHang" method="post">
+        <div class="header">
+            <h1>Xác Nhận Đơn Hàng</h1>
         </div>
-        <div class="order-item">
-            <span>Giảm giá</span>
-            <%if(giaSauKhiGiam != 0){ %>
-            <span class="price">-<%= giaCU - giaSauKhiGiam %></span>
-            <%}else{ %>
-             <span class="price"><%=0%></span>
-             <%} %>
+
+        <%
+        String hoTen = (String) request.getAttribute("hoTen");
+        String soDienThoai = (String) request.getAttribute("soDienThoai");
+        String diaChi = (String) request.getAttribute("diaChi");
+        String maTaiKhoanUser = (String) request.getAttribute("maTaiKhoanUser");
+        String kichThuoc = (String) request.getAttribute("kichThuoc");
+        String mauSac = (String) request.getAttribute("mauSac");
+        String soLuong = (String) request.getAttribute("soLuong");
+        int id = (int) request.getAttribute("idSanPham");
+        float giaCU = (float) request.getAttribute("gia");
+        String tenSanPham = (String) request.getAttribute("tenSanPham");
+        String time = (String) request.getAttribute("thoiGian");
+        float giaSauKhiGiam = (float) request.getAttribute("giaSauKhiGiam");
+        %>
+
+        <div class="order-date">
+            <p><strong>Ngày Đặt Hàng: <%=time %></strong></p>
         </div>
-    </div>
 
-    <div class="total">
-        <span>Tổng cộng</span>
-        <%if(giaSauKhiGiam !=0){ %>
-        <span class="final-price"><%=giaSauKhiGiam %></span>
-        <input type="hidden" name="gia" value="<%=giaSauKhiGiam %>">
-        <%}else {%>
-        <span class="final-price"><%=giaCU %></span>
-        <input type="hidden" name="gia" value="<%=giaCU %>">
-        <%} %>
-    </div>
+        <!-- Hidden input fields -->
+        <input type="hidden" name="hoTen" value="<%=hoTen %>">
+        <input type="hidden" name="soDienThoai" value="<%=soDienThoai %>">
+        <input type="hidden" name="diaChi" value="<%=diaChi %>">
+        <input type="hidden" name="maTaiKhoanUser" value="<%=maTaiKhoanUser %>">
+        <input type="hidden" name="mauSac" value="<%=mauSac %>">
+        <input type="hidden" name="kichThuoc" value="<%=kichThuoc %>">
+        <input type="hidden" name="soLuong" value="<%=soLuong %>">
+        <input type="hidden" name="id" value="<%=id %>">
+        <input type="hidden" name="time" value="<%=time %>">
+        <input type="hidden" name="tenSanPham" value="<%=tenSanPham %>">
+        <input type="hidden" name="gia" value="<%= giaSauKhiGiam != 0 ? giaSauKhiGiam : giaCU %>">
 
-    <div class="button-group">
-        <button class="button confirm-button" onclick="confirmOrder()" name="Xacnhandonhang" value="Xacnhandonhang">Xác Nhận Đơn Hàng</button>
-        <button class="button cancel-button" onclick="cancelOrder()" name="Huydonhang" value="Huydonhang">Hủy</button>
-    </div>
+        <div class="order-summary">
+            <div class="order-item">
+                <span><%=tenSanPham %></span>
+                <% if(giaSauKhiGiam != 0) { %>
+                    <span class="price original-price"><%=String.format("%.2f", giaCU)%>₫</span>
+                <% } else { %>
+                    <span class="price"><%=String.format("%.2f", giaCU)%>₫</span>
+                <% } %>
+            </div>
+            <% if(giaSauKhiGiam != 0) { %>
+                <div class="order-item">
+                    <span>Giảm giá (<%=String.format("%.0f", (1 - giaSauKhiGiam/giaCU)*100)%>%)</span>
+                    <span class="price"><%=String.format("%.2f", (giaCU - giaSauKhiGiam))%>₫</span>
+                </div>
+            <% } %>
+        </div>
+
+        <div class="total">
+            <span>Tổng cộng</span>
+            <span class="final-price"><%= giaSauKhiGiam != 0 ? giaSauKhiGiam : giaCU %></span>
+        </div>
+
+        <div class="button-group">
+            <button class="button confirm-button" onclick="confirmOrder(event)" name="Xacnhandonhang" value="Xacnhandonhang">Xác Nhận Đơn Hàng</button>
+            <button class="button cancel-button" onclick="cancelOrder(event)" name="Huydonhang" value="Huydonhang">Hủy</button>
+        </div>
     </form>
 </div>
 
 <div class="footer">
     <p>© 2024 <a href="#">Cửa Hàng Online</a>. Tất cả các quyền được bảo lưu.</p>
-</div> 
+</div>
+
+<!-- Success Dialog -->
+<dialog id="successDialog">
+    <p>🎉 Đơn hàng của bạn đã được xác nhận thành công!</p>
+    <button onclick="submitForm()">OK</button>
+</dialog>
+
+<!-- Cancel Dialog -->
+<dialog id="cancelDialog">
+    <p>❗ Bạn có chắc chắn muốn hủy đơn hàng không?</p>
+    <form method="post" action="XacNhanandHuyDonHang">
+        <!-- Hidden fields -->
+        <input type="hidden" name="hoTen" value="<%=hoTen %>">
+        <input type="hidden" name="soDienThoai" value="<%=soDienThoai %>">
+        <input type="hidden" name="diaChi" value="<%=diaChi %>">
+        <input type="hidden" name="maTaiKhoanUser" value="<%=maTaiKhoanUser %>">
+        <input type="hidden" name="mauSac" value="<%=mauSac %>">
+        <input type="hidden" name="kichThuoc" value="<%=kichThuoc %>">
+        <input type="hidden" name="soLuong" value="<%=soLuong %>">
+        <input type="hidden" name="id" value="<%=id %>">
+        <input type="hidden" name="time" value="<%=time %>">
+        <input type="hidden" name="tenSanPham" value="<%=tenSanPham %>">
+        <input type="hidden" name="gia" value="<%= giaSauKhiGiam != 0 ? giaSauKhiGiam : giaCU %>">
+        <input type="hidden" name="Huydonhang" value="Huydonhang">
+
+        <button type="submit">Có, hủy đơn</button>
+        <button type="button" onclick="document.getElementById('cancelDialog').close()">Không</button>
+    </form>
+</dialog>
 
 <script>
-    // Hàm để hiển thị ngày đặt hàng
-    function formatDate(date) {
-        const day = date.getDate().toString().padStart(2, '0');
-        const month = (date.getMonth() + 1).toString().padStart(2, '0');
-        const year = date.getFullYear();
-        return `${day}/${month}/${year}`;
+    function confirmOrder(event) {
+        event.preventDefault();
+        document.getElementById("successDialog").showModal();
     }
 
-    // Hiển thị ngày đặt hàng hiện tại
-    const today = new Date();
-    document.getElementById("order-date").innerText = formatDate(today);
-
-    // Hàm xác nhận đơn hàng
-    function confirmOrder() {
-        alert("Đơn hàng của bạn đã được xác nhận thành công!");
+    function submitForm() {
+        document.querySelector("form").submit();
     }
 
-    // Hàm hủy đơn hàng
-    function cancelOrder() {
-    	 alert("Bạn có muốn hủy đơn hàng không!");
+    function cancelOrder(event) {
+        event.preventDefault();
+        document.getElementById("cancelDialog").showModal();
     }
 </script>
-
 </body>
 </html>

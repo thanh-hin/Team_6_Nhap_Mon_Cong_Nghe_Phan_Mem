@@ -1,3 +1,4 @@
+
 <%@page import="model.User"%>
 <%@page import="model.DanhMuc"%>
 <%@page import="java.util.List"%>
@@ -177,12 +178,12 @@
         </a>
       </li><!-- End Profile Page Nav -->
 
-      <li class="nav-item">
+      <%-- <li class="nav-item">
         <a class="nav-link collapsed" href="<%=projectName%>/group.jsp">
           <i class="bi bi-question-circle"></i>
           <span>Phân quyền</span>
         </a>
-      </li><!-- End F.A.Q Page Nav -->
+      </li><!-- End F.A.Q Page Nav --> --%>
 
     </ul>
 
@@ -268,12 +269,10 @@
                     <td class="small-column"><%=danhmuc.getSoluong()%></td>
                     <td>
                     <div class="d-flex justify-content-center mb-1">
-                    <form>
-					<button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
-					</form>
-					<form action="Xoadanhmuc" method="get">
-					<input type="hidden" value=<%=danhmuc.getMaDanhmuc()%> name="id">
-					<button class="btn btn-outline-danger" type="submit">Xoá</button>
+					<form onsubmit="return false;">
+					  <button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
+					  <input type="hidden" id="id-danhmuc-<%=danhmuc.getMaDanhmuc()%>" value="<%=danhmuc.getMaDanhmuc()%>">
+					  <button type="button" class="btn btn-outline-danger" onclick="confirmDelete(<%=danhmuc.getMaDanhmuc()%>)">Xoá</button>
 					</form>
                     </div>
 					<%-- <form>
@@ -455,7 +454,6 @@ function editForm(button) {
   </script>
   
 	<script>
-	
 	document.addEventListener("DOMContentLoaded", function () {
 	  const form = document.getElementById("form-them-danh-muc");
 	  const input = document.getElementById("inputName");
@@ -482,7 +480,7 @@ function editForm(button) {
 	      switch (result.trim()) {
 	        case "success":
 	          alert("Thêm danh mục thành công!");
-	          location.reload();
+	          location.reload(); // tự động reload
 	          break;
 	        case "duplicate":
 	          alert("Tên danh mục đã tồn tại!");
@@ -500,20 +498,28 @@ function editForm(button) {
 	    });
 	  }
 	
-	  document.addEventListener("keydown", function (e) {
-	    if (e.key === "Enter" && document.activeElement === input) {
+	  input.addEventListener("keydown", function(e) {
+	    if (e.key === "Enter") {
 	      e.preventDefault();
-	      xuLyThemDanhMuc();
+	      xuLyThemDanhMuc(); // xử lý giống submit
 	    }
 	  });
 	
-	  form.addEventListener("submit", function (e) {
+	  form.addEventListener("submit", function(e) {
 	    e.preventDefault();
 	    xuLyThemDanhMuc();
 	  });
 	});
-	
 	</script>
+	
+	<script>
+	function confirmDelete(id) {
+	  if (confirm("Bạn có chắc chắn muốn xoá danh mục này không?")) {
+	    window.location.href = "Xoadanhmuc?id=" + id;
+	  }
+	}
+	</script>
+
 
 </body>
 

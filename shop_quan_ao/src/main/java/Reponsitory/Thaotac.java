@@ -57,4 +57,6 @@ public interface Thaotac {
 	public boolean ThemBaiViet(String tenBai, String noiDung, int maNguoiDung, String ngayThang);
 	public List<BaiViet> LayThongTinBaiViet();
 	public boolean DeleteBaiViet(String maBaiViet);
+
+
 }

@@ -138,7 +138,6 @@
             <div class="product-details">
                 <div class="product-id">Mã Sản Phẩm: <%=s.getMaSanpham() %></div>
                 <div class="product-name">Tên Sản Phẩm: <%=s.getTenSanPham()%></div>
-                <div class="product-quantity">Số Lượng: <%=s.getSoLuong()%></div>
                 <div class="product-price">Giá: $<%=s.getGia()%></div>
             </div>
         </div>

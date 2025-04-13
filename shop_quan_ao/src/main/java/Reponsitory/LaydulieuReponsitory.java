@@ -225,7 +225,7 @@ public class LaydulieuReponsitory implements Thaotac {
 		} catch (SQLException e) {
 
 			e.printStackTrace();
-		}finally {
+		} finally {
 			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
 			try {
 				if (rs != null) {
@@ -240,7 +240,8 @@ public class LaydulieuReponsitory implements Thaotac {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}}
+			}
+		}
 		return ktra;
 	}
 
@@ -407,66 +408,65 @@ public class LaydulieuReponsitory implements Thaotac {
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
 		try {
-		    connectionSql = new ConnectionSql();
-		    conn = connectionSql.getConnection(); // Lấy kết nối từ pool
+			connectionSql = new ConnectionSql();
+			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
+			// Xóa đơn hàng của người dùng
+			String deleteDonHang = "DELETE FROM donhang WHERE MaNguoiDung = ?";
+			ps = conn.prepareStatement(deleteDonHang);
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			ps.close();
 
-		    // Xóa đơn hàng của người dùng
-		    String deleteDonHang = "DELETE FROM donhang WHERE MaNguoiDung = ?";
-		    ps = conn.prepareStatement(deleteDonHang);
-		    ps.setInt(1, id);
-		    ps.executeUpdate();
-		    ps.close();
+			// Xóa đánh giá của người dùng
+			String deleteDanhGia = "DELETE FROM danhgia WHERE MaNguoiDung = ?";
+			ps = conn.prepareStatement(deleteDanhGia);
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			ps.close();
 
-		    // Xóa đánh giá của người dùng
-		    String deleteDanhGia = "DELETE FROM danhgia WHERE MaNguoiDung = ?";
-		    ps = conn.prepareStatement(deleteDanhGia);
-		    ps.setInt(1, id);
-		    ps.executeUpdate();
-		    ps.close();
+			// Xóa giỏ hàng của người dùng
+			String deleteGioHang = "DELETE FROM giohang WHERE MaNguoiDung = ?";
+			ps = conn.prepareStatement(deleteGioHang);
+			ps.setInt(1, id);
+			ps.executeUpdate();
+			ps.close();
 
-		    // Xóa giỏ hàng của người dùng
-		    String deleteGioHang = "DELETE FROM giohang WHERE MaNguoiDung = ?";
-		    ps = conn.prepareStatement(deleteGioHang);
-		    ps.setInt(1, id);
-		    ps.executeUpdate();
-		    ps.close();
+			// Cuối cùng xóa người dùng
+			String deleteNguoiDung = "DELETE FROM nguoidung WHERE MaNguoiDung = ?";
+			ps = conn.prepareStatement(deleteNguoiDung);
+			ps.setInt(1, id);
+			if (ps.executeUpdate() > 0) {
+				bs = true;
+			}
 
-		    // Cuối cùng xóa người dùng
-		    String deleteNguoiDung = "DELETE FROM nguoidung WHERE MaNguoiDung = ?";
-		    ps = conn.prepareStatement(deleteNguoiDung);
-		    ps.setInt(1, id);
-		    if (ps.executeUpdate() > 0) {
-		        bs = true;
-		    }
-
-		    // Commit transaction nếu mọi thứ thành công
-		    conn.commit();
+			// Commit transaction nếu mọi thứ thành công
+			conn.commit();
 
 		} catch (SQLException e) {
-		    System.out.println("Lỗi trong phần xóa người dùng (LoginRepository)");
-		    e.printStackTrace();
-		    if (conn != null) {
-		        try {
-		            conn.rollback(); // rollback nếu có lỗi
-		        } catch (SQLException ex) {
-		            ex.printStackTrace();
-		        }
-		    }
+			System.out.println("Lỗi trong phần xóa người dùng (LoginRepository)");
+			e.printStackTrace();
+			if (conn != null) {
+				try {
+					conn.rollback(); // rollback nếu có lỗi
+				} catch (SQLException ex) {
+					ex.printStackTrace();
+				}
+			}
 		} finally {
-		    try {
-		        if (rs != null) {
-		            rs.close();
-		        }
-		        if (ps != null) {
-		            ps.close();
-		        }
-		        if (conn != null) {
-		            connectionSql.releaseConnection(conn); // Trả kết nối về pool
-		        }
-		    } catch (SQLException e) {
-		        e.printStackTrace();
-		    }
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (ps != null) {
+					ps.close();
+				}
+				if (conn != null) {
+					connectionSql.releaseConnection(conn); // Trả kết nối về pool
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 
 		return bs;
@@ -485,7 +485,7 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
 			// Câu truy vấn SQL
-			String query = "SELECT * FROM sanpham ";
+			String query = "SELECT * FROM sanpham ORDER BY RAND()";
 
 			// Chuẩn bị câu lệnh SQL
 			ps = conn.prepareStatement(query);
@@ -948,21 +948,19 @@ public class LaydulieuReponsitory implements Thaotac {
 			 * mau); ps.setString(3, kichCo); ps.setInt(4, SoLuong); rs = ps.executeQuery();
 			 * if (rs.next()) { ktra = true; }
 			 */
-			
-				String query = "INSERT INTO chitietsanpham (MaSanPham, mauSac, kichCo, soLuong)\r\n"
-						+ "VALUES (?,?,?,?)";
 
-				ps = conn.prepareStatement(query);
+			String query = "INSERT INTO chitietsanpham (MaSanPham, mauSac, kichCo, soLuong)\r\n" + "VALUES (?,?,?,?)";
 
-				ps.setInt(1, id);
-				ps.setString(2, mau);
-				ps.setString(3, kichCo);
-				ps.setInt(4, SoLuong);
-				// Thực thi câu lệnh SQL
+			ps = conn.prepareStatement(query);
 
-				bs = ps.executeUpdate() > 0 ? true : false;
+			ps.setInt(1, id);
+			ps.setString(2, mau);
+			ps.setString(3, kichCo);
+			ps.setInt(4, SoLuong);
+			// Thực thi câu lệnh SQL
 
-			
+			bs = ps.executeUpdate() > 0 ? true : false;
+
 			// Câu truy vấn SQL
 
 		} catch (SQLException e) {
@@ -1123,32 +1121,30 @@ public class LaydulieuReponsitory implements Thaotac {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
-	   try {
-		   connectionSql = new ConnectionSql();
+		try {
+			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 			String xoaDanhMuc = "delete from danhmucsanpham where MaDanhMuc = ?";
 			ps = conn.prepareStatement(xoaDanhMuc);
 			ps.setInt(1, id);
-			ktra = ps.executeUpdate()>0? true: false;
-			
-		
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}finally {
-		// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
-		try {
-			if (rs != null)
-				rs.close();
-			if (ps != null)
-				ps.close();
-			if (conn != null)
-				connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			ktra = ps.executeUpdate() > 0 ? true : false;
+
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
+			try {
+				if (rs != null)
+					rs.close();
+				if (ps != null)
+					ps.close();
+				if (conn != null)
+					connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 		return ktra;
 	}
 
@@ -1166,13 +1162,12 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 			ps = conn.prepareStatement(xoaSanPham);
 			ps.setInt(1, id);
-			ktra = ps.executeUpdate()>0 ? true:false;
-				
-			
+			ktra = ps.executeUpdate() > 0 ? true : false;
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
 			try {
 				if (rs != null)
@@ -1195,31 +1190,30 @@ public class LaydulieuReponsitory implements Thaotac {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
-	   try {
-		   connectionSql = new ConnectionSql();
+		try {
+			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 			String xoaDanhMuc = "delete from chitietsanpham where MaSanPham = ?";
 			ps = conn.prepareStatement(xoaDanhMuc);
 			ps.setInt(1, id);
-			ktra=ps.executeUpdate()>0?true:false;
-		
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}finally {
-		// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
-		try {
-			if (rs != null)
-				rs.close();
-			if (ps != null)
-				ps.close();
-			if (conn != null)
-				connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			ktra = ps.executeUpdate() > 0 ? true : false;
+
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
+			try {
+				if (rs != null)
+					rs.close();
+				if (ps != null)
+					ps.close();
+				if (conn != null)
+					connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 		return ktra;
 	}
 
@@ -1230,31 +1224,30 @@ public class LaydulieuReponsitory implements Thaotac {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
-	   try {
-		   connectionSql = new ConnectionSql();
+		try {
+			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 			String xoaDanhMuc = "insert into danhmucsanpham(TenDanhMuc) values(?)";
 			ps = conn.prepareStatement(xoaDanhMuc);
 			ps.setString(1, tenDanhMuc);
-			ktra=ps.executeUpdate()>0?true:false;
-		
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}finally {
-		// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
-		try {
-			if (rs != null)
-				rs.close();
-			if (ps != null)
-				ps.close();
-			if (conn != null)
-				connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			ktra = ps.executeUpdate() > 0 ? true : false;
+
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
+			try {
+				if (rs != null)
+					rs.close();
+				if (ps != null)
+					ps.close();
+				if (conn != null)
+					connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 		return ktra;
 	}
 
@@ -1265,31 +1258,31 @@ public class LaydulieuReponsitory implements Thaotac {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
-	   try {
-		   connectionSql = new ConnectionSql();
+		try {
+			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 			String updateDanhMuc = "update danhmucsanpham set TenDanhMuc=? where MaDanhMuc=?";
 			ps = conn.prepareStatement(updateDanhMuc);
 			ps.setString(1, tenDanhMuc);
 			ps.setInt(2, idDanhMuc);
-			ktra=ps.executeUpdate()>0?true:false;
-		
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}finally {
-		// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
-		try {
-			if (rs != null)
-				rs.close();
-			if (ps != null)
-				ps.close();
-			if (conn != null)
-				connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			ktra = ps.executeUpdate() > 0 ? true : false;
+
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+		} finally {
+			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
+			try {
+				if (rs != null)
+					rs.close();
+				if (ps != null)
+					ps.close();
+				if (conn != null)
+					connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 		return ktra;
 	}
 
@@ -1338,7 +1331,7 @@ public class LaydulieuReponsitory implements Thaotac {
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-	}
+		}
 		return ktra;
 	}
 
@@ -1349,88 +1342,87 @@ public class LaydulieuReponsitory implements Thaotac {
 		PreparedStatement ps = null;
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
-	   try {
-		   connectionSql = new ConnectionSql();
+		try {
+			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 			String updateDanhMuc = "update nguoidung set MatKhau=? where Email=?";
 			ps = conn.prepareStatement(updateDanhMuc);
 			ps.setString(1, matKhau);
 			ps.setString(2, email);
-			ktra=ps.executeUpdate()>0?true:false;
-		
-		
-	} catch (SQLException e) {
-		System.out.println("Lỗi trong phần update email mk người dùng");
-		e.printStackTrace();
-	}finally {
-		// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
-		try {
-			if (rs != null)
-				rs.close();
-			if (ps != null)
-				ps.close();
-			if (conn != null)
-				connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			ktra = ps.executeUpdate() > 0 ? true : false;
+
 		} catch (SQLException e) {
+			System.out.println("Lỗi trong phần update email mk người dùng");
 			e.printStackTrace();
+		} finally {
+			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
+			try {
+				if (rs != null)
+					rs.close();
+				if (ps != null)
+					ps.close();
+				if (conn != null)
+					connectionSql.releaseConnection(conn); // Trả kết nối về pool
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
-	}
 		return ktra;
 	}
 
 	@Override
 	public List<SanPham> Laythongtinsanphamtheodanhmuc() {
 		List<SanPham> list = new ArrayList<>();
-	    Connection conn = null;
-	    PreparedStatement ps = null;
-	    ResultSet rs = null;
-	    ConnectionSql connectionSql = null;
-	    try {
-	        // Tạo đối tượng ConnectionSql để lấy kết nối
-	        connectionSql = new ConnectionSql();
-	        conn = connectionSql.getConnection(); // Lấy kết nối từ pool
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ConnectionSql connectionSql = null;
+		try {
+			// Tạo đối tượng ConnectionSql để lấy kết nối
+			connectionSql = new ConnectionSql();
+			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
-	        // Câu truy vấn SQL để lấy số lượng sản phẩm theo danh mục
-	        String query = "SELECT MaDanhMuc, COUNT(*) AS SoLuong FROM sanpham GROUP BY MaDanhMuc";
+			// Câu truy vấn SQL để lấy số lượng sản phẩm theo danh mục
+			String query = "SELECT MaDanhMuc, COUNT(*) AS SoLuong FROM sanpham GROUP BY MaDanhMuc";
 
-	        // Chuẩn bị câu lệnh SQL
-	        ps = conn.prepareStatement(query);
+			// Chuẩn bị câu lệnh SQL
+			ps = conn.prepareStatement(query);
 
-	        // Thực thi câu lệnh SQL
-	        rs = ps.executeQuery();
+			// Thực thi câu lệnh SQL
+			rs = ps.executeQuery();
 
-	        // Xử lý kết quả trả về
-	        while (rs.next()) {
-	            // Lưu thông tin vào một đối tượng SanPham hoặc một đối tượng khác nếu cần thiết
-	            SanPham sp = new SanPham();
-	            sp.setMaDanhMuc(rs.getInt("MaDanhMuc"));
-	            sp.setSoLuong(rs.getInt("SoLuong"));
-	            System.out.println("mã danh muc là: "+rs.getInt("MaDanhMuc"));
-	            System.out.println("Sô lượng là: "+ rs.getInt("SoLuong"));
-	            list.add(sp);
-	        }
-	    } catch (SQLException e) {
-	        System.out.println("Lỗi trong phần lấy số lượng theo mã sản phẩm");
-	        e.printStackTrace();
-	    } finally {
-	        // Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
-	        try {
-	            if (rs != null) {
-	                rs.close();
-	            }
-	            if (ps != null) {
-	                ps.close();
-	            }
-	            // Trả kết nối lại vào pool
-	            if (conn != null) {
-	                connectionSql.releaseConnection(conn); // Trả kết nối về pool
-	            }
-	        } catch (SQLException e) {
-	            e.printStackTrace();
-	        }
-	    }
+			// Xử lý kết quả trả về
+			while (rs.next()) {
+				// Lưu thông tin vào một đối tượng SanPham hoặc một đối tượng khác nếu cần thiết
+				SanPham sp = new SanPham();
+				sp.setMaDanhMuc(rs.getInt("MaDanhMuc"));
+				sp.setSoLuong(rs.getInt("SoLuong"));
+				System.out.println("mã danh muc là: " + rs.getInt("MaDanhMuc"));
+				System.out.println("Sô lượng là: " + rs.getInt("SoLuong"));
+				list.add(sp);
+			}
+		} catch (SQLException e) {
+			System.out.println("Lỗi trong phần lấy số lượng theo mã sản phẩm");
+			e.printStackTrace();
+		} finally {
+			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
+			try {
+				if (rs != null) {
+					rs.close();
+				}
+				if (ps != null) {
+					ps.close();
+				}
+				// Trả kết nối lại vào pool
+				if (conn != null) {
+					connectionSql.releaseConnection(conn); // Trả kết nối về pool
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 
-	    return list;
+		return list;
 	}
 
 	@Override
@@ -1446,13 +1438,10 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
 			// Câu truy vấn SQL
-			String query = "SELECT sp.TenSanPham, SUM(dh.SoLuong) AS soLuongBan\r\n"
-					+ "FROM sanpham sp\r\n"
+			String query = "SELECT sp.TenSanPham, SUM(dh.SoLuong) AS soLuongBan\r\n" + "FROM sanpham sp\r\n"
 					+ "JOIN chitietsanpham ctsp ON sp.MaSanPham = ctsp.MaSanPham\r\n"
-					+ "JOIN donhang dh ON ctsp.id = dh.id\r\n"
-					+ "WHERE dh.TrangThai = 'Hoàn Thành' \r\n"
-					+ "GROUP BY sp.TenSanPham\r\n"
-					+ "ORDER BY soLuongBan DESC;";
+					+ "JOIN donhang dh ON ctsp.id = dh.id\r\n" + "WHERE dh.TrangThai = 'Hoàn Thành' \r\n"
+					+ "GROUP BY sp.TenSanPham\r\n" + "ORDER BY soLuongBan DESC;";
 
 			// Chuẩn bị câu lệnh SQL
 			ps = conn.prepareStatement(query);
@@ -1517,7 +1506,7 @@ public class LaydulieuReponsitory implements Thaotac {
 		} catch (SQLException e) {
 			System.out.println("Lỗi trong reponsitory bài viết");
 			e.printStackTrace();
-		}finally {
+		} finally {
 			// Đảm bảo tài nguyên được đóng đúng cách và trả kết nối vào pool
 			try {
 				if (rs != null) {
@@ -1532,7 +1521,8 @@ public class LaydulieuReponsitory implements Thaotac {
 				}
 			} catch (SQLException e) {
 				e.printStackTrace();
-			}}
+			}
+		}
 		return ktra;
 	}
 
@@ -1559,8 +1549,9 @@ public class LaydulieuReponsitory implements Thaotac {
 
 			// Xử lý kết quả trả về
 			while (rs.next()) {
-				BaiViet bv = new BaiViet(rs.getInt("maBaiViet"),rs.getInt("MaNguoiDung"),rs.getString("tenBai"),rs.getString("noiDung"),rs.getString("thoiGian"));
-				
+				BaiViet bv = new BaiViet(rs.getInt("maBaiViet"), rs.getInt("MaNguoiDung"), rs.getString("tenBai"),
+						rs.getString("noiDung"), rs.getString("thoiGian"));
+
 				list.add(bv);
 			}
 		} catch (SQLException e) {
@@ -1600,16 +1591,14 @@ public class LaydulieuReponsitory implements Thaotac {
 
 			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
-			
 
-				String query = "delete from baiviet where maBaiViet=?";
+			String query = "delete from baiviet where maBaiViet=?";
 
-				ps = conn.prepareStatement(query);
+			ps = conn.prepareStatement(query);
 
-				ps.setInt(1, Integer.parseInt(maBaiViet));
+			ps.setInt(1, Integer.parseInt(maBaiViet));
 
-				bs = ps.executeUpdate()>0 ? true: false;
-			
+			bs = ps.executeUpdate() > 0 ? true : false;
 
 		} catch (SQLException e) {
 			System.out.println("Lỗi trong phần xóa bài viết trong   LoginReponsitory");
@@ -1635,4 +1624,83 @@ public class LaydulieuReponsitory implements Thaotac {
 
 		return bs;
 	}
+	
+	// check trùng khi thêm mới
+
+	public boolean daTonTaiTenDanhMuc(String tenDanhMuc) {
+		boolean tonTai = false;
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ConnectionSql connectionSql = null;
+
+		try {
+			connectionSql = new ConnectionSql();
+			conn = connectionSql.getConnection();
+			String query = "SELECT * FROM danhmucsanpham WHERE TenDanhMuc = ? ";
+			ps = conn.prepareStatement(query);
+			ps.setString(1, tenDanhMuc);
+			rs = ps.executeQuery();
+			tonTai = rs.next(); // true nếu có kết quả
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (ps != null)
+					ps.close();
+				if (conn != null)
+					connectionSql.releaseConnection(conn);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return tonTai;
+	}
+
+	public List<SanPham> LaythongtinsanphamTheoDanhMuc(int maDanhMuc) {
+		List<SanPham> filteredList = new ArrayList<>();
+		List<SanPham> allProducts = Laythongtinsanpham(); // Get all products
+		for (SanPham sp : allProducts) {
+			if (sp.getMaDanhMuc() == maDanhMuc) {
+				filteredList.add(sp);
+			}
+		}
+		return filteredList;
+	}
+
+	// check trùng khi sửa (sửa sẽ kiểm bỏ cái id đang check)
+	public boolean kiemTraTrungTenDanhMuc(String tenDanhMucMoi, int maDangSua) {
+	    boolean trung = false;
+	    Connection conn = null;
+	    PreparedStatement ps = null;
+	    ResultSet rs = null;
+	    ConnectionSql connectionSql = null;
+
+	    try {
+	        connectionSql = new ConnectionSql();
+	        conn = connectionSql.getConnection();
+	        String sql = "SELECT * FROM danhmucsanpham WHERE TenDanhMuc = ? AND MaDanhMuc <> ?";
+	        ps = conn.prepareStatement(sql);
+	        ps.setString(1, tenDanhMucMoi);
+	        ps.setInt(2, maDangSua);
+	        rs = ps.executeQuery();
+	        trung = rs.next();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (rs != null) rs.close();
+	            if (ps != null) ps.close();
+	            if (conn != null) connectionSql.releaseConnection(conn);
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    return trung;
+	}
+
+
 }
