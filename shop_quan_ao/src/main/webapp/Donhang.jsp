@@ -222,7 +222,6 @@
 </head>
 
 <body>
-
     <div class="container">
         <h1>Xác Nhận Đơn Hàng</h1>
         <form action="Xacnhandathang" method="post"> 
@@ -246,7 +245,6 @@
                     <input type="hidden" name="maTaiKhoanUser" value="<%=user.getMaTaiKhoan()%>" required>
                     <%
                         } else {
-                            // Nếu không có thông tin người dùng, hiển thị thông báo lỗi hoặc chuyển hướng
                             out.println("<p style='color: red;'>Không tìm thấy thông tin người dùng. Vui lòng đăng nhập lại.</p>");
                             return;
                         }
@@ -279,8 +277,10 @@
                                 <p><strong>Kích cỡ:</strong> <%=kichThuoc%></p>
                                 <p><strong>Màu sắc:</strong> <%=mauSac%></p>
                                 <p><strong>Số lượng:</strong> <%=soLuong%></p>
-                                <p><strong>Giá:</strong>$<%=sanPham.getGia()%></p>
+                                <p><strong>Giá sảm phẩm:</strong> $<%=String.format("%.2f", sanPham.getGia())%></p>
+                                <p><strong>Tổng giá:</strong> $<%=String.format("%.2f", sanPham.getGia() * soLuong)%></p>
                                 <input type="hidden" name="giaSanPham" value="<%=sanPham.getGia()%>">
+                                <input type="hidden" name="tongGia" value="<%=sanPham.getGia() * soLuong%>">
                                 <input type="hidden" name="tenSanPham" value="<%=sanPham.getTenSanPham()%>">
                                 <input type="hidden" name="idSanPham" value="<%=idSanPham%>">
                                 <input type="hidden" name="kichThuoc" value="<%=kichThuoc%>">
@@ -289,7 +289,6 @@
                             </div>
                             <%
                                 } else {
-                                    // Nếu không tìm thấy sản phẩm, hiển thị thông báo lỗi
                                     out.println("<p style='color: red;'>Không tìm thấy sản phẩm.</p>");
                                     return;
                                 }
@@ -307,7 +306,6 @@
                 <!-- Nút Quay lại và Đặt hàng -->
                 <div class="buttons">
                     <%
-                        // Đảm bảo user và sanPham không null trước khi tạo URL
                         if (user != null && sanPham != null) {
                     %>
                     <a href="XacNhanandHuyDonHang?id=<%=idSanPham%>&mauSac=<%=mauSac%>&kichThuoc=<%=kichThuoc%>&soLuong=<%=soLuong%>&hoTen=<%=user.getHoTen()%>&soDienThoai=<%=user.getSoDienThoai()%>&diaChi=<%=user.getDiaChi()%>&maTaiKhoanUser=<%=user.getMaTaiKhoan()%>&gia=<%=sanPham.getGia()%>&time=<%=System.currentTimeMillis()%>&Huydonhang=HuyDonHang" class="button button-secondary">Quay lại</a>
@@ -321,10 +319,6 @@
             </div>
         </form>
     </div>
-
-   
-
-
 </body>
 
 </html>
