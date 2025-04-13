@@ -42,13 +42,16 @@ public class Xacnhandathang extends HttpServlet {
 
 		int soLuongInt = Integer.parseInt(soLuong);
 		float tongGia = gia*soLuongInt;
-		float giaSauKhiGiam = gia; // Mặc định là chưa giảm giá
+		float giaSauKhiGiam = 0; // Mặc định là 0
+		
+		
 
 		if (maKhuyenMai != null && !maKhuyenMai.trim().isEmpty()) {
 			List<KhuyenMai> listKhuyenMai = lgn.LayThongTinKhuyenMai();
 			for (KhuyenMai km : listKhuyenMai) {
 				if (km.getMaKhuyenMai().equals(maKhuyenMai) && km.getMaSanpham() == id) {
 					float phanTramKhuyenMai = km.getPhanTramKhuyenMai();
+					
 					giaSauKhiGiam = tongGia * (1 - (phanTramKhuyenMai / 100));
 					break;
 				}
