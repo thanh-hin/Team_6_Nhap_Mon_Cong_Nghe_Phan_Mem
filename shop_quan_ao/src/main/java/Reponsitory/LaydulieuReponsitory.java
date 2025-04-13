@@ -485,7 +485,7 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
 			// Câu truy vấn SQL
-			String query = "SELECT * FROM sanpham ORDER BY RAND() ";
+			String query = "SELECT * FROM sanpham ORDER BY RAND()";
 
 			// Chuẩn bị câu lệnh SQL
 			ps = conn.prepareStatement(query);
