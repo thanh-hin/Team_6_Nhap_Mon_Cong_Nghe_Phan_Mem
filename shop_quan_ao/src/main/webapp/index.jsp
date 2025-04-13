@@ -104,7 +104,7 @@ body {
 	font-weight: bold; /* Đặt chữ đậm */
 	font-family:  'Noto Sans Vietnamese', sans-serif;
 	color: #8d8b98; 
-	text-align: center; /* Căn giữa */
+	text-align: center; /* Căn giữa */f
 	margin-top: 20px; /* Thêm khoảng cách phía trên */
 }
 </style>
@@ -482,21 +482,17 @@ body {
 			<div class="row">
 				 <div class="col-lg-3 p-b-30">
   				<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
- 	    			<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
-    				<!-- Ảnh bên trái -->
-   						<img src="images/icongirl.jpg" alt="IMG-BANNER"
-     				    			style="width: 60px; height: auto; margin-right: 15px;">
-
-  					<!-- Text bên phải -->
-   					<div>
-    					<div class="block1-name ltext-102 text-dark">Nữ</div>
-      					<div class="block1-info stext-102 text-secondary">2024</div>
-    				</div>
+ 	    			<a href="Cuahang?loai=nu" class="d-flex align-items-center text-decoration-none">
+					    <img src="images/icongirl.jpg" alt="IMG-BANNER" style="width: 60px; height: auto; margin-right: 15px;">
+					    <div>
+					        <div class="block1-name ltext-102 text-dark">Nữ</div>
+					        <div class="block1-info stext-102 text-secondary">2024</div>
+					    </div>
 					</a>
 				</div>
 				<div class="col-lg-3 p-b-30">
   				<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
- 	    			<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
+ 	    			<a href="Cuahang?loai=nam" class="d-flex align-items-center text-decoration-none">
     				<!-- Ảnh bên trái -->
    						<img src="images/iconboy.jpg" alt="IMG-BANNER"
      				    			style="width: 60px; height: auto; margin-right: 15px;">
@@ -509,7 +505,7 @@ body {
 					</a>
 				</div>
 				<div class="col-6 col-lg-3 p-b-30">
- 					<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
+ 					<a href="Cuahang?loai=giay" class="d-flex align-items-center text-decoration-none">
     				<!-- Ảnh bên trái -->
     					<img src="images/iconshoe.jpg" alt="IMG-BANNER"
          							style="width: 60px; height: auto; margin-right: 15px;">
@@ -522,7 +518,7 @@ body {
   					</a>
 					</div>
 				<div class="col-6 col-lg-3 p-b-30">
-  					<a href="Cuahang" class="d-flex align-items-center text-decoration-none">
+  					<a href="Cuahang?loai=tui" class="d-flex align-items-center text-decoration-none">
    		 			<!-- Ảnh bên trái -->
     					<img src="images/iconbag.jpg" alt="IMG-BANNER"
         							style="width: 60px; height: auto; margin-right: 15px;">

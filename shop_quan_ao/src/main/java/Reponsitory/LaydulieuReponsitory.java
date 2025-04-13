@@ -1664,5 +1664,18 @@ public class LaydulieuReponsitory implements Thaotac {
 	    }
 	    return tonTai;
 	}
+	
+	public List<SanPham> LaythongtinsanphamTheoDanhMuc(int maDanhMuc) {
+	    List<SanPham> filteredList = new ArrayList<>();
+	    List<SanPham> allProducts = Laythongtinsanpham(); // Get all products
+	    for (SanPham sp : allProducts) {
+	        if (sp.getMaDanhMuc() == maDanhMuc) {
+	            filteredList.add(sp);
+	        }
+	    }
+	    return filteredList;
+	}
+	
+	
 
 }
