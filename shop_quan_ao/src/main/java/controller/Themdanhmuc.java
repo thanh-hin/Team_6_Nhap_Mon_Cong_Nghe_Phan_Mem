@@ -49,6 +49,7 @@ public class Themdanhmuc extends HttpServlet {
 		 * response.getWriter().write("fail"); //Lỗi: thêm thất bại }
 		 */
 		
+		
 		LaydulieuReponsitory l = new LaydulieuReponsitory();
 
 		if (tenDanhMuc == null || tenDanhMuc.trim().equals("")) {
