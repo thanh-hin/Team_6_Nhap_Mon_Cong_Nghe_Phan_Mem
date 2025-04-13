@@ -119,7 +119,7 @@
 							</li>
 
 							<li>
-								<a href="blog.html">Blog</a>
+								<a href="blog.jsp">Blog</a>
 							</li>
 
 							<li class="active-menu">
@@ -127,7 +127,7 @@
 							</li>
 
 							<li>
-								<a href="contact.html">Liên hệ</a>
+								<a href="contact.jsp">Liên hệ</a>
 							</li>
 						</ul>
 					</div>	

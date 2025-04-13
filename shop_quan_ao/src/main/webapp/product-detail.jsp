@@ -194,11 +194,11 @@
 							<li class="label1" data-label1="hot"><a href="Giohang">Giỏ
 									hàng</a></li>
 
-							<li><a href="blog.html">Blog</a></li>
+							<li><a href="blog.jsp">Blog</a></li>
 
-							<li><a href="Giới thiệu.html">Giới thiệu</a></li>
+							<li><a href="Giới thiệu.jsp">Giới thiệu</a></li>
 
-							<li><a href="contact.html">Liên hệ</a></li>
+							<li><a href="contact.jsp">Liên hệ</a></li>
 						</ul>
 					</div>
 
