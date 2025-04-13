@@ -607,6 +607,28 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	<script src="js/map-custom.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+  // Mở modal khi click icon tìm kiếm
+  document.querySelectorAll('.js-show-modal-search').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.modal-search-header').classList.add('show-modal-search');
+    });
+  });
+
+  // Đóng modal khi click nút ×
+  document.querySelectorAll('.js-hide-modal-search').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.modal-search-header').classList.remove('show-modal-search');
+    });
+  });
+
+  // Đóng modal khi click ra ngoài vùng trắng
+  document.querySelector('.modal-search-header').addEventListener('click', function (e) {
+    if (e.target === this) {
+      this.classList.remove('show-modal-search');
+    }
+  });
+</script>
 
 </body>
 </html>

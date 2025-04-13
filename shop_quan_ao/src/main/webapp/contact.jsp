@@ -11,7 +11,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<!-- <link rel="icon" type="image/png" href="images/icons/favicon.png"/> -->
 	<link rel="icon" type="image/png" href="images/icons/LOGOTHE5IVE.jpg"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
@@ -145,14 +144,11 @@
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div>
+					  <!-- Icon kính lúp -->
+					  <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+					    <i class="zmdi zmdi-search"></i>
+					  </div>
 
-						<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
-						</div>
 
 						<div
 							<%Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();

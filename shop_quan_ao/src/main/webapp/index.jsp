@@ -313,11 +313,9 @@ if (user != null) {
 		</div>
 
 		<!-- Modal Search -->
-		<div
-			class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
-				<button
-					class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
 					<img src="images/icons/icon-close2.png" alt="CLOSE">
 				</button>
 
@@ -325,8 +323,7 @@ if (user != null) {
 					<button class="flex-c-m trans-04">
 						<i class="zmdi zmdi-search"></i>
 					</button>
-					<input class="plh3" type="text" name="search"
-						placeholder="Search...">
+					<input class="plh3" type="text" name="search" placeholder="Search...">
 				</form>
 			</div>
 		</div>
@@ -979,7 +976,30 @@ if (user != null) {
 	</script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+  // Mở modal khi click icon tìm kiếm
+  document.querySelectorAll('.js-show-modal-search').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.modal-search-header').classList.add('show-modal-search');
+    });
+  });
 
+  // Đóng modal khi click nút ×
+  document.querySelectorAll('.js-hide-modal-search').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelector('.modal-search-header').classList.remove('show-modal-search');
+    });
+  });
+
+  // Đóng modal khi click ra ngoài vùng trắng
+  document.querySelector('.modal-search-header').addEventListener('click', function (e) {
+    if (e.target === this) {
+      this.classList.remove('show-modal-search');
+    }
+  });
+</script>
+
+	
 </body>
 
 </html>

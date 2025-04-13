@@ -216,7 +216,7 @@
 			</ul>
 		</div>
 
-		<!-- Modal Search -->
+		<!-- <!-- Modal Search
 		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
 				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
@@ -231,7 +231,29 @@
 				</form>
 			</div>
 		</div>
-	</header>
+	</header> -->
+	
+	<!-- Search Modal -->
+		<!-- Modal Search -->
+		<div class="modal-search-header">
+		  <div class="container-search-header">
+		    <!-- Nút đóng -->
+		    <button class="btn-hide-modal-search js-hide-modal-search">
+		      <img src="images/icons/icon-close2.png" alt="CLOSE">
+		    </button>
+		
+		    <!-- Ô tìm kiếm -->
+		    <form class="wrap-search-header flex-w p-l-15">
+		      <button class="flex-c-m trans-04">
+		        <i class="zmdi zmdi-search"></i>
+		      </button>
+		      <input class="plh3" type="text" name="search" placeholder="Tìm kiếm...">
+		    </form>
+		  </div>
+		</div>
+
+
+	
 
 	<!-- Cart -->
 	<div class="wrap-header-cart js-panel-cart">
@@ -588,6 +610,30 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script>
+  // Mở modal
+  document.querySelectorAll('.js-show-modal-search').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelector('.modal-search-header').classList.add('show-modal-search');
+    });
+  });
+
+  // Đóng modal khi bấm nút đóng
+  document.querySelectorAll('.js-hide-modal-search').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelector('.modal-search-header').classList.remove('show-modal-search');
+    });
+  });
+
+  // Đóng modal khi click ra ngoài khung tìm kiếm
+  document.querySelector('.modal-search-header').addEventListener('click', function (e) {
+    if (e.target === this) {
+      this.classList.remove('show-modal-search');
+    }
+  });
+</script>
+
+	
 	
 </body>
 </html>
