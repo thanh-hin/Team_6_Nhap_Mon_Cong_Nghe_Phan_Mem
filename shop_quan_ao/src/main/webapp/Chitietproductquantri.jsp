@@ -105,7 +105,7 @@ body {
 	gap: 20px;
 }
 
-.edit, .delete, .save {
+/* .edit, .delete, .save {
 	padding: 12px 20px;
 	font-size: 1.3rem;
 	color: white;
@@ -113,6 +113,21 @@ body {
 	border-radius: 8px;
 	cursor: pointer;
 	transition: background 0.3s ease;
+} */
+.edit, .delete, .save {
+    width: 60px; /* Đặt chiều rộng cố định */
+    height: 38px; /* Đặt chiều cao cố định */
+    padding: 8px 12px; /* Điều chỉnh padding để nội dung căn giữa */
+    font-size: 1.3rem;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    display: inline-flex; /* Sử dụng flex để căn giữa nội dung */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    box-sizing: border-box; /* Đảm bảo kích thước bao gồm padding và border */
 }
 
 .edit {
@@ -375,6 +390,12 @@ form label {
 form input, .styled-select {
 	margin-bottom: 15px;
 }
+
+.quantity-input {
+    width: 100px; /* Tăng chiều rộng, bạn có thể điều chỉnh giá trị */
+    height: 30px; /* Tăng chiều cao, bạn có thể điều chỉnh giá trị */
+    font-size: 16px; /* Tăng kích thước chữ nếu cần */
+}
 </style>
 </head>
 <body>
@@ -487,8 +508,11 @@ form input, .styled-select {
 				</div>
 				<div class="actions">
 					<button class="edit" onclick="editVariant(this)">Sửa</button>
-					<form action="Xoachitietproductquantri" method="POST"
-						class="d-inline">
+					<!-- <form action="Xoachitietproductquantri" method="POST"
+						class="d-inline"> -->
+						<form action="Xoachitietproductquantri" method="POST" class="d-inline"
+      onsubmit="return confirm('Bạn có chắc chắn muốn xóa không?');">
+
 						<input type="hidden" name="id"
 							value="<%=c.getIdChiTietSanPham()%>">
 						<button class="delete" type="submit">Xóa</button>
