@@ -752,17 +752,6 @@ button.btn-remove:hover {
             document.querySelector('#total-price').textContent = `Tổng cộng: ${total.toLocaleString()} VND`;
         }
 
-        // Hàm xóa sản phẩm khỏi giỏ
-        function removeItem() {
-        	if (confirm("Bạn câu chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
-        	    // Nếu người dùng nhấn "OK"
-        	    console.log("Đã xóa sản phẩm!");
-        	} else {
-        	    // Nếu người dùng nhấn "Cancel"
-        	    console.log("Hủy thao tác xóa.");
-        	}
-        }
-
         // Khởi tạo tổng giá trị khi tải trang
         updateTotal();
 	</script>
