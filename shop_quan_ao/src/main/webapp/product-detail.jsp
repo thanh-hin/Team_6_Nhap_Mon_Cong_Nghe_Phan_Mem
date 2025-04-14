@@ -16,7 +16,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="assetsquantri/img/LOGOTHE5IVE.jpgg" />
+<link rel="icon" type="image/g" href="assetsquantri/img/LOGOTHE5IVE.jpg" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="vendor/bootstrap/css/bootstrap.min.css">

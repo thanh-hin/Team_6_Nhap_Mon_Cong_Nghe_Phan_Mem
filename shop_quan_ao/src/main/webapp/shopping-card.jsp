@@ -149,17 +149,20 @@ h2 {
 }
 
 .btn-remove {
-	background-color: #ff4d4d;
-	color: #fff;
-	padding: 8px 15px;
-	border: none;
-	border-radius: 5px;
-	cursor: pointer;
-	transition: background-color 0.3s;
+	font-size: 14px;
+  padding: 6px 14px;
+  border-radius: 6px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: 36px;
+  line-height: 1;
 }
 
-.btn-remove:hover {
-	background-color: #e60000;
+button.btn-remove:hover {
+  background-color: #e04343;
 }
 
 .cart-total {
