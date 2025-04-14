@@ -540,39 +540,34 @@ button.btn-remove:hover {
 			tongGia += g.getGia();
 		%>
 
-		<div class="cart-item" id="product1" style="marigin-top: -70px">
-			<img src="<%=g.getDuongDan()%>" alt="Sản phẩm 1"
-				class="product-image">
-			<div class="product-info">
-				<h3 class="product-name"><%=g.getTenSanPham()%></h3>
-				<p class="product-price" data-price="<%=g.getGia()%>"><%=g.getGia()%></p>
-				<p class="product-color">
-					Màu:
-					<%=g.getMauSac()%></p>
-				<p class="product-color">
-					Kích cỡ:
-					<%=g.getKichThuoc()%></p>
-				<div class="quantity-control">
-					<input type="number" class="quantity" id="quantity-product1"
-						value="<%=g.getSoLuong()%>" min="1" onchange="updateTotal()">
-
-				</div>
-			</div>
-			<form action="Xoasanphamtrongdonhang" method="post">
-				<input hidden="text" value="<%=g.getMaGioHang()%>" name="idGioHang">
-				<button class="btn-remove" onclick="removeItem()">Xóa</button>
-			</form>
-
+		<div class="cart-item" id="product1">
+		    <img src="<%= g.getDuongDan() %>" alt="Sản phẩm 1" class="product-image">
+		    <div class="product-info">
+		        <h3 class="product-name"><%= g.getTenSanPham() %></h3>
+		        <!-- Lưu giá trị sản phẩm trong data-price -->
+		        <p class="product-price" data-price="<%= g.getGia() %>"><%= g.getGia() %></p>
+		        <p class="product-color">Màu: <%= g.getMauSac() %></p>
+		        <p class="product-color">Kích cỡ: <%= g.getKichThuoc() %></p>
+		        <div class="quantity-control">
+		            <input type="number" class="quantity" id="quantity-product1" value="<%= g.getSoLuong() %>" min="1" onchange="updateTotal()">
+		        </div>
+		    </div>
+		    <form action="Xoasanphamtrongdonhang" method="post">
+		        <input hidden="text" value="<%= g.getMaGioHang() %>" name="idGioHang">
+		        <button class="btn-remove" onclick="removeItem()">Xóa</button>
+		    </form>
 		</div>
 		<%
 		}
 		%>
 
-		<div class="cart-total">
-			<p>
-				Tổng cộng:
-				<%=tongGia%></p>
-		</div>
+		    <!-- Hiển thị tổng cộng -->
+<!-- Hiển thị tổng cộng -->
+<div class="cart-total">
+    <p>Tổng cộng: <span id="total-price">0 VND</span></p>  <!-- Mặc định hiển thị 0 VND -->
+</div>
+
+
 		<form action="ThanhToanGioHang" method="post">
 
 			<button class="btn-checkout" type="submit">Thanh toán</button>
@@ -580,8 +575,6 @@ button.btn-remove:hover {
 		</form>
 
 	</div>
-
-
 
 
 	<!-- Footer -->
@@ -727,7 +720,7 @@ button.btn-remove:hover {
 				ps.update();
 			})
 		});
-		 // Hàm cập nhật số lượng
+		 /* // Hàm cập nhật số lượng
 		 function updateQuantity(productId, change) {
             const quantityInput = document.querySelector(`#quantity-${productId}`);
             let quantity = parseInt(quantityInput.value);
@@ -738,21 +731,106 @@ button.btn-remove:hover {
         }
 
         // Hàm tính tổng giá
-        function updateTotal() {
-            let total = 0;
-            const productItems = document.querySelectorAll('.cart-item');
-            productItems.forEach(item => {
-                const priceElement = item.querySelector('.product-price');
-                const price = parseFloat(priceElement.getAttribute('data-price'));
-                const quantity = parseInt(item.querySelector('.quantity').value);
-                total += price * quantity;
-            });
+		function updateTotal() {
+		    let total = 0;
+		    const productItems = document.querySelectorAll('.cart-item');
+		    
+		    // Duyệt qua từng sản phẩm trong giỏ hàng
+		    productItems.forEach(item => {
+		        const priceElement = item.querySelector('.product-price'); // Lấy phần tử giá
+		        const price = parseFloat(priceElement.getAttribute('data-price')); // Lấy giá sản phẩm từ thuộc tính 'data-price'
+		        const quantity = parseInt(item.querySelector('.quantity').value); // Lấy số lượng sản phẩm
+		        
+		        // Tính tổng tiền cho sản phẩm và cộng vào tổng giá trị
+		        total += price * quantity;
+		    });
+		
+		    // Cập nhật tổng giá trị vào giao diện
+		    document.querySelector('#total-price').textContent = `Tổng cộng: ${total.toLocaleString()} VND`;
+		}
+		
+		// Hàm cập nhật số lượng sản phẩm trong giỏ hàng
+		function updateQuantity(productId, change) {
+		    const quantityInput = document.querySelector(`#quantity-${productId}`); // Lấy input số lượng của sản phẩm
+		    let quantity = parseInt(quantityInput.value);
+		    quantity += change;
+		    
+		    // Đảm bảo số lượng không nhỏ hơn 1
+		    if (quantity < 1) quantity = 1; 
+		    
+		    // Cập nhật lại giá trị của ô input số lượng
+		    quantityInput.value = quantity;
+		    
+		    // Cập nhật lại tổng tiền
+		    updateTotal();
+		}
+		
+		// Khởi tạo tổng giá trị khi tải trang
+		updateTotal(); */
+		
+/* 			// Hàm tính tổng giá trị giỏ hàng
+			function updateTotal() {
+			    let total = 0;
+			    const productItems = document.querySelectorAll('.cart-item');
 
-            document.querySelector('#total-price').textContent = `Tổng cộng: ${total.toLocaleString()} VND`;
-        }
+			    // Duyệt qua tất cả sản phẩm trong giỏ
+			    productItems.forEach(item => {
+			        // Lấy giá của sản phẩm
+			        const priceElement = item.querySelector('.product-price');
+			        const price = parseFloat(priceElement.getAttribute('data-price'));
 
-        // Khởi tạo tổng giá trị khi tải trang
-        updateTotal();
+			        // Lấy số lượng từ input
+			        const quantityInput = item.querySelector('.quantity');
+			        const quantity = parseInt(quantityInput.value);
+
+			        // Kiểm tra nếu số lượng hợp lệ, nếu không đặt mặc định là 1
+			        const validQuantity = isNaN(quantity) || quantity < 1 ? 1 : quantity;
+
+			        // Tính tổng cho sản phẩm và cộng vào tổng giỏ hàng
+			        total += price * validQuantity;
+			    });
+
+			    // Cập nhật tổng tiền vào giao diện
+			    const totalPriceElement = document.querySelector('#total-price');
+			    totalPriceElement.textContent = `${total.toLocaleString()} VND`;  // Định dạng số thành VND
+			}
+
+			// Khởi tạo tổng giá trị khi tải trang
+			updateTotal();
+ */
+ 
+//Hàm tính tổng giá trị giỏ hàng
+ function updateTotal() {
+     let total = 0;
+
+     // Lấy tất cả các sản phẩm trong giỏ hàng
+     const productItems = document.querySelectorAll('.cart-item');
+
+     // Duyệt qua từng sản phẩm trong giỏ hàng
+     productItems.forEach(item => {
+         // Lấy giá của sản phẩm từ thuộc tính 'data-price'
+         const priceElement = item.querySelector('.product-price');
+         const price = parseFloat(priceElement.getAttribute('data-price')); // Lấy giá sản phẩm từ 'data-price'
+
+         // Lấy số lượng từ input
+         const quantityInput = item.querySelector('.quantity');
+         const quantity = parseInt(quantityInput.value); // Lấy giá trị số lượng từ ô input
+
+         // Nếu số lượng không hợp lệ, mặc định là 1
+         const validQuantity = isNaN(quantity) || quantity < 1 ? 1 : quantity;
+
+         // Tính tổng cho sản phẩm và cộng vào tổng giỏ hàng
+         total += price * validQuantity;
+     });
+
+     // Hiển thị tổng tiền vào phần tử với id 'total-price'
+     const totalPriceElement = document.querySelector('#total-price');
+     totalPriceElement.textContent = `${total.toLocaleString()} VND`;  // Định dạng số với dấu phân cách hàng nghìn và thêm "VND"
+ }
+
+ // Khởi tạo tổng giá trị khi tải trang
+ updateTotal();
+
 	</script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>

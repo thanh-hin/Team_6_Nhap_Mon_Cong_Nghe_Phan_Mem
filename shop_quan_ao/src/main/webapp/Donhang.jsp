@@ -226,8 +226,6 @@
         <h1>Xác Nhận Đơn Hàng</h1>
         <form action="Xacnhandathang" method="post"> 
             <div class="order-details">
-                <h2>Thông Tin Đơn Hàng</h2>
-
                 <!-- Thông tin khách hàng -->
                 <div class="customer-info">
                     <h3>Thông Tin Khách Hàng</h3>
