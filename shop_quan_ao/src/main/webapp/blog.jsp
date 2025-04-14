@@ -161,7 +161,7 @@
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->		
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO"></a>
+				<a href="index.jsp"><img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->

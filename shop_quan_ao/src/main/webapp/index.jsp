@@ -113,9 +113,9 @@ body {
 
 /* Tùy chỉnh màu và kiểu chữ cho tiêu đề */
 .custom-title {
-	font-size: 1rem; /* Điều chỉnh kích thước chữ */
+	font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
 	font-weight: bold; /* Đặt chữ đậm */
-	font-family:  'Noto Sans Vietnamese', sans-serif;
+	font-family:  'Material-Design-Iconic-Font';
 	color: #8d8b98; 
 	text-align: center; /* Căn giữa */f
 	margin-top: 20px; /* Thêm khoảng cách phía trên */
@@ -766,29 +766,39 @@ body {
 <div class="row">
     <!-- LIÊN HỆ VỚI CHÚNG TÔI -->
     <div class="col-sm-6 col-lg-4 p-b-50">
-        <h4 class="stext-301 cl0 p-b-30">LIÊN HỆ VỚI CHÚNG TÔI</h4>
+    <h4 class="stext-301 cl0 p-b-30"><strong>Liên hệ với chúng tôi</strong></h4>
         <p class="stext-107 cl7 size-201">
-            Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại 97 Man Thiện, Hiệp Phú, Quận 9, TP Hồ Chí Minh.
+            Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại <strong>97 Man Thiện, Hiệp Phú, Quận 9, TP Hồ Chí Minh.</strong>
         </p>
         <p class="stext-107 cl7 size-201">
-            Hoặc liên hệ đến số điện thoại: 0987309485
+            Hoặc liên hệ đến số điện thoại: <strong>0987309485</strong>
         </p>
     </div>
 
-    <!-- VỀ THE 5IVE -->
-    <div class="col-sm-6 col-lg-4 p-b-50">
-        <h4 class="stext-301 cl0 p-b-30">VỀ THE 5IVE</h4>
-        <p class="stext-107 cl7 size-201">
-            The 5ive là thương hiệu thời trang hiện đại, kết hợp phong cách tối giản với sự cá tính, hướng tới sự tự do và sáng tạo trong cách thể hiện bản thân. Chúng tôi tin rằng thời trang là tuyên ngôn cá nhân.
-        </p>
-        <p class="stext-107 cl7 size-201 p-t-10">
-            <em>"Define Your Style – Live The 5ive."</em>
-        </p>
-    </div>
+<!-- HỖ TRỢ KHÁCH HÀNG -->
+<div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>Hỗ trợ khách hàng</strong></h4>
+    <p class="stext-107 cl7 size-201">
+        <strong>Tổng đài chăm sóc khách hàng:</strong>
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Thời trang/Nhận hàng:</strong> 1800 6789
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Đổi trả/Bảo hành:</strong> 1800 1234
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Email CSKH:</strong> support@the5ive.vn
+    </p>
+    <p class="stext-107 cl7 size-201 p-t-10">
+        <em>"Define Your Style – Live The 5ive."</em>
+    </p>
+</div>
+
 
     <!-- THEO DÕI CHÚNG TÔI -->
     <div class="col-sm-6 col-lg-4 p-b-50">
-        <h4 class="stext-301 cl0 p-b-30">THEO DÕI CHÚNG TÔI</h4>
+    <h4 class="stext-301 cl0 p-b-30"><strong>Theo dõi chúng tôi</strong></h4>
          <div class="auth-external-list">
         <div class="row social-icons-custom">
             <div class="col-2 d-flex justify-content-right">

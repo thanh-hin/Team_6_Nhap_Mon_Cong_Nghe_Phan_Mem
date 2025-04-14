@@ -66,7 +66,7 @@
 
 /* Nút "Thêm vào giỏ hàng" */
 .js-addcart-detail {
-	background-color: #28a745; /* Màu xanh lá */
+	background-color: #5978ad; 
 	color: white;
 	font-size: 16px;
 	padding: 12px 25px;
@@ -83,7 +83,7 @@
 
 /* Nút "Đặt hàng" */
 .js-order {
-	background-color: #007bff; /* Màu xanh dương */
+	background-color: #5699e2; /* Màu xanh dương */
 	color: white;
 	font-size: 16px;
 	padding: 12px 25px;
@@ -100,7 +100,7 @@
 
 /* Hiệu ứng hover */
 .js-addcart-detail:hover {
-	background-color: #218838; /* Xanh lá đậm khi hover */
+	background-color: #9fa9b9; /* hover nut them vao gio hang */
 	transition: background-color 0.3s ease;
 }
 
@@ -194,11 +194,11 @@
 							<li class="label1" data-label1="hot"><a href="Giohang">Giỏ
 									hàng</a></li>
 
-							<li><a href="blog.html">Blog</a></li>
+							<li><a href="blog.jsp">Blog</a></li>
 
-							<li><a href="Giới thiệu.html">Giới thiệu</a></li>
+							<li><a href="about.jsp">Giới thiệu</a></li>
 
-							<li><a href="contact.html">Liên hệ</a></li>
+							<li><a href="contact.jsp">Liên hệ</a></li>
 						</ul>
 					</div>
 
@@ -553,7 +553,7 @@ if (user != null) {
 											<button
 												class="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail "
 												name="gioHang" value="gioHang">
-												<i class="zmdi zmdi-shopping-cart"></i> Giỏ hàng
+												<i class="zmdi zmdi-shopping-cart"></i> Thêm vào giỏ hàng
 											</button>
 
 											<!-- Nút "Đặt hàng" với logo -->
@@ -570,11 +570,8 @@ if (user != null) {
 								</div>
 							</form>
 						</div>
-
-					</div>
-
-					<!--  -->
-					<div class="flex-w flex-m p-l-100 p-t-40 respon7">
+						
+						<div class="flex-w flex-m p-l-100 p-t-40 respon7">
 						<div class="flex-m bor9 p-r-10 m-r-11">
 							<a href="#"
 								class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100"
@@ -594,6 +591,11 @@ if (user != null) {
 							data-tooltip="Google Plus"> <i class="fa fa-google-plus"></i>
 						</a>
 					</div>
+
+					</div>
+
+					<!--  -->
+					
 				</div>
 			</div>
 		</div>

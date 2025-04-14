@@ -625,21 +625,16 @@ button.btn-remove:hover {
 					</ul>
 				</div>
 
+				<!-- Lien He -->
 				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">LIÊN LẠC</h4>
-
-					<p class="stext-107 cl7 size-201">Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại 379 Hudson Street, Floor 8, New York, NY 10014, USA 10018 hoặc gọi đến số 18008098.</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"> <i
-							class="fa fa-facebook"></i>
-						</a> <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"> <i
-							class="fa fa-instagram"></i>
-						</a> <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"> <i
-							class="fa fa-pinterest-p"></i>
-						</a>
-					</div>
-				</div>
+   					<h4 class="stext-301 cl0 p-b-30"><strong>Liên hệ với chúng tôi</strong></h4>
+       					<p class="stext-107 cl7 size-201">
+            				Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại <strong>97 Man Thiện, Hiệp Phú, Quận 9, TP Hồ Chí Minh.</strong>
+        				</p>
+        				<p class="stext-107 cl7 size-201">
+            				Hoặc liên hệ đến số điện thoại: <strong>0987309485</strong>
+        				</p>
+    			</div>
 
 				<div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">Đăng ký nhận thông báo</h4>
@@ -759,7 +754,7 @@ button.btn-remove:hover {
 
         // Hàm xóa sản phẩm khỏi giỏ
         function removeItem() {
-        	if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
+        	if (confirm("Bạn câu chắc chắn muốn xóa sản phẩm này khỏi giỏ hàng?")) {
         	    // Nếu người dùng nhấn "OK"
         	    console.log("Đã xóa sản phẩm!");
         	} else {

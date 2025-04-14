@@ -11,8 +11,8 @@
 }
 
 body, html {
-	font-family: Arial;
-	font-size: 40px;
+	font-family: 'Material-Design-Iconic-Font';
+    font-size: 20px;
 	color: #666666;
 
 	height: 100%;
