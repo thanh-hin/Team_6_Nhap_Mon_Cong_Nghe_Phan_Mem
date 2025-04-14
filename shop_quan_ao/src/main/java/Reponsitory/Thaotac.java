@@ -59,4 +59,8 @@ public interface Thaotac {
 	public boolean DeleteBaiViet(String maBaiViet);
 
 
+
+
+
+
 }

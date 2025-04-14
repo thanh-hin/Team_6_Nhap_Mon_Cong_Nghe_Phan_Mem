@@ -120,6 +120,24 @@ body {
 	text-align: center; /* Căn giữa */f
 	margin-top: 20px; /* Thêm khoảng cách phía trên */
 }
+
+#more-products {
+  display: none;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 30px;
+  margin-bottom: 200px; /* đẩy xa footer hơn */
+  gap: 20px;
+}
+
+section.bg0 {
+  overflow: visible;
+  position: relative;
+  padding-bottom: 280px; /* Tăng đủ để không bị footer đè */
+}
+
+
+
 </style>
 </head>
 <body class="animsition">
@@ -701,61 +719,116 @@ body {
 				</div>
 			</div>
 
-			<div class="row isotope-grid">
-				<%
-				List<SanPham> list = (List<SanPham>) request.getAttribute("listHome");
+<div class="row isotope-grid">
+<%
+    List<SanPham> list = (List<SanPham>) request.getAttribute("listHome");
+    for (SanPham sp : list) {
+        String tenDanhMuc = "";
+        for (DanhMuc d : listDanhMuc) {
+            if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
+                tenDanhMuc = d.getTenDanhMuc();
+                break; // Thoát khỏi vòng for khi đã tìm đúng danh mục
+            }
+        }
+%>
+    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=tenDanhMuc%>">
+        <div class="block2">
+            <div class="block2-pic hov-img0">
+                <img src="<%=sp.getDuongDanAnh()%>" alt="IMG-PRODUCT" style="height: 300px;">
+                <a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+                    Xem nhanh
+                </a>
+            </div>
 
-				for (SanPham sp : list) {
-					for (DanhMuc d : listDanhMuc) {
-						if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
-				%>
-				<div
-					class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=d.getTenDanhMuc()%>">
-					<%
-					}
-					}
-					%>
-					<!-- Block2 -->
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="<%=sp.getDuongDanAnh()%>" alt="IMG-PRODUCT"
-								style="height: 300px;"> <a
-								href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
-								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
-								Xem nhanh </a>
-						</div>
+            <div class="block2-txt flex-w flex-t p-t-14">
+                <div class="block2-txt-child1 flex-col-l">
+                    <a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                        <%=sp.getTenSanPham()%>
+                    </a>
+                    <span class="stext-105 cl3"><%=sp.getGia()%>đ</span>
+                </div>
+                <div class="block2-txt-child2 flex-r p-t-3">
+                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<%
+    }
+%>
+</div>
 
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
-									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> <%=sp.getTenSanPham()%>
-								</a> <span class="stext-105 cl3"> <%=sp.getGia()%>đ
-								</span>
-							</div>
 
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#"
-									class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04"
-									src="images/icons/icon-heart-01.png" alt="ICON"> <img
-									class="icon-heart2 dis-block trans-04 ab-t-l"
-									src="images/icons/icon-heart-02.png" alt="ICON">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<%
-				}
-				%>
+			
+			<div class="row isotope-grid" id="more-products" style="display: none;">
+<%
+    List<SanPham> listMore = (List<SanPham>) request.getAttribute("listMore");
+    for (SanPham sp : listMore) {
+        String tenDanhMuc = "";
+        for (DanhMuc d : listDanhMuc) {
+            if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
+                tenDanhMuc = d.getTenDanhMuc();
+                break;
+            }
+        }
+%>
+    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=tenDanhMuc%>">
+        <div class="block2">
+            <div class="block2-pic hov-img0">
+                <img src="<%=sp.getDuongDanAnh()%>" alt="IMG-PRODUCT" style="height: 300px;">
+                <a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+                    Xem nhanh
+                </a>
+            </div>
+            <div class="block2-txt flex-w flex-t p-t-14">
+                <div class="block2-txt-child1 flex-col-l ">
+                    <a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+                        <%=sp.getTenSanPham()%>
+                    </a>
+                    <span class="stext-105 cl3"><%=sp.getGia()%>đ</span>
+                </div>
+                <div class="block2-txt-child2 flex-r p-t-3">
+                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+                        <img class="icon-heart1 dis-block trans-04"
+                             src="images/icons/icon-heart-01.png" alt="ICON">
+                        <img class="icon-heart2 dis-block trans-04 ab-t-l"
+                             src="images/icons/icon-heart-02.png" alt="ICON">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+<% } %>
+</div>
+
+
+			<div class="flex-c-m flex-w w-full p-t-45" id="loadMoreBtn">
+			  <button onclick="showMoreProducts()" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+			    Xem thêm
+			  </button>
 			</div>
+			
+			<script>
+			  function showMoreProducts() {
+			    const more = document.getElementById('more-products');
+			    if (more) {
+			      more.style.display = 'flex';
+			      more.scrollIntoView({ behavior: 'smooth' });
+			      document.getElementById('loadMoreBtn').style.display = 'none';
+			    }
+			  }
+			</script>
 
-			<!-- Load more -->
-			<div class="flex-c-m flex-w w-full p-t-45">
-				<a href="#"
-					class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-					Xem thêm </a>
-			</div>
+			
+
+
 		</div>
 	</section>
 
