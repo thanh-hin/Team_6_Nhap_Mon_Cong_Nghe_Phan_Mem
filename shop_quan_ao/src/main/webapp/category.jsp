@@ -221,13 +221,13 @@
 				   String err = request.getParameter("error");
 				
 				   if ("true".equals(msg)) { %>
-				       <div class="alert alert-success">✅ Thêm danh mục thành công!</div>
+				       <div class="alert alert-success">Thêm danh mục thành công!</div>
 				<% } else if ("fail".equals(err)) { %>
-				       <div class="alert alert-danger">❌ Thêm danh mục thất bại!</div>
+				       <div class="alert alert-danger">Thêm danh mục thất bại!</div>
 				<% } else if ("empty".equals(err)) { %>
-				       <div class="alert alert-warning">⚠️ Tên danh mục không được để trống.</div>
+				       <div class="alert alert-warning">Tên danh mục không được để trống.</div>
 				<% } else if ("duplicate".equals(err)) { %>
-				       <div class="alert alert-warning">⚠️ Tên danh mục đã tồn tại!</div>
+				       <div class="alert alert-warning">Tên danh mục đã tồn tại!</div>
 				<% } %>
               
               <!-- Vertical Form -->
@@ -309,25 +309,31 @@
     alert("Lỗi sửa sản phẩm");
     </script>
     <%} %>
-	<div class="card editForm hide" id="editF">
-		<div class="card-body row "  >
-              <h5 class="card-title">Sửa danh mục</h5>
+<div class="card editForm hide" id="editF">
+    <div class="card-body row">
+        <h5 class="card-title">Sửa danh mục</h5>
 
-              <!-- Vertical Form -->
-              <form action="UpdateDanhMuc" method="post">
-              <input type="hidden" id="product-id" name="product-id" readonly>
-                <div class="col-12">
-                  <label for="inputName" class="form-label">Tên danh mục mới</label>
-                  <input type="text" class="form-control" id="inputName" name="updateDanhMuc">
-                </div>
-                
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary">Sửa</button>
-                  
-                </div>
-              </form><!-- Vertical Form -->
-		</div>
+        <!-- Vertical Form -->
+        <form action="UpdateDanhMuc" method="post" id="form-sua-danh-muc">
+            <input type="hidden" id="product-id" name="product-id" readonly>
+            
+            <div class="col-12">
+                <label for="inputName" class="form-label">Tên danh mục mới</label>
+                <input type="text" class="form-control" id="inputUpdate" name="updateDanhMuc">
+            </div>
+
+            <!-- Error Message Box -->
+            <div id="edit-error-msg" class="text-danger"></div> <!-- This will show error messages -->
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Sửa</button>
+                <button type="button" class="btn btn-secondary" id="cancelBtn">Hủy</button>
+            </div>
+        </form>
+        <!-- End Vertical Form -->
     </div>
+</div>
+
 	
 	<div class="card detailForm hide" id="detailF">
 		<div class="card-body row "  >
@@ -519,7 +525,92 @@ function editForm(button) {
 	  }
 	}
 	</script>
+	
+	<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	    const form = document.getElementById("form-sua-danh-muc");
+	    const input = document.getElementById("inputUpdate");
+	    const msgBox = document.getElementById("edit-error-msg");
+	
+	    if (!form || !input) return;
+	
+	    // Xử lý khi sửa danh mục
+	    function xuLySuaDanhMuc() {
+	        const tenDanhMuc = input.value.trim(); // Lấy giá trị tên danh mục nhập vào
+	
+	        // Kiểm tra nếu tên danh mục rỗng
+	        if (!tenDanhMuc) {
+	            msgBox.textContent = "Tên danh mục không được để trống!";
+	            return;
+	        }
+	
+	        // Gửi yêu cầu kiểm tra trùng tên danh mục
+	        fetch("UpdateDanhMuc", {
+	            method: "POST",
+	            headers: {
+	                "Content-Type": "application/x-www-form-urlencoded"
+	            },
+	            body: "product-id=" + encodeURIComponent(document.getElementById('product-id').value) + 
+	                  "&updateDanhMuc=" + encodeURIComponent(tenDanhMuc)
+	        })
+	        .then(res => res.text())
+	        .then(result => {
+	            switch (result.trim()) {
+	                case "success":
+	                    alert("Sửa danh mục thành công!");
+	                    location.reload(); // Reload trang sau khi sửa thành công
+	                    break;
+	                case "duplicate":
+	                    msgBox.textContent = "Tên danh mục mới đã tồn tại!";
+	                    break;
+	                case "fail":
+	                    msgBox.textContent = "Cập nhật danh mục thất bại!";
+	                    break;
+	                case "empty":
+	                    msgBox.textContent = "Tên danh mục không được để trống!";
+	                    break;
+	                default:
+	                    msgBox.textContent = "Có lỗi xảy ra khi sửa danh mục.";
+	            }
+	        })
+	        .catch(err => {
+	            console.error("Lỗi fetch:", err);
+	            msgBox.textContent = "❌ Không thể kết nối đến server.";
+	        });
+	        
+	    }
+	
+	    // Lắng nghe sự kiện nhấn enter trong input
+	    input.addEventListener("keydown", function(e) {
+	        if (e.key === "Enter") {
+	            e.preventDefault();
+	            xuLySuaDanhMuc(); // Gọi hàm xử lý sửa danh mục khi nhấn enter
+	        }
+	    });
+	
+	    // Lắng nghe sự kiện submit của form
+	    form.addEventListener("submit", function(e) {
+	        e.preventDefault(); // Ngừng hành động mặc định của form submit
+	        xuLySuaDanhMuc(); // Gọi hàm xử lý sửa danh mục
+	    });
+	    
+	    cancelBtn.addEventListener("click", function() {
+	        const editForm = document.getElementById('editF');
+	        const smoke = document.getElementById('smoke');
+	        // Ẩn form và lớp phủ mờ
+	        if (editForm) {
+	            editForm.classList.add('hide');
+	        }
+	        if (smoke) {
+	            smoke.classList.add('hide');
+	        }
+	        // Reset các trường nhập liệu
+	        form.reset();
+	        msgBox.textContent = ''; // Xóa thông báo lỗi
+	    });
 
+	});
+	</script>
 
 </body>
 
