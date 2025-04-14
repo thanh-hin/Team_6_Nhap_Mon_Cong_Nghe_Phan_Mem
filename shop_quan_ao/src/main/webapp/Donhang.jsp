@@ -277,7 +277,7 @@
                                 <p><strong>Kích cỡ:</strong> <%=kichThuoc%></p>
                                 <p><strong>Màu sắc:</strong> <%=mauSac%></p>
                                 <p><strong>Số lượng:</strong> <%=soLuong%></p>
-                                <p><strong>Giá sảm phẩm:</strong> $<%=String.format("%.2f", sanPham.getGia())%></p>
+                                <p><strong>Giá sản phẩm:</strong> $<%=String.format("%.2f", sanPham.getGia())%></p>
                                 <p><strong>Tổng giá:</strong> $<%=String.format("%.2f", sanPham.getGia() * soLuong)%></p>
                                 <input type="hidden" name="giaSanPham" value="<%=sanPham.getGia()%>">
                                 <input type="hidden" name="tongGia" value="<%=sanPham.getGia() * soLuong%>">
