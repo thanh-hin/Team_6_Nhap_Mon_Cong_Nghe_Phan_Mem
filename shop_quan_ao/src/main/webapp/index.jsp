@@ -179,8 +179,6 @@ section.bg0 {
 							<li class="label1" data-label1="hot"><a href="Giohang">Giỏ
 									hàng</a></li>
 
-							<li><a href="blog.jsp">Blog</a></li>
-
 							<li><a href="about.jsp">Giới thiệu</a></li>
 
 							<li><a href="contact.jsp">Liên hệ</a></li>
@@ -334,8 +332,6 @@ section.bg0 {
 				<li><a href="Giohang" class="label1 rs1" data-label1="hot">Giỏ
 						hàng</a></li>
 
-				<li><a href="blog.jsp">Blog</a></li>
-
 				<li><a href="about.jsp">Giới thiệu</a></li>
 
 				<li><a href="contact.jsp">Liên hệ</a></li>
@@ -403,8 +399,9 @@ section.bg0 {
 
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Tổng tiền: $<%=tongTien%></div>
-
+  <strong>Tổng tiền:</strong> 
+  <span style="font-weight: normal;"><%= tongTien %>đ</span>
+</div>
 					<div class="header-cart-buttons flex-w w-full">
 						<a href="Giohang"
 							class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
@@ -838,13 +835,13 @@ section.bg0 {
 <div class="row">
     <!-- LIÊN HỆ VỚI CHÚNG TÔI -->
     <div class="col-sm-6 col-lg-4 p-b-50">
-    <h4 class="stext-301 cl0 p-b-30"><strong>Liên hệ với chúng tôi</strong></h4>
+    <h4 class="stext-301 cl0 p-b-30"><strong>The 5ive</strong></h4>
         <p class="stext-107 cl7 size-201">
-            Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại <strong>97 Man Thiện, Hiệp Phú, Quận 9, TP Hồ Chí Minh.</strong>
-        </p>
-        <p class="stext-107 cl7 size-201">
-            Hoặc liên hệ đến số điện thoại: <strong>0987309485</strong>
-        </p>
+          The 5ive là thương hiệu thời trang hiện đại, kết hợp sự tối giản và cá tính, đề cao tự do thể hiện bản thân. Với chúng tôi, thời trang là tuyên ngôn cá nhân.
+        </p><p class="stext-107 cl7 size-201 p-t-10">
+        <em>"Define Your Style – Live The 5ive."</em>
+    </p>
+        
     </div>
 
 <!-- HỖ TRỢ KHÁCH HÀNG -->
@@ -861,9 +858,6 @@ section.bg0 {
     </p>
     <p class="stext-107 cl7 size-201">
         <strong>Email CSKH:</strong> support@the5ive.vn
-    </p>
-    <p class="stext-107 cl7 size-201 p-t-10">
-        <em>"Define Your Style – Live The 5ive."</em>
     </p>
 </div>
 

@@ -194,8 +194,6 @@
 							<li class="label1" data-label1="hot"><a href="Giohang">Giỏ
 									hàng</a></li>
 
-							<li><a href="blog.jsp">Blog</a></li>
-
 							<li><a href="about.jsp">Giới thiệu</a></li>
 
 							<li><a href="contact.jsp">Liên hệ</a></li>
@@ -313,8 +311,6 @@ if (user != null) {
 				<li><a href="Giohang" class="label1 rs1" data-label1="hot">Giỏ
 						hàng</a></li>
 
-				<li><a href="blog.html">Blog</a></li>
-
 				<li><a href="about.html">About</a></li>
 
 				<li><a href="contact.html">Contact</a></li>
@@ -385,7 +381,9 @@ if (user != null) {
 
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Tổng tiền: $<%=tongTien%></div>
+  <strong>Tổng tiền:</strong> 
+  <span style="font-weight: normal;"><%= tongTien %>đ</span>
+</div>
 
 					<div class="header-cart-buttons flex-w w-full">
 						<a href="Giohang"
@@ -474,7 +472,7 @@ if (user != null) {
 							<%=sp.getTenSanPham()%>
 						</h4>
 
-						<span class="mtext-106 cl2"> <%=sp.getGia()%>
+						<span class="mtext-106 cl2"> <%=sp.getGia()%>đ
 						</span>
 
 						<p class="stext-102 cl3 p-t-23">

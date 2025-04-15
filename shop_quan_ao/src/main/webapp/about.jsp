@@ -118,10 +118,6 @@
 								<a href="Giohang">Giỏ hàng</a>
 							</li>
 
-							<li>
-								<a href="blog.jsp">Blog</a>
-							</li>
-
 							<li class="active-menu">
 								<a href="about.jsp">Giới thiệu</a>
 							</li>
@@ -361,7 +357,9 @@ if (user != null) {
 
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Tổng tiền: $<%=tongTien%></div>
+  <strong>Tổng tiền:</strong> 
+  <span style="font-weight: normal;"><%= tongTien %>đ</span>
+</div>
 
 					<div class="header-cart-buttons flex-w w-full">
 						<a href="Giohang"
@@ -380,7 +378,7 @@ if (user != null) {
 	<!-- Title page -->
 	<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
 		<h2 class="ltext-105 cl0 txt-center">
-			Về chúng tôi
+			<strong>Về chúng tôi</strong>
 		</h2>
 	</section>	
 
@@ -390,17 +388,15 @@ if (user != null) {
 		<div class="container">
 			<div class="row p-b-148">
 				<div class="col-md-7 col-lg-8">
-					<div class="p-t-7 p-r-85 p-r-15-lg p-r-0-md">
+					<div class="p-t-7 p-r-100 p-r-15-lg p-r-0-md">
 						<h3 class="mtext-111 cl2 p-b-16">
-							Our Story
+							<strong> Hành Trình Chúng Tôi</strong>
 						</h3>
 
-						<p class="stext-113 cl6 p-b-26">
+						<p class="stext-113 cl6 p-b-26 text-align: justify">
 							The 5ive là điểm đến lý tưởng dành cho những ai yêu thích phong cách thời trang hiện đại, tinh tế và luôn bắt kịp xu hướng. Tại đây, bạn sẽ dễ dàng khám phá bộ sưu tập đa dạng từ quần áo, giày dép, túi xách cho đến phụ kiện thời trang – tất cả đều được chọn lọc kỹ lưỡng nhằm tôn lên cá tính và gu thẩm mỹ riêng biệt của từng khách hàng.
 
 Giao diện của The 5ive được thiết kế hiện đại, thân thiện với người dùng, giúp việc mua sắm trực tuyến trở nên đơn giản và thú vị. Mỗi sản phẩm đều được mô tả chi tiết với hình ảnh rõ nét, thông tin chất liệu, size, màu sắc và gợi ý phối đồ độc đáo. Bạn có thể dễ dàng lọc theo danh mục, mức giá, màu sắc hay kích cỡ để nhanh chóng tìm ra item ưng ý.
-
-The 5ive luôn cập nhật các xu hướng thời trang mới nhất theo mùa, mang đến cho bạn những lựa chọn hợp thời và phong cách. Với nhiều phương thức thanh toán linh hoạt và chính sách đổi trả rõ ràng, khách hàng có thể hoàn toàn yên tâm khi mua sắm. Đội ngũ hỗ trợ luôn sẵn sàng tư vấn, đảm bảo bạn có trải nghiệm tuyệt vời nhất khi đồng hành cùng The 5ive – nơi thời trang là tuyên ngôn của chính bạn.
 						</p>
 
 					
@@ -420,29 +416,21 @@ The 5ive luôn cập nhật các xu hướng thời trang mới nhất theo mùa
 				<div class="order-md-2 col-md-7 col-lg-8 p-b-30">
 					<div class="p-t-7 p-l-85 p-l-15-lg p-l-0-md">
 						<h3 class="mtext-111 cl2 p-b-16">
-							Our Mission
+							<strong>Sứ Mệnh Của Chúng Tôi</strong>
 						</h3>
 
-						<p class="stext-113 cl6 p-b-26">
-							Tại The 5ive, chúng tôi không đơn thuần cung cấp quần áo – chúng tôi mang đến một lối sống, một tuyên ngôn phong cách dành cho những ai dám khác biệt và luôn muốn làm mới bản thân mỗi ngày. Sứ mệnh của chúng tôi là tạo ra một không gian thời trang hiện đại, nơi mọi khách hàng đều có thể tìm thấy bản thể riêng thông qua từng thiết kế.
+						<p class="stext-113 cl6 p-b-26 text-align: justify">
+							The 5ive không chỉ là nơi bạn mua sắm quần áo - mà là nơi bạn khám phá và thể hiện bản sắc riêng qua từng thiết kế.
+Chúng tôi mang đến những lựa chọn thời trang hiện đại, tinh tế và đa dạng, được tuyển chọn kỹ lưỡng để phù hợp với nhiều phong cách - từ tối giản thanh lịch, năng động cá tính đến bắt trend thời thượng.
 
-Chúng tôi tin rằng thời trang là công cụ mạnh mẽ để thể hiện cá tính. Dù bạn yêu thích sự tối giản, theo đuổi phong cách đường phố cá tính, hay là một người trẻ luôn nắm bắt xu hướng mới – The 5ive đều sẵn sàng đồng hành cùng bạn. Mỗi sản phẩm tại đây đều được tuyển chọn kỹ lưỡng về chất liệu, thiết kế và tính ứng dụng, nhằm mang đến trải nghiệm mặc tốt nhất – không chỉ đẹp mà còn thoải mái và tự tin.
+Bên cạnh chất lượng sản phẩm, chúng tôi chú trọng vào trải nghiệm mua sắm trực tuyến: giao diện thân thiện, bộ lọc thông minh, hình ảnh rõ nét và dịch vụ hỗ trợ tận tâm – tất cả đều hướng đến sự tiện lợi, thoải mái và truyền cảm hứng cho người dùng.
 
-Không chỉ dừng lại ở sản phẩm, chúng tôi chú trọng vào hành trình mua sắm của bạn. Giao diện trực quan, bộ lọc thông minh, hình ảnh chất lượng cao, cùng dịch vụ hỗ trợ khách hàng nhiệt tình – tất cả đều được xây dựng để giúp bạn có trải nghiệm mua sắm trực tuyến trọn vẹn và dễ dàng nhất.
-
-The 5ive không chỉ là nơi mua sắm – mà là nơi bạn tìm thấy phiên bản thời trang tốt nhất của chính mình.
-
-
+Với The 5ive, thời trang không chỉ là vẻ ngoài, mà là cách bạn kể câu chuyện của chính mình - một cách tự tin và khác biệt.
 </p>
 
 						<div class="bor16 p-l-29 p-b-9 m-t-22">
-							<!-- <p class="stext-114 cl6 p-r-40 p-b-11">
-								Nhất định tui sẽ được A môn java web
-							</p>
+							<em>"Define Your Style - Live The 5ive."</em>
 
-							<span class="stext-111 cl8">
-								- Nguyễn Ngọc Tuấn -
-							</span> -->
 						</div>
 					</div>
 				</div>
@@ -464,99 +452,66 @@ The 5ive không chỉ là nơi mua sắm – mà là nơi bạn tìm thấy phi�
 		<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Danh mục
-					</h4>
+	<div class="row">
+    <!-- LIÊN HỆ VỚI CHÚNG TÔI -->
+    <div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>The 5ive</strong></h4>
+        <p class="stext-107 cl7 size-201">
+          The 5ive là thương hiệu thời trang hiện đại, kết hợp sự tối giản và cá tính, đề cao tự do thể hiện bản thân. Với chúng tôi, thời trang là tuyên ngôn cá nhân.
+        </p><p class="stext-107 cl7 size-201 p-t-10">
+        <em>"Define Your Style – Live The 5ive."</em>
+    </p>
+        
+    </div>
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Nữ
-							</a>
-						</li>
+<!-- HỖ TRỢ KHÁCH HÀNG -->
+<div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>Hỗ trợ khách hàng</strong></h4>
+    <p class="stext-107 cl7 size-201">
+        <strong>Tổng đài chăm sóc khách hàng:</strong>
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Thời trang/Nhận hàng:</strong> 1800 6789
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Đổi trả/Bảo hành:</strong> 1800 1234
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Email CSKH:</strong> support@the5ive.vn
+    </p>
+</div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Nam
-							</a>
-						</li>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Giày
-							</a>
-						</li>
+    <!-- THEO DÕI CHÚNG TÔI -->
+    <div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>Theo dõi chúng tôi</strong></h4>
+         <div class="auth-external-list">
+        <div class="row social-icons-custom">
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-pinterest-p"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-twitter"></i> <!-- Icon thêm nếu muốn đủ 4 -->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Đồng hồ
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Trợ giúp
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Theo dõi đơn
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Hoàn trả 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Giao hàng
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-			<!-- Lien He -->
-				<div class="col-sm-6 col-lg-3 p-b-50">
-   					<h4 class="stext-301 cl0 p-b-30"><strong>Liên hệ với chúng tôi</strong></h4>
-       					<p class="stext-107 cl7 size-201">
-            				Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại <strong>97 Man Thiện, Hiệp Phú, Quận 9, TP Hồ Chí Minh.</strong>
-        				</p>
-        				<p class="stext-107 cl7 size-201">
-            				Hoặc liên hệ đến số điện thoại: <strong>0987309485</strong>
-        				</p>
-    			</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Đăng ký nhận thông báo
-					</h4>
-
-					<form>
-						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-							<div class="focus-input1 trans-04"></div>
-						</div>
-
-						<div class="p-t-18">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Đăng kí
-							</button>
-						</div>
-					</form>
-				</div>
+    </div>
 			</div>
 
 			<div class="p-t-40">

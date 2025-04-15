@@ -124,10 +124,6 @@
 							</li>
 
 							<li>
-								<a href="blog.html">Blog</a>
-							</li>
-
-							<li>
 								<a href="about.jsp">Giới thiệu</a>
 							</li>
 
@@ -292,11 +288,7 @@
 				<li>
 					<a href="Giohang" class="label1 rs1" data-label1="hot">Giỏ hàng</a>
 				</li>
-
-				<li>
-					<a href="blog.jsp">Blog</a>
-				</li>
-
+				
 				<li>
 					<a href="about.jsp">Giới thiệu</a>
 				</li>
@@ -522,7 +514,7 @@
 								</a>
 
 								<span class="stext-105 cl3">
-									<%=sp.getGia() %>
+									<%=sp.getGia() %>đ
 								</span>
 							</div>
 
@@ -554,99 +546,65 @@
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Danh mục
-					</h4>
+    <!-- LIÊN HỆ VỚI CHÚNG TÔI -->
+    <div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>The 5ive</strong></h4>
+        <p class="stext-107 cl7 size-201">
+          The 5ive là thương hiệu thời trang hiện đại, kết hợp sự tối giản và cá tính, đề cao tự do thể hiện bản thân. Với chúng tôi, thời trang là tuyên ngôn cá nhân.
+        </p><p class="stext-107 cl7 size-201 p-t-10">
+        <em>"Define Your Style – Live The 5ive."</em>
+    </p>
+        
+    </div>
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Nữ
-							</a>
-						</li>
+<!-- HỖ TRỢ KHÁCH HÀNG -->
+<div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>Hỗ trợ khách hàng</strong></h4>
+    <p class="stext-107 cl7 size-201">
+        <strong>Tổng đài chăm sóc khách hàng:</strong>
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Thời trang/Nhận hàng:</strong> 1800 6789
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Đổi trả/Bảo hành:</strong> 1800 1234
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Email CSKH:</strong> support@the5ive.vn
+    </p>
+</div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Nam
-							</a>
-						</li>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Giày
-							</a>
-						</li>
+    <!-- THEO DÕI CHÚNG TÔI -->
+    <div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>Theo dõi chúng tôi</strong></h4>
+         <div class="auth-external-list">
+        <div class="row social-icons-custom">
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-pinterest-p"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-twitter"></i> <!-- Icon thêm nếu muốn đủ 4 -->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Đồng hồ
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Trợ giúp
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Theo dõi đơn
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Hoàn trả 
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Giao hàng
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<!-- Lien He -->
-				<div class="col-sm-6 col-lg-3 p-b-50">
-   					<h4 class="stext-301 cl0 p-b-30"><strong>Liên hệ với chúng tôi</strong></h4>
-       					<p class="stext-107 cl7 size-201">
-            				Có bất kì câu hỏi nào? Hãy đến cửa hàng chúng tôi tại <strong>97 Man Thiện, Hiệp Phú, Quận 9, TP Hồ Chí Minh.</strong>
-        				</p>
-        				<p class="stext-107 cl7 size-201">
-            				Hoặc liên hệ đến số điện thoại: <strong>0987309485</strong>
-        				</p>
-    			</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Đăng ký nhận thông báo
-					</h4>
-
-					<form>
-						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-							<div class="focus-input1 trans-04"></div>
-						</div>
-
-						<div class="p-t-18">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Đăng kí
-							</button>
-						</div>
-					</form>
-				</div>
+    </div>
 			</div>
 
 			<div class="p-t-40">
