@@ -218,11 +218,10 @@ section.bg0 {
 
 
 						<div class="icon-header-dropdown">
-							<a href="#"
-								class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-								<i class="fa fa-user"></i>
+							<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" onclick="toggleDropdown(event)">
+							    <i class="fa fa-user"></i>
 							</a>
-
+							
 							<!-- Thẻ con chứa thông tin cá nhân và đơn hàng -->
 							<div class="dropdown-menu">
 								<ul>
@@ -809,19 +808,13 @@ section.bg0 {
 </div>
 
 
-			<div class="flex-c-m flex-w w-full p-t-45" id="loadMoreBtn">
-			  <!-- Load more -->
- 			<div class="flex-c-m flex-w w-full p-t-45">
+			<div class="flex-c-m flex-w w-full p-t-45">
  				<a href="#"
  					class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
  					Xem thêm 
  				</a>
 			</div>
 			
-			
-			
-
-
 		</div>
 	</section>
 
@@ -1044,29 +1037,57 @@ section.bg0 {
 	</script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+		<script>
+	  // Mở modal khi click icon tìm kiếm
+	  document.querySelectorAll('.js-show-modal-search').forEach(btn => {
+	    btn.addEventListener('click', () => {
+	      document.querySelector('.modal-search-header').classList.add('show-modal-search');
+	    });
+	  });
+	
+	  // Đóng modal khi click nút ×
+	  document.querySelectorAll('.js-hide-modal-search').forEach(btn => {
+	    btn.addEventListener('click', () => {
+	      document.querySelector('.modal-search-header').classList.remove('show-modal-search');
+	    });
+	  });
+	
+	  // Đóng modal khi click ra ngoài vùng trắng
+	  document.querySelector('.modal-search-header').addEventListener('click', function (e) {
+	    if (e.target === this) {
+	      this.classList.remove('show-modal-search');
+	    }
+	  });
+	</script>
+	
+	
 	<script>
-  // Mở modal khi click icon tìm kiếm
-  document.querySelectorAll('.js-show-modal-search').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelector('.modal-search-header').classList.add('show-modal-search');
-    });
-  });
+	// điều hướng icon hợp lý
+	// Hàm để mở và đóng dropdown
+	function toggleDropdown(event) {
+	    event.preventDefault();  // Ngừng hành động mặc định của <a> (tránh điều hướng)
+	
+	    // Lấy thẻ dropdown
+	    const dropdownMenu = document.querySelector('.dropdown-menu');
+	    
+	    // Chuyển đổi việc hiển thị menu dropdown (hiển thị/ẩn)
+	    dropdownMenu.classList.toggle('show');  // Tạo class 'show' để hiển thị dropdown
+	}
+	
+	// Hàm để đóng dropdown khi click ra ngoài
+	function closeDropdown(event) {
+	    const dropdownMenu = document.querySelector('.dropdown-menu');
+	    
+	    // Kiểm tra nếu click ra ngoài dropdown (và không click vào icon user)
+	    if (!dropdownMenu.contains(event.target) && !event.target.closest('.icon-header-item')) {
+	        dropdownMenu.classList.remove('show');  // Ẩn dropdown
+	    }
+	}
+	
+	// Lắng nghe sự kiện click toàn trang
+	document.addEventListener('click', closeDropdown);
 
-  // Đóng modal khi click nút ×
-  document.querySelectorAll('.js-hide-modal-search').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelector('.modal-search-header').classList.remove('show-modal-search');
-    });
-  });
-
-  // Đóng modal khi click ra ngoài vùng trắng
-  document.querySelector('.modal-search-header').addEventListener('click', function (e) {
-    if (e.target === this) {
-      this.classList.remove('show-modal-search');
-    }
-  });
-</script>
-
+    </script>
 	
 </body>
 

@@ -226,8 +226,6 @@
         <h1>Xác Nhận Đơn Hàng</h1>
         <form action="Xacnhandathang" method="post"> 
             <div class="order-details">
-                <h2>Thông Tin Đơn Hàng</h2>
-
                 <!-- Thông tin khách hàng -->
                 <div class="customer-info">
                     <h3>Thông Tin Khách Hàng</h3>
@@ -277,7 +275,7 @@
                                 <p><strong>Kích cỡ:</strong> <%=kichThuoc%></p>
                                 <p><strong>Màu sắc:</strong> <%=mauSac%></p>
                                 <p><strong>Số lượng:</strong> <%=soLuong%></p>
-                                <p><strong>Giá sảm phẩm:</strong> $<%=String.format("%.2f", sanPham.getGia())%></p>
+                                <p><strong>Giá sản phẩm:</strong> $<%=String.format("%.2f", sanPham.getGia())%></p>
                                 <p><strong>Tổng giá:</strong> $<%=String.format("%.2f", sanPham.getGia() * soLuong)%></p>
                                 <input type="hidden" name="giaSanPham" value="<%=sanPham.getGia()%>">
                                 <input type="hidden" name="tongGia" value="<%=sanPham.getGia() * soLuong%>">

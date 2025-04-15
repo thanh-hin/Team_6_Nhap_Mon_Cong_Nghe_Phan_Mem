@@ -244,6 +244,12 @@
 				<!-- Vertical Form -->
 
             </div>
+            
+            <!-- Thanh tìm kiếm -->
+<div class="search-container" style="padding: 20px;">
+    <input type="text" id="search-input" class="form-control" placeholder="Tìm kiếm danh mục..." />
+</div>
+
           </div>
               <!-- Table with stripped rows -->
               <table class="table datatable">
@@ -309,31 +315,30 @@
     alert("Lỗi sửa sản phẩm");
     </script>
     <%} %>
-<div class="card editForm hide" id="editF">
-    <div class="card-body row">
-        <h5 class="card-title">Sửa danh mục</h5>
-
-        <!-- Vertical Form -->
-        <form action="UpdateDanhMuc" method="post" id="form-sua-danh-muc">
-            <input type="hidden" id="product-id" name="product-id" readonly>
-            
-            <div class="col-12">
-                <label for="inputName" class="form-label">Tên danh mục mới</label>
-                <input type="text" class="form-control" id="inputUpdate" name="updateDanhMuc">
-            </div>
-
-            <!-- Error Message Box -->
-            <div id="edit-error-msg" class="text-danger"></div> <!-- This will show error messages -->
-
-            <div class="text-center">
-                <button type="submit" class="btn btn-primary">Sửa</button>
-                <button type="button" class="btn btn-secondary" id="cancelBtn">Hủy</button>
-            </div>
-        </form>
-        <!-- End Vertical Form -->
-    </div>
-</div>
-
+	<div class="card editForm hide" id="editF">
+	    <div class="card-body row">
+	        <h5 class="card-title">Sửa danh mục</h5>
+	
+	        <!-- Vertical Form -->
+	        <form action="UpdateDanhMuc" method="post" id="form-sua-danh-muc">
+	            <input type="hidden" id="product-id" name="product-id" readonly>
+	            
+	            <div class="col-12">
+	                <label for="inputName" class="form-label">Tên danh mục mới</label>
+	                <input type="text" class="form-control" id="inputUpdate" name="updateDanhMuc">
+	            </div>
+	
+	            <!-- Error Message Box -->
+	            <div id="edit-error-msg" class="text-danger"></div> <!-- This will show error messages -->
+	
+	            <div class="text-center">
+	                <button type="submit" class="btn btn-primary">Sửa</button>
+	                <button type="button" class="btn btn-secondary" id="cancelBtn">Hủy</button>
+	            </div>
+	        </form>
+	        <!-- End Vertical Form -->
+	    </div>
+	</div>
 	
 	<div class="card detailForm hide" id="detailF">
 		<div class="card-body row "  >
@@ -386,6 +391,7 @@
               </form><!-- Vertical Form -->
 		</div>
     </div>
+    
 	</div>
   </main><!-- End #main -->
 <div id="smoke" class="smoke hide"></div>
@@ -611,7 +617,32 @@ function editForm(button) {
 
 	});
 	</script>
-
+	
+	<script>
+	document.getElementById('search-input').addEventListener('input', function() {
+	    const filter = this.value.toLowerCase(); // Lấy giá trị tìm kiếm và chuyển sang chữ thường
+	    const rows = document.querySelectorAll('table tbody tr'); // Chọn tất cả các dòng trong bảng
+	
+	    rows.forEach(row => {
+	        const columns = row.querySelectorAll('td');
+	        let matchFound = false;
+	
+	        columns.forEach(column => {
+	            // Kiểm tra xem một trong các cột có chứa chuỗi tìm kiếm không
+	            if (column.textContent.toLowerCase().includes(filter)) {
+	                matchFound = true;
+	            }
+	        });
+	
+	        // Ẩn hoặc hiển thị dòng tùy vào kết quả tìm kiếm
+	        if (matchFound) {
+	            row.style.display = '';
+	        } else {
+	            row.style.display = 'none';
+	        }
+	    });
+	});
+	</script>
 </body>
 
 </html>
