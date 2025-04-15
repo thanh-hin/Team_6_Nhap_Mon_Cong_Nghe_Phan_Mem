@@ -411,98 +411,72 @@ if (user != null) {
 
 
 	<!-- Content page -->
-	<section class="bg0 p-t-104 p-b-116">
-		<div class="container">
-			<div class="flex-w flex-tr">
-				<div class="size-210 bor10 p-lr-70 p-t-55 p-b-70 p-lr-15-lg w-full-md">
-					<form action="Emailweb" method="post">
-						<h4 class="mtext-105 cl2 txt-center p-b-30">
-							Để lại tin nhắn cho chúng tôi
-						</h4>
+<section class="bg0 p-t-104 p-b-116">
+  <div class="container">
+    <div class="row justify-content-center gy-5">
+      <!-- Form bên trái -->
+      <div class="col-lg-6 col-md-10 me-0">
+        <div class="p-4 border rounded shadow-sm bg-white h-100">
+          <form action="Emailweb" method="post">
+            <h4 class="mtext-105 cl2 txt-center p-b-30 fw-bold">
+              Để lại tin nhắn cho chúng tôi
+            </h4>
 
-						<div class="bor8 m-b-20 how-pos4-parent">
-							<input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30" type="text" name="email" placeholder="Địa chỉ email" value="nguyenvana@gmail.com">
-							<img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
-						</div>
+            <div class="bor8 m-b-20 how-pos4-parent">
+              <input class="stext-111 cl2 plh3 size-116 p-l-62 p-r-30 fw-bold" 
+                     type="text" name="email"
+                     placeholder="Địa chỉ email" value="nguyenvana@gmail.com">
+              <img class="how-pos4 pointer-none" src="images/icons/icon-email.png" alt="ICON">
+            </div>
 
-						<div class="bor8 m-b-30">
-							<textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25" name="msg" placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
-						</div>
+            <div class="bor8 m-b-30">
+              <textarea class="stext-111 cl2 plh3 size-120 p-lr-28 p-tb-25 fw-bold" 
+                        name="msg" placeholder="Chúng tôi có thể giúp gì cho bạn?"></textarea>
+            </div>
 
-						<button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
-							Gửi
-						</button>
-					</form>
-				</div>
-				<%
-				
-				String guiMailThanhCong = (String) request.getAttribute("guimailthanhcong");
-				String guiMailThatBai = (String) request.getAttribute("guimailthatbai");
-				if(guiMailThanhCong != null){
-				%>
-				<script>
-				alert("Gửi mail thành công roài hehe");
-				</script>
-				
-				<%} if(guiMailThatBai != null){%>
-				<script>
-				alert("Gửi mail thất bạn cho tún roài huhu");
-				</script>
-				
-				<%} %>
-				<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-					<div class="flex-w w-full p-b-42">
-						<span class="fs-18 cl5 txt-center size-211">
-							<span class="lnr lnr-map-marker"></span>
-						</span>
+            <button class="flex-c-m stext-101 cl0 size-121 bg3 bor1 hov-btn3 p-lr-15 trans-04 pointer">
+              Gửi
+            </button>
+          </form>
+        </div>
+      </div>
 
-						<div class="size-212 p-t-2">
-							<span class="mtext-110 cl2">
-								Địa chỉ
-							</span>
-
-							<p class="stext-115 cl6 size-213 p-t-18">
-								379 Hudson Street, Floor 8, New York, NY 10014, USA
-							</p>
-						</div>
-					</div>
-
-					<div class="flex-w w-full p-b-42">
-						<span class="fs-18 cl5 txt-center size-211">
-							<span class="lnr lnr-phone-handset"></span>
-						</span>
-
-						<div class="size-212 p-t-2">
-							<span class="mtext-110 cl2">
-								Số điện thoại
-							</span>
-
-							<p class="stext-115 cl1 size-213 p-t-18">
-								18008098
-							</p>
-						</div>
-					</div>
-
-					<div class="flex-w w-full">
-						<span class="fs-18 cl5 txt-center size-211">
-							<span class="lnr lnr-envelope"></span>
-						</span>
-
-						<div class="size-212 p-t-2">
-							<span class="mtext-110 cl2">
-								Thư điện tử
-							</span>
-
-							<p class="stext-115 cl1 size-213 p-t-18">
-								dotanhung0505@gmail.com
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
+     <!-- Thông tin bên phải -->
+		<div class="col-lg-5 col-md-10 ms-0">
+		  <div class="p-4 py-5 border rounded shadow-sm bg-white h-100 d-flex align-items-center">
+		    <div class="w-100">
+		      <div class="contact-item d-flex align-items-start gap-3 mb-4">
+		        <span class="contact-item-icon"><i class="lnr lnr-map-marker"></i></span>
+		        <div>
+		          <span class="mtext-110 cl2">Địa chỉ</span>
+		          <p class="stext-115 cl6 p-t-10">379 Hudson Street, Floor 8, New York, NY 10014, USA</p>
+		        </div>
+		      </div>
+		
+		      <div class="contact-item d-flex align-items-start gap-3 mb-4">
+		        <span class="contact-item-icon"><i class="lnr lnr-phone-handset"></i></span>
+		        <div>
+		          <span class="mtext-110 cl2">Số điện thoại</span>
+		          <p class="stext-115 cl1 p-t-10">18008098</p>
+		        </div>
+		      </div>
+		
+		      <div class="contact-item d-flex align-items-start gap-3">
+		        <span class="contact-item-icon"><i class="lnr lnr-envelope"></i></span>
+		        <div>
+		          <span class="mtext-110 cl2">Thư điện tử</span>
+		          <p class="stext-115 cl1 p-t-10">dotanhung0505@gmail.com</p>
+		        </div>
+		      </div>
+		    </div>
+		  </div>
 		</div>
-	</section>	
-	
+
+    </div>
+  </div>
+</section>
+
+
 	
 	<!-- Map -->
 	<!-- <div class="map">

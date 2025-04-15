@@ -421,7 +421,7 @@
 							<i class="zmdi zmdi-search"></i>
 						</button>
 						
-						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="timKiem" placeholder="Search">
+						<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text" name="timKiem" placeholder="Tìm kiếm">
 					</div>	
 				
 				</form>
@@ -511,7 +511,7 @@
 
 							<a href="Giohangproducttail?id=<%=sp.getMaSanpham() %>"
 								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
-								Xem nhanh
+								Xem sản phẩm
 							</a>
 						</div>
 
