@@ -5,6 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import configg.ConnectionSql;
@@ -485,7 +486,7 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
 			// Câu truy vấn SQL
-			String query = "SELECT * FROM sanpham ORDER BY RAND()  LIMIT 8";
+			String query = "SELECT * FROM sanpham";
 
 			// Chuẩn bị câu lệnh SQL
 			ps = conn.prepareStatement(query);
@@ -1701,6 +1702,8 @@ public class LaydulieuReponsitory implements Thaotac {
 
 	    return trung;
 	}
+	
+	
 
 
 }
