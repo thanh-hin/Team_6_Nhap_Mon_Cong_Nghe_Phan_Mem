@@ -812,12 +812,7 @@ section.bg0 {
 <% } %>
 </div>
 
-
 			
-
-			
-
-
 		</div>
 	</section>
 
