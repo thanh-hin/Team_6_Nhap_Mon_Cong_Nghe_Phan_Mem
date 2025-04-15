@@ -2745,7 +2745,7 @@ input.num-product::-webkit-inner-spin-button {
   position: absolute;
 
   /* 🔻 Hạ thấp nhẹ xuống so với vị trí cũ */
-  top: 20px; /* từ 3px → 7px để thấp hơn một chút */
+  top: 10px; /* từ 3px → 7px để thấp hơn một chút */
   right: -9px;
 
   height: 15px;
