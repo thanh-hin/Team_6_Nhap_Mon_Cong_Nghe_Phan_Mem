@@ -808,26 +808,13 @@ section.bg0 {
 </div>
 
 
-			<div class="flex-c-m flex-w w-full p-t-45" id="loadMoreBtn">
-			  <button onclick="showMoreProducts()" class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
-			    Xem thêm
-			  </button>
+			<div class="flex-c-m flex-w w-full p-t-45">
+ 				<a href="#"
+ 					class="flex-c-m stext-101 cl5 size-103 bg2 bor1 hov-btn1 p-lr-15 trans-04">
+ 					Xem thêm 
+ 				</a>
 			</div>
 			
-			<script>
-			  function showMoreProducts() {
-			    const more = document.getElementById('more-products');
-			    if (more) {
-			      more.style.display = 'flex';
-			      more.scrollIntoView({ behavior: 'smooth' });
-			      document.getElementById('loadMoreBtn').style.display = 'none';
-			    }
-			  }
-			</script>
-
-			
-
-
 		</div>
 	</section>
 
