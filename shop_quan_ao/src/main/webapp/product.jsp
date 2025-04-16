@@ -716,15 +716,32 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 			e.preventDefault();
 		});
 
-		$('.js-addwish-b2').each(function(){
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function(){
-				swal(nameProduct, "is added to wishlist !", "success");
+		$('.js-addwish-b2').each(function () {
+		    var nameProduct = $(this).closest('.block2').find('.js-name-b2').html();
+		    var btn = $(this);
 
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
+		    btn.on('click', function (e) {
+		        e.preventDefault();
+
+		        if (!isUser) {
+		            swal({
+		                title: "Bạn chưa đăng nhập",
+		                text: "Vui lòng đăng nhập để thêm vào danh sách yêu thích.",
+		                icon: "warning",
+		                button: "OK"
+		            }).then(() => {
+		                window.location.href = "login.jsp"; // hoặc servlet "Dangnhap"
+		            });
+		            return;
+		        }
+
+		        swal(nameProduct, "Đã thêm vào danh sách yêu thích!", "success");
+
+		        btn.addClass('js-addedwish-b2');
+		        btn.off('click');
+		    });
 		});
+
 
 		$('.js-addwish-detail').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
@@ -794,6 +811,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	document.addEventListener('click', closeDropdown);
 
     </script>
+    
+    <script>
+    	const isUser = <%= user != null && user.get(0).getMaQuyen() == 3 %>; // true nếu người dùng là khách
+	</script>
+    
     
 </body>
 </html>

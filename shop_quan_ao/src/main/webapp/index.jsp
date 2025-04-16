@@ -193,23 +193,30 @@ section.bg0 {
 						</div>
 
 						<div
-							<%Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
+							<%
+								Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
 								List<GioHang> gh = lgn.LayHetThongTinGioHang();
 								HttpSession tk = request.getSession(false);
 								List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
 								int soluong = 0;
 								float tongTien = 0;
+								boolean isUser = false; // Biến kiểm tra quyền người dùng
+								
 								if (user != null) {
 									for (GioHang gioHang : gh) {
-										for (User u : user)
+										for (User u : user) {
 											if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
 												soluong += gioHang.getSoLuong();
 												tongTien += gioHang.getGia();
-												
 											}
+										}
 									}
-								
-							}%>
+									// Kiểm tra quyền của người dùng đầu tiên trong session
+									if (user.get(0).getMaQuyen() == 3) {
+										isUser = true;
+									}
+								}
+							%>
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=soluong%>">
 							<i class="zmdi zmdi-shopping-cart"></i>
@@ -980,17 +987,34 @@ section.bg0 {
 			e.preventDefault();
 		});
 
-		$('.js-addwish-b2').each(
-				function() {
-					var nameProduct = $(this).parent().parent().find(
-							'.js-name-b2').html();
-					$(this).on('click', function() {
-						swal(nameProduct, "is added to wishlist !", "success");
+		$('.js-addwish-b2').each(function () {
+		    var nameProduct = $(this).closest('.block2').find('.js-name-b2').html();
+		    var btn = $(this);
 
-						$(this).addClass('js-addedwish-b2');
-						$(this).off('click');
-					});
-				});
+		    btn.on('click', function (e) {
+		        e.preventDefault();
+
+		        if (!isUser) {
+		            swal({
+		                title: "Bạn chưa đăng nhập",
+		                text: "Vui lòng đăng nhập để thêm sản phẩm vào yêu thích.",
+		                icon: "warning",
+		                button: "OK" // ✅ chỉ hiện nút OK, không có Cancel
+		            }).then(() => {
+		                window.location.href = "login.jsp"; // ✅ chuyển hướng sau khi bấm OK
+		            });
+		            return;
+		        }
+
+		        swal(nameProduct, "Đã thêm vào danh sách yêu thích!", "success");
+
+		        btn.addClass('js-addedwish-b2');
+		        btn.off('click');
+		    });
+		});
+
+
+
 
 		$('.js-addwish-detail').each(
 				function() {
@@ -1086,6 +1110,13 @@ section.bg0 {
 	document.addEventListener('click', closeDropdown);
 
     </script>
+    
+    <script>
+		const isUser = <%= isUser %>; // truyền biến từ JSP sang JS
+	</script>
+    
+    
+    
 	
 </body>
 
