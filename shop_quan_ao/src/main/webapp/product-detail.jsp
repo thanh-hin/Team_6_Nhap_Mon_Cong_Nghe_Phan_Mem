@@ -209,20 +209,20 @@
 
 						<div
 							<%Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
-List<GioHang> gh = lgn.LayHetThongTinGioHang();
-HttpSession tk = request.getSession(false);
-List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
-int soluong = 0;
-float tongTien = 0;
-if (user != null) {
-	for (GioHang gioHang : gh) {
-		for (User u : user)
-			if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
-				soluong += gioHang.getSoLuong();
-				tongTien += gioHang.getGia();
-			}
-	}
-}%>
+							List<GioHang> gh = lgn.LayHetThongTinGioHang();
+							HttpSession tk = request.getSession(false);
+							List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
+							int soluong = 0;
+							float tongTien = 0;
+							if (user != null) {
+								for (GioHang gioHang : gh) {
+									for (User u : user)
+										if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
+											soluong += gioHang.getSoLuong();
+											tongTien += gioHang.getGia();
+										}
+								}
+							}%>
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=soluong%>">
 							<i class="zmdi zmdi-shopping-cart"></i>
@@ -427,7 +427,7 @@ if (user != null) {
 					session.removeAttribute("loiTonTai"); // Xóa sau khi hiển thị
 				%>
 				<script>
-					alert("Lỗi hết hàng");
+					swal("Sản phẩm đã hết hàng", "Xin lỗi, sản phẩm này hiện không còn trong kho.");
 					
 				</script>
 				<%
@@ -1134,5 +1134,48 @@ if (user != null) {
  	document.addEventListener('click', closeDropdown);
  
      </script>
+     
+     <script>
+		document.addEventListener("DOMContentLoaded", function () {
+		    const form = document.querySelector('form[action="Giohangsanpham"]');
+		
+		    const btnGioHang = document.querySelector('button[name="gioHang"]');
+		    const btnDatHang = document.querySelector('button[name="datHang"]');
+		
+		    // Xử lý khi form submit (bằng bất kỳ nút nào)
+		    form.addEventListener("submit", function (e) {
+		        const kichThuoc = document.querySelector('select[name="kichThuoc"]').value.trim();
+		        const mauSac = document.querySelector('select[name="mauSac"]').value.trim();
+		
+		        if (kichThuoc === "Chọn kích cỡ" || mauSac === "Chọn màu sắc") {
+		            e.preventDefault(); // Ngăn không gửi form
+		
+		            // Hiển thị hộp thoại cảnh báo thay cho alert
+		            swal("Thiếu thông tin!", "Vui lòng chọn kích thước và màu sắc.", "warning");
+		
+		            // Đánh dấu đỏ dropdown chưa chọn
+		            if (kichThuoc === "Chọn kích cỡ") {
+		                document.querySelector('select[name="kichThuoc"]').style.border = "2px solid red";
+		            }
+		            if (mauSac === "Chọn màu sắc") {
+		                document.querySelector('select[name="mauSac"]').style.border = "2px solid red";
+		            }
+		        }
+		    });
+		
+		    // Reset viền đỏ khi người dùng thay đổi lựa chọn
+		    document.querySelector('select[name="kichThuoc"]').addEventListener("change", function () {
+		        this.style.border = "";
+		    });
+		
+		    document.querySelector('select[name="mauSac"]').addEventListener("change", function () {
+		        this.style.border = "";
+		    });
+		});
+		</script>
+
+     
+     
+     
 </body>
 </html>
