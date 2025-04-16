@@ -113,10 +113,11 @@
 	<header id="header" class="header fixed-top d-flex align-items-center">
 
 		<div class="d-flex align-items-center justify-content-between">
-			<a href="index.html" class="logo d-flex align-items-center"> <img
-				src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
-				class="d-none d-lg-block">Admin</span>
-			</a> <i class="bi bi-list toggle-sidebar-btn"></i>
+			<a href="<%=projectName%>/Bieudodoanhthu" class="logo d-flex align-items-center">
+				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="">
+				<span class="d-none d-lg-block">Admin</span>
+			</a>
+
 		</div>
 		<!-- End Logo -->
 

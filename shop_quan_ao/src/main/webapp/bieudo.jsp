@@ -122,13 +122,13 @@
 	<!-- ======= Header ======= -->
 	<header id="header" class="header fixed-top d-flex align-items-center">
 
-		<div class="d-flex align-items-center justify-content-between">
-			<div class="logo d-flex align-items-center">
-				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
-					class="d-none d-lg-block">Admin</span>
-			</div>
-			<i class="bi bi-list toggle-sidebar-btn"></i>
+		<div class="logo d-flex align-items-center">
+			<a href="<%=projectName%>/Bieudodoanhthu" class="d-flex align-items-center">
+				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="">
+				<span class="d-none d-lg-block">Admin</span>
+			</a>
 		</div>
+
 		<!-- End Logo -->
 
 
