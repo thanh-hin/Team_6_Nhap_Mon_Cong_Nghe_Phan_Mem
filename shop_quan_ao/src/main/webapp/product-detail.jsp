@@ -416,30 +416,37 @@
 		<div class="container">
 			<div class="row">
 				<%
-				int id = (int) request.getAttribute("idSanPham");
-				List<SanPham> listSP = (List<SanPham>) request.getAttribute("listSanPham");
-				List<ChiTietSanPham> listCTSP = (List<ChiTietSanPham>) request.getAttribute("listChiTietSanPham");
-				HttpSession s = request.getSession(false);
-				String loi = (String) s.getAttribute("loiTonTai");
-				System.out.println("Giá trị loiTonTai: " + s.getAttribute("loiTonTai"));
-				String loiDanhGia = (String) s.getAttribute("Loidanhgia");
-				if (loi != null && !loi.isEmpty()) {
-					session.removeAttribute("loiTonTai"); // Xóa sau khi hiển thị
-				%>
+	int id = (int) request.getAttribute("idSanPham");
+	List<SanPham> listSP = (List<SanPham>) request.getAttribute("listSanPham");
+	List<ChiTietSanPham> listCTSP = (List<ChiTietSanPham>) request.getAttribute("listChiTietSanPham");
+	HttpSession s = request.getSession(false);
+	String loi = (String) s.getAttribute("loiTonTai");
+	System.out.println("Giá trị loiTonTai: " + s.getAttribute("loiTonTai"));
+	String loiDanhGia = (String) s.getAttribute("Loidanhgia");
+	if (loi != null && !loi.isEmpty()) {
+		session.removeAttribute("loiTonTai");
+			%>
 				<script>
-					alert("Lỗi hết hàng");
-					
+					setTimeout(function() {
+					    swal("Sản phẩm đã hết hàng", "Xin lỗi, sản phẩm hiện không còn trong kho.", "error");
+					}, 300);
 				</script>
+
 				<%
-				}
-				%>
-				<%if(loiDanhGia != null && !loiDanhGia.isEmpty()){ 
-					s.removeAttribute("Loidanhgia");
+					}
+					if(loiDanhGia != null && !loiDanhGia.isEmpty()){ 
+						s.removeAttribute("Loidanhgia");
 				%>
 				<script>
-					alert("Bạn chỉ được phép đánh giá khi mua sản phẩm của chúng tôi.");
+					setTimeout(function () {
+						swal("Không thể đánh giá", "Bạn chỉ được phép đánh giá khi đã mua sản phẩm.", "warning");
+					}, 300); // hoặc tăng lên 500 nếu cần delay hơn nữa
 				</script>
-				<%} %>
+
+				<%
+					}
+%>
+
 				<div class="col-md-6 col-lg-7 p-b-30">
 					<div class="p-l-25 p-r-30 p-lr-0-lg">
 						<div class="wrap-slick3 flex-sb flex-w">
