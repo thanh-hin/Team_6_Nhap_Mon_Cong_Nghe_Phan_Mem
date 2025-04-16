@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
+	<link rel="icon" type="image/png" href="images/icons/LOGOTHE5IVE.jpg"/>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thông Tin Cá Nhân</title>
@@ -205,14 +206,14 @@
                 
                 <a href="https://www.facebook.com/thanhhienitme?locale=vi_VN"> <button class="btn">Liên hệ</button></a>
                 <button class="btn" onclick="goBack()">Quay lại</button>
-                <a href="Doimatkhau.jsp"> <button class="btn">Chỉnh sửa</button></a>
+                <a href="Doimatkhau.jsp"> <button class="btn">Đổi mật khẩu</button></a>
             </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Thông Tin Cá Nhân | Designed by Your Name</p>
+            <p>&copy; 2025 Thông Tin Cá Nhân | Designed by Group 6</p>
         </div>
     </footer>
 <script>

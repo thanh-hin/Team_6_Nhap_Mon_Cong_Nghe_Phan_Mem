@@ -482,7 +482,7 @@
 						<span class="mtext-106 cl2"> <%=sp.getGia()%>đ
 						</span>
 
-						<p class="stext-102 cl3 p-t-23">
+						<p class="stext-102 cl3 p-t-23" style="display:none;">
 							<%=sp.getMoTa()%>
 						</p>
 						<%
@@ -609,12 +609,9 @@
 			<div class="tab01">
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">
-					<li class="nav-item p-b-10"><a class="nav-link active"
-						data-toggle="tab" href="#description" role="tab">Mô tả</a></li>
+					<li class="nav-item p-b-10"><a class="nav-link active" data-toggle="tab" href="#description" role="tab" style="font-size: 18px; font-weight: 500;">Mô tả</a></li>
 
-					<li class="nav-item p-b-10"><a class="nav-link"
-						data-toggle="tab" href="#information" role="tab">Thông tin chi
-							tiết </a></li>
+					<li class="nav-item p-b-10"> <a class="nav-link" data-toggle="tab" href="#information" role="tab" style="font-size: 18px; font-weight: 500;">Thông tin chi tiết</a></li>
 							
 							<%
 							Laydulieuchonguoidung lgnn = new Laydulieuchonguoidung();
@@ -625,8 +622,7 @@
 						soLuonDanhGia += 1;
 								}}
 							%>
-					<li class="nav-item p-b-10"><a class="nav-link"
-						data-toggle="tab" href="#reviews" role="tab">Đánh giá (<%=soLuonDanhGia %>)</a></li>
+					<li class="nav-item p-b-10"><a class="nav-link" data-toggle="tab" href="#reviews" role="tab" style="font-size: 18px; font-weight: 500;">Đánh giá (<%=soLuonDanhGia %>)</a></li>
 				</ul>
 
 				<!-- Tab panes -->
@@ -635,46 +631,45 @@
 					<div class="tab-pane fade show active" id="description"
 						role="tabpanel">
 						<div class="how-pos2 p-lr-15-md">
-							<p class="stext-102 cl6">Thời trang năng động này được thiết
-								kế dành cho những ai yêu thích phong cách thời trang trẻ trung
-								và tiện lợi. Chất liệu nỉ cao cấp, mềm mại và thoáng khí mang
-								đến cảm giác thoải mái suốt cả ngày, bất kể thời tiết se lạnh
-								hay những buổi sáng sớm. Form dáng oversize hiện đại giúp bạn dễ
-								dàng kết hợp với quần jeans, jogger hoặc chân váy, tạo nên phong
-								cách cá tính mà không kém phần lịch sự. Đặc biệt, chiếc mũ rộng
-								và túi trước tiện dụng là điểm nhấn hoàn hảo, vừa mang tính thẩm
-								mỹ vừa đáp ứng nhu cầu thực tế. Với bảng màu đa dạng từ trung
-								tính đến nổi bật, chiếc áo hoodie này chắc chắn sẽ là món đồ
-								không thể thiếu trong tủ quần áo của bạn! .</p>
+						  <p class="stext-102 cl6" style="font-size:18px; font-weight:500;">
+						    Thời trang năng động này được thiết kế dành cho những ai yêu thích phong cách thời trang trẻ trung và tiện lợi. 
+						    Chất liệu nỉ cao cấp, mềm mại và thoáng khí mang đến cảm giác thoải mái suốt cả ngày, bất kể thời tiết se lạnh 
+						    hay những buổi sáng sớm. Form dáng oversize hiện đại giúp bạn dễ dàng kết hợp với quần jeans, jogger hoặc chân váy, 
+						    tạo nên phong cách cá tính mà không kém phần lịch sự. Đặc biệt, chiếc mũ rộng và túi trước tiện dụng là điểm nhấn 
+						    hoàn hảo, vừa mang tính thẩm mỹ vừa đáp ứng nhu cầu thực tế. Với bảng màu đa dạng từ trung tính đến nổi bật, chiếc áo 
+						    hoodie này chắc chắn sẽ là món đồ không thể thiếu trong tủ quần áo của bạn!
+						  </p>
 						</div>
+
 					</div>
 
 					<!-- - -->
 					<div class="tab-pane fade" id="information" role="tabpanel">
 						<div class="row">
-							<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
+							<div class="col-sm-10 col-md-8 col-lg-6 mx-auto">
 								<ul class="p-lr-28 p-lr-15-sm">
-									<li class="flex-w flex-t p-b-7"><span
-										class="stext-102 cl3 size-205"> Cân nặng </span> <span
-										class="stext-102 cl6 size-206"> 0.79 kg </span></li>
-
-									<li class="flex-w flex-t p-b-7"><span
-										class="stext-102 cl3 size-205"> Chiều cao </span> <span
-										class="stext-102 cl6 size-206"> 110 x 33 x 100 cm </span></li>
-
-									<li class="flex-w flex-t p-b-7"><span
-										class="stext-102 cl3 size-205"> Chất liệu </span> <span
-										class="stext-102 cl6 size-206"> 60% cotton </span></li>
-
-									<li class="flex-w flex-t p-b-7"><span
-										class="stext-102 cl3 size-205"> Màu sắc </span> <span
-										class="stext-102 cl6 size-206"> Black, Blue, Grey,
-											Green, Red, White </span></li>
-
-									<li class="flex-w flex-t p-b-7"><span
-										class="stext-102 cl3 size-205"> Kích cỡ </span> <span
-										class="stext-102 cl6 size-206">XXL, XL, L, M, S </span></li>
+								  <li class="flex-w flex-t p-b-7 justify-content-between">
+								    <span class="stext-102 cl3 size-205 text-right" style="font-size:18px; font-weight:500;">Cân nặng</span>
+								    <span class="stext-102 cl6 size-206 text-center" style="font-size:18px; font-weight:500;">0.79 kg</span>
+								  </li>
+								  <li class="flex-w flex-t p-b-7 justify-content-between">
+								    <span class="stext-102 cl3 size-205 text-right" style="font-size:18px; font-weight:500;">Chiều cao</span>
+								    <span class="stext-102 cl6 size-206 text-center" style="font-size:18px; font-weight:500;">110 x 33 x 100 cm</span>
+								  </li>
+								  <li class="flex-w flex-t p-b-7 justify-content-between">
+								    <span class="stext-102 cl3 size-205 text-right" style="font-size:18px; font-weight:500;">Chất liệu</span>
+								    <span class="stext-102 cl6 size-206 text-center" style="font-size:18px; font-weight:500;">60% cotton</span>
+								  </li>
+								  <li class="flex-w flex-t p-b-7 justify-content-between">
+								    <span class="stext-102 cl3 size-205 text-right" style="font-size:18px; font-weight:500;">Màu sắc</span>
+								    <span class="stext-102 cl6 size-206 text-center" style="font-size:18px; font-weight:500;">Black, Blue, Grey, Green, Red, White</span>
+								  </li>
+								  <li class="flex-w flex-t p-b-7 justify-content-between">
+								    <span class="stext-102 cl3 size-205 text-right" style="font-size:18px; font-weight:500;">Kích cỡ</span>
+								    <span class="stext-102 cl6 size-206 text-center" style="font-size:18px; font-weight:500;">XXL, XL, L, M, S</span>
+								  </li>
 								</ul>
+
 							</div>
 						</div>
 					</div>
@@ -747,26 +742,15 @@
 										<input value="<%=id%>" name="idSanPham" type="hidden">
 										<p class="stext-102 cl6">Vui lòng hãy đánh giá sản phẩm này một cách khách quan nhất*</p>
 
-										<select name="soSao" id="number">
-										<option value="0" class="star-option"><span
-													class="star">★</span>
-											</option>
-											<option value="1" class="star-option"><span
-													class="star">★</span>1
-											</option>
-											<option value="2" class="star-option"><span
-													class="star">★</span>2
-											</option>
-											<option value="3" class="star-option"><span
-													class="star">★</span>3
-											</option>
-											<option value="4" class="star-option"><span
-													class="star">★</span>4
-											</option>
-											<option value="5" class="star-option"><span
-													class="star">★</span>5
-											</option>
+										<select name="soSao" id="number" class="star-select">
+										  <option value="0" class="star-option">★</option>
+										  <option value="1" class="star-option">★ 1</option>
+										  <option value="2" class="star-option">★ 2</option>
+										  <option value="3" class="star-option">★ 3</option>
+										  <option value="4" class="star-option">★ 4</option>
+										  <option value="5" class="star-option">★ 5</option>
 										</select>
+
 
 										<div class="row p-b-25">
 											<div class="col-12 p-b-5">
@@ -869,105 +853,94 @@
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">Categories</h4>
+    <!-- LIÊN HỆ VỚI CHÚNG TÔI -->
+    <div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>The 5ive</strong></h4>
+        <p class="stext-107 cl7 size-201">
+          The 5ive là thương hiệu thời trang hiện đại, kết hợp sự tối giản và cá tính, đề cao tự do thể hiện bản thân. Với chúng tôi, thời trang là tuyên ngôn cá nhân.
+        </p><p class="stext-107 cl7 size-201 p-t-10">
+        <em>"Define Your Style – Live The 5ive."</em>
+    </p>
+        
+    </div>
 
-					<ul>
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> Women </a></li>
+<!-- HỖ TRỢ KHÁCH HÀNG -->
+<div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>Hỗ trợ khách hàng</strong></h4>
+    <p class="stext-107 cl7 size-201">
+        <strong>Tổng đài chăm sóc khách hàng:</strong>
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Thời trang/Nhận hàng:</strong> 1800 6789
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Đổi trả/Bảo hành:</strong> 1800 1234
+    </p>
+    <p class="stext-107 cl7 size-201">
+        <strong>Email CSKH:</strong> support@the5ive.vn
+    </p>
+</div>
 
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> Men </a></li>
 
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> Shoes </a></li>
+    <!-- THEO DÕI CHÚNG TÔI -->
+    <div class="col-sm-6 col-lg-4 p-b-50">
+    <h4 class="stext-301 cl0 p-b-30"><strong>Theo dõi chúng tôi</strong></h4>
+         <div class="auth-external-list">
+        <div class="row social-icons-custom">
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-facebook"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-pinterest-p"></i>
+                </a>
+            </div>
+            <div class="col-2 d-flex justify-content-right">
+                <a href="#" class="social-icon">
+                    <i class="fa fa-twitter"></i> <!-- Icon thêm nếu muốn đủ 4 -->
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> Watches </a></li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">Help</h4>
-
-					<ul>
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> Track Order </a></li>
-
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> Returns </a></li>
-
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> Shipping </a></li>
-
-						<li class="p-b-10"><a href="#"
-							class="stext-107 cl7 hov-cl1 trans-04"> FAQs </a></li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">GET IN TOUCH</h4>
-
-					<p class="stext-107 cl7 size-201">Any questions? Let us know in
-						store at 8th floor, 379 Hudson St, New York, NY 10018 or call us
-						on (+1) 96 716 6879</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"> <i
-							class="fa fa-facebook"></i>
-						</a> <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"> <i
-							class="fa fa-instagram"></i>
-						</a> <a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16"> <i
-							class="fa fa-pinterest-p"></i>
-						</a>
-					</div>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">Newsletter</h4>
-
-					<form>
-						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text"
-								name="email" placeholder="email@example.com">
-							<div class="focus-input1 trans-04"></div>
-						</div>
-
-						<div class="p-t-18">
-							<button
-								class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe</button>
-						</div>
-					</form>
-				</div>
+    </div>
 			</div>
 
 			<div class="p-t-40">
 				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-01.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-02.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-03.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-04.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+					</a>
+
+					<a href="#" class="m-all-1">
+						<img src="images/icons/icon-pay-05.png" alt="ICON-PAY">
 					</a>
 				</div>
 
 				<p class="stext-107 cl6 txt-center">
 					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;
-					<script>
-						document.write(new Date().getFullYear());
-					</script>
-					All rights reserved | Made with <i class="fa fa-heart-o"
-						aria-hidden="true"></i> by <a href="https://colorlib.com"
-						target="_blank">Colorlib</a> &amp; distributed by <a
-						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 				</p>
 			</div>

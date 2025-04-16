@@ -123,6 +123,28 @@
   height: 84px;
 }
 
+ul.p-lr-28 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+ul.p-lr-28 li.flex-w {
+  width: 100%;
+  max-width: 450px;
+  justify-content: space-between;
+  text-align: left;
+}
+
+ul.p-lr-28 li.flex-w:hover {
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+
 
 /*==================================================================
 [ Top bar ]*/
@@ -2088,8 +2110,21 @@ input.num-product::-webkit-inner-spin-button {
 .cl11 {color: #f9ba48;}
 .cl12 {color: #ccc;}
 
+
+.star-option {
+  font-size: 12px !important;
+}
+
+.star-select {
+  font-size: 12px;
+  padding: 5px;
+  width: 100px;
+}
+ 
 /*//////////////////////////////////////////////////////////////////
 [ S-Text 0 - 15 ]*/
+
+
 .stext-101 {
   font-family: Poppins-Medium;
   font-size: 15px;
