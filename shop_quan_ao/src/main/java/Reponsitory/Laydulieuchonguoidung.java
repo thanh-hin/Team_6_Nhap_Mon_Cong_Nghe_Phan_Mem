@@ -1315,7 +1315,22 @@ public class Laydulieuchonguoidung implements Thaotacvoigiaodiennguoidung {
 		}
 		return ktra;
 	}
-
-
+	
+	public boolean XoaTatCaGioHangCuaNguoiDung(int maNguoiDung) {
+		ConnectionSql connectionSql = null;
+		Connection conn = null;
+	    try {
+	    	connectionSql = new ConnectionSql();
+	    	conn = connectionSql.getConnection();
+	        String sql = "DELETE FROM GioHang WHERE maNguoiDung = ?";
+	        PreparedStatement stmt = conn.prepareStatement(sql);
+	        stmt.setInt(1, maNguoiDung);
+	        int rows = stmt.executeUpdate();
+	        return rows > 0;
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        return false;
+	    }
+	}
 
 }

@@ -576,11 +576,10 @@ button.btn-remove:hover {
 				Tổng cộng:
 				<%=tongGia%></p>
 		</div>
-		<form action="ThanhToanGioHang" method="post">
-
-			<button class="btn-checkout" type="submit">Thanh toán</button>
-
-		</form>
+		
+	<form action="ThanhToanGioHang" method="post">
+ 	   <button class="btn-checkout" type="submit">Thanh toán</button>
+	</form>
 
 	</div>
 
