@@ -48,6 +48,10 @@
     display: inline-block;
 }
 
+.stext-106 {
+        font-size: 20px !important; /* hoặc giá trị to hơn như 20px, 24px tùy ý */
+    }	
+
 .dropdown-menu {
     display: none; /* Ẩn menu mặc định */
     position: absolute;
