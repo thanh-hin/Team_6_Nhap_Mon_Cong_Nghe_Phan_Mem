@@ -427,7 +427,7 @@
 					session.removeAttribute("loiTonTai"); // Xóa sau khi hiển thị
 				%>
 				<script>
-					swal("Sản phẩm đã hết hàng", "Xin lỗi, sản phẩm này hiện không còn trong kho.");
+					alert("Lỗi hết hàng");
 					
 				</script>
 				<%
