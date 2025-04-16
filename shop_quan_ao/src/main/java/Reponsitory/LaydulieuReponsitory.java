@@ -1703,7 +1703,47 @@ public class LaydulieuReponsitory implements Thaotac {
 	    return trung;
 	}
 	
-	
+	public List<SanPham> laySanPhamTheoMau(String mauSac) {
+	    List<SanPham> danhSach = new ArrayList<>();
+	    Connection conn = null;
+	    PreparedStatement ps = null;
+	    ResultSet rs = null;
+	    ConnectionSql connectionSql = null;
+
+	    try {
+	        connectionSql = new ConnectionSql();
+	        conn = connectionSql.getConnection();
+	        String sql = "SELECT DISTINCT s.* FROM sanpham s JOIN chitietsanpham ct ON s.MaSanpham = ct.MaSanPham WHERE ct.mauSac = ?";
+	        ps = conn.prepareStatement(sql);
+	        ps.setString(1, mauSac);
+	        rs = ps.executeQuery();
+
+	        while (rs.next()) {
+	            SanPham sp = new SanPham();
+	            sp.setMaSanpham(rs.getInt("MaSanpham"));
+	            sp.setTenSanPham(rs.getString("TenSanPham"));
+	            sp.setGia(rs.getFloat("Gia"));
+	            sp.setDuongDanAnh(rs.getString("DuongDanAnh"));
+	            sp.setMoTa(rs.getString("MoTa"));
+	            sp.setMaDanhMuc(rs.getInt("MaDanhMuc"));
+	            danhSach.add(sp);
+	        }
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        try {
+	            if (rs != null) rs.close();
+	            if (ps != null) ps.close();
+	            if (conn != null) connectionSql.releaseConnection(conn);
+	        } catch (SQLException e) {
+	            e.printStackTrace();
+	        }
+	    }
+
+	    return danhSach;
+	}
+
+
 
 
 }

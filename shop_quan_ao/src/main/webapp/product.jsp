@@ -421,115 +421,118 @@
 				</div>
 
 				<!-- Filter -->
+				<!-- Filter -->
+				<!-- Filter -->
 				<div class="dis-none panel-filter w-full p-t-10">
-					<div
-						class="wrap-filter flex-w bg6 p-t-30 p-lr-30 ml-auto rounded-md w-full max-w-md" style="width: fit-content;gap: 40px;">
+					<div class="wrap-filter flex-w bg6 p-t-30 p-lr-30 ml-auto rounded-md w-full max-w-md" style="width: fit-content; gap: 40px;">
+						
+						<!-- LỌC GIÁ -->
 						<div class="filter-col1col1 p-r-15 p-b-27 pl-4">
 							<div class="mtext-102 cl2 p-b-15">Giá</div>
 							<ul>
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04 filter-link-active">
-										Tất cả </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $0.00 - $50.00 </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $50.00 - $100.00 </a></li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $100.00 - $150.00 </a>
+								<li class="p-b-6">
+									<a href="Cuahang?loai=<%=request.getAttribute("currentLoai")%><%= request.getAttribute("currentMau") != null ? "&mau=" + request.getAttribute("currentMau") : "" %>"
+									   class="filter-link stext-106 trans-04 <%= request.getAttribute("currentGia") == null ? "filter-link-active" : "" %>">
+										Tất cả
+									</a>
 								</li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $150.00 - $200.00 </a>
+				
+								<%
+								String[] giaList = {"0-50", "50-100", "100-150", "150-200", "200+"};
+								for (String g : giaList) {
+								%>
+								<li class="p-b-6">
+									<a href="Cuahang?loai=<%=request.getAttribute("currentLoai")%>&gia=<%=g%><%= request.getAttribute("currentMau") != null ? "&mau=" + request.getAttribute("currentMau") : "" %>"
+									   class="filter-link stext-106 trans-04 <%= g.equals(request.getAttribute("currentGia")) ? "filter-link-active" : "" %>">
+										<% if ("200+".equals(g)) { %>
+											$200.00+
+										<% } else { %>
+											$<%=g.replace("-", ".00 - $")%>.00
+										<% } %>
+									</a>
 								</li>
-
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $200.00+ </a></li>
+								<% } %>
 							</ul>
 						</div>
-
+				
+						<!-- LỌC MÀU -->
 						<div class="filter-col2 p-r-15 p-b-27">
 							<div class="mtext-102 cl2 p-b-15">Màu</div>
-
 							<ul>
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #222;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Đen </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #4272d7;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#"
-									class="filter-link stext-106 trans-04 filter-link-active">
-										Xanh </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #b3b3b3;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Xám </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #00ad5f;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Xanh lá
-								</a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #fa4251;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Đỏ </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #aaa;"> <i class="zmdi zmdi-circle-o"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Trắng </a>
+								<%
+								String[] mauList = {"Đen", "Xanh", "Xám", "Xanh lá", "Đỏ", "Trắng"};
+								String[] mauColor = {"#222", "#4272d7", "#b3b3b3", "#00ad5f", "#fa4251", "#aaa"};
+				
+								for (int i = 0; i < mauList.length; i++) {
+									String m = mauList[i];
+									String color = mauColor[i];
+								%>
+								<li class="p-b-6">
+									<span class="fs-15 lh-12 m-r-6" style="color: <%=color%>;">
+										<i class="zmdi zmdi-circle"></i>
+									</span>
+									<a href="Cuahang?loai=<%=request.getAttribute("currentLoai")%><%= request.getAttribute("currentGia") != null ? "&gia=" + request.getAttribute("currentGia") : "" %>&mau=<%=m%>"
+									   class="filter-link stext-106 trans-04 <%= m.equals(request.getAttribute("currentMau")) ? "filter-link-active" : "" %>">
+										<%=m%>
+									</a>
 								</li>
+								<% } %>
 							</ul>
 						</div>
+				
 					</div>
 				</div>
+				
+				
 			</div>
+			
 			<div class="row isotope-grid">
 			<%
 			List<SanPham> list = (List<SanPham>) request.getAttribute("listHome");
 			
-			for(SanPham sp : list){
-				for(DanhMuc d : listDanhMuc){
-					if(sp.getMaDanhMuc()==d.getMaDanhmuc()){
+			for (SanPham sp : list) {
+			    String classDanhMuc = "";
+			    for (DanhMuc d : listDanhMuc) {
+			        if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
+			            classDanhMuc = d.getTenDanhMuc();
+			            break;
+			        }
+			    }
 			%>
-				<div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=d.getTenDanhMuc() %>">
-				<%} } %>
-					<!-- Block2 -->
-					<div class="block2">
-						<div class="block2-pic hov-img0">
-							<img src="<%=sp.getDuongDanAnh() %>" alt="IMG-PRODUCT" style="height: 300px;">
+			    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%= classDanhMuc %>">
+			        <!-- Block2 -->
+			        <div class="block2">
+			            <div class="block2-pic hov-img0">
+			                <img src="<%= sp.getDuongDanAnh() %>" alt="IMG-PRODUCT" style="height: 300px;">
 
-							<a href="Giohangproducttail?id=<%=sp.getMaSanpham() %>"
-								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
-								Xem sản phẩm
-							</a>
-						</div>
+			                <a href="Giohangproducttail?id=<%= sp.getMaSanpham() %>"
+			                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+			                    Xem sản phẩm
+			                </a>
+			            </div>
 
-						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="Giohangproducttail?id=<%=sp.getMaSanpham() %>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" >
-									<%=sp.getTenSanPham() %>
-								</a>
+			            <div class="block2-txt flex-w flex-t p-t-14">
+			                <div class="block2-txt-child1 flex-col-l ">
+			                    <a href="Giohangproducttail?id=<%= sp.getMaSanpham() %>"
+			                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+			                        <%= sp.getTenSanPham() %>
+			                    </a>
 
-								<span class="stext-105 cl3">
-									<%=sp.getGia() %>đ
-								</span>
-							</div>
+			                    <span class="stext-105 cl3">
+			                        <%= sp.getGia() %>đ
+			                    </span>
+			                </div>
 
-							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
-										alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l"
-										src="images/icons/icon-heart-02.png" alt="ICON">
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<%}%>
+			                <div class="block2-txt-child2 flex-r p-t-3">
+			                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+			                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
+			                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
+			                    </a>
+			                </div>
+			            </div>
+			        </div>
+			    </div>
+			<% } %>
 			</div>
 
 			<!-- Load more -->
