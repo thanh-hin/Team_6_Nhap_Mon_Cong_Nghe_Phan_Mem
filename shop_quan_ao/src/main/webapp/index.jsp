@@ -205,6 +205,7 @@ section.bg0 {
 											if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
 												soluong += gioHang.getSoLuong();
 												tongTien += gioHang.getGia();
+												
 											}
 									}
 								
@@ -239,6 +240,7 @@ section.bg0 {
 								</ul>
 							</div>
 						</div>
+					
 					</div>
 				</nav>
 			</div>
@@ -260,6 +262,7 @@ section.bg0 {
 				</div>
 
 				<%
+				tongTien = 0;
 				if (user != null) {
 					for (GioHang gioHang : gh) {
 						for (User u : user)
@@ -381,12 +384,15 @@ section.bg0 {
 						<div class="header-cart-item-img">
 							<img src="<%=giohang.getDuongDan()%>" alt="IMG">
 						</div>
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat </a> <span class="header-cart-item-info"> <%=giohang.getSoLuong()%>
-								x $<%=giohang.getGia()%>
-							</span>
+						<div class="header-cart-item-txt" style="padding-top: 4px;">
+							<a href="#" class="header-cart-item-name hov-cl1 trans-04" style="margin-bottom: 4px; display: inline-block;">
+								<%= giohang.getTenSanPham() %>
+							</a>
+							<div class="header-cart-item-info" style="font-size: 13px; color: #888;">
+								Số lượng: <%= giohang.getSoLuong() %> &nbsp;-&nbsp; Tổng: <%= String.format("%.2f", giohang.getGia()) %>
+							</div>
 						</div>
+
 					</li>
 					<%
 					}

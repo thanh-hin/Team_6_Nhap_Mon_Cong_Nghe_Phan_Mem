@@ -211,16 +211,17 @@
 
 						<div
 							<%
-if (user != null) {
-	for (GioHang gioHang : gh) {
-		for (User u : user)
-			if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
-				soluong += gioHang.getSoLuong();
-				tongTien += gioHang.getGia();
-			}
-	}
-
-}%>
+							tongTien = 0;
+							if (user != null) {
+								for (GioHang gioHang : gh) {
+									for (User u : user)
+										if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
+											soluong += gioHang.getSoLuong();
+											tongTien += gioHang.getGia();
+										}
+								}
+							
+							}%>
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=soluong%>">
 							<i class="zmdi zmdi-shopping-cart"></i>
@@ -339,14 +340,14 @@ if (user != null) {
 				        <div class="header-cart-item-img">
 				            <img src="<%=giohang.getDuongDan()%>" alt="IMG">
 				        </div>
-				        <div class="header-cart-item-txt p-t-8">
-				            <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-				                <%=giohang.getTenSanPham()%>
-				            </a>
-				            <span class="header-cart-item-info">
-				                <%=giohang.getSoLuong()%> x $<%=giohang.getGia()%>
-				            </span>
-				        </div>
+				        <div class="header-cart-item-txt" style="padding-top: 4px;">
+							<a href="#" class="header-cart-item-name hov-cl1 trans-04" style="margin-bottom: 4px; display: inline-block;">
+								<%= giohang.getTenSanPham() %>
+							</a>
+							<div class="header-cart-item-info" style="font-size: 13px; color: #888;">
+								Số lượng: <%= giohang.getSoLuong() %> &nbsp;-&nbsp; Tổng: <%= String.format("%.2f", giohang.getGia()) %>
+							</div>
+						</div>
 				    </li>
 				<%
 				            }
