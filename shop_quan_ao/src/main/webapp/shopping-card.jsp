@@ -297,7 +297,8 @@ button.btn-remove:hover {
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="#" class="logo"> <img src="assetsquantri/img/LOGOTHE5IVE-removebg.png"
+					<a href="Laydulieusanpham" class="logo">
+						 <img src="assetsquantri/img/LOGOTHE5IVE-removebg.png"
 						alt="IMG-LOGO">
 					</a>
 

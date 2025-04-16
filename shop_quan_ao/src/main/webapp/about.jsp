@@ -98,7 +98,8 @@
 				<nav class="limiter-menu-desktop container">
 					
 					<!-- Logo desktop -->		
-					<a href="#" class="logo">
+					<a href="Laydulieusanpham" class="logo">
+
 						<img src="images/icons/LOGOTHE5IVE-removebg.png" alt="IMG-LOGO">
 					</a>
 
