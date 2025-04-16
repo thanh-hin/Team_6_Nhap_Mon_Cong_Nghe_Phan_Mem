@@ -113,10 +113,11 @@
 	<header id="header" class="header fixed-top d-flex align-items-center">
 
 		<div class="d-flex align-items-center justify-content-between">
-			<a href="index.html" class="logo d-flex align-items-center"> <img
-				src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
-				class="d-none d-lg-block">Admin</span>
-			</a> <i class="bi bi-list toggle-sidebar-btn"></i>
+			<a href="<%=projectName%>/Bieudodoanhthu" class="logo d-flex align-items-center">
+				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="">
+				<span class="d-none d-lg-block">Admin</span>
+			</a>
+
 		</div>
 		<!-- End Logo -->
 
@@ -179,13 +180,13 @@
 	<aside id="sidebar" class="sidebar">
 
 		<ul class="sidebar-nav" id="sidebar-nav">
-		<li class="nav-heading">Tổng quan dữ liệu</li>
+		<li class="nav-heading"><strong>Tổng quan dữ liệu</strong></li>
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/Bieudodoanhthu"> <i class="fas fa-tachometer-alt"></i> <span>Biểu đồ
 						thống kê</span>
 			</a></li>
 
-			<li class="nav-heading">Quản lý bán hàng</li>
+			<li class="nav-heading"><strong>Quản lý bán hàng</strong></li>
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/category.jsp"> <i
 					class="bi bi-layout-text-window-reverse"></i> <span>Danh mục</span>
@@ -209,7 +210,7 @@
 				href="<%=projectName%>/Quanlibaiviet.jsp"> <i
 					class="fa fa-newspaper"></i> <span>Bài viết</span>
 			</a></li> --%>
-			<li class="nav-heading">Quản lý tài khoản</li>
+			<li class="nav-heading"><strong>Quản lý tài khoản</strong></li>
 
 			<li class="nav-item"><a class="nav-link "
 				href="<%=projectName%>/account.jsp"> <i class="bi bi-person"></i>

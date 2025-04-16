@@ -234,7 +234,7 @@ h6 {
 
 .card-title {
   padding: 20px 0 15px 0;
-  font-size: 25px;
+  font-size: 26px;
   font-weight: 500;
   color: #012970;
  
@@ -608,9 +608,9 @@ h6 {
   padding: 20px;
   overflow-y: auto;
   scrollbar-width: thin;
-  scrollbar-color: #aab7cf transparent;
-  box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  scrollbar-color: rgb(255, 255, 255) transparent;
+  box-shadow: 2px 0 16px rgb(4 4 20 / 33%);
+  background-color: #ffff;
 }
 
 @media (max-width: 1199px) {
@@ -672,9 +672,9 @@ h6 {
 }
 
 .sidebar-nav .nav-heading {
-  font-size: 11px;
+  font-size: 15px;
   text-transform: uppercase;
-  color: #899bbd;
+  color: rgb(41, 70, 186);
   font-weight: 600;
   margin: 10px 0 5px 15px;
 }
@@ -684,9 +684,9 @@ h6 {
   align-items: center;
   font-size: 15px;
   font-weight: 600;
-  color: #4154f1;
+  color: #ffff;
   transition: 0.3;
-  background: #f6f9ff;
+  background: rgb(146, 198, 245);
   padding: 10px 15px;
   border-radius: 4px;
 }
@@ -698,7 +698,7 @@ h6 {
 .sidebar-nav .nav-link i {
   font-size: 16px;
   margin-right: 10px;
-  color: #4154f1;
+  color: rgb(255, 255, 255);
 }
 
 .sidebar-nav .nav-link.collapsed {

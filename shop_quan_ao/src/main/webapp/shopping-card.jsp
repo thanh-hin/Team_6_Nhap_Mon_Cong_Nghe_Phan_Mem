@@ -297,7 +297,8 @@ button.btn-remove:hover {
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="#" class="logo"> <img src="assetsquantri/img/LOGOTHE5IVE-removebg.png"
+					<a href="Laydulieusanpham" class="logo">
+						 <img src="assetsquantri/img/LOGOTHE5IVE-removebg.png"
 						alt="IMG-LOGO">
 					</a>
 
@@ -575,11 +576,10 @@ button.btn-remove:hover {
 				Tổng cộng:
 				<%=tongGia%></p>
 		</div>
-		<form action="ThanhToanGioHang" method="post">
-
-			<button class="btn-checkout" type="submit">Thanh toán</button>
-
-		</form>
+		
+	<form action="ThanhToanGioHang" method="post">
+ 	   <button class="btn-checkout" type="submit">Thanh toán</button>
+	</form>
 
 	</div>
 

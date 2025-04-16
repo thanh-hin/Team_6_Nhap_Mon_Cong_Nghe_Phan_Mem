@@ -180,9 +180,10 @@
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="#" class="logo"> <img src="assetsquantri/img/LOGOTHE5IVE.jpg"
-						alt="IMG-LOGO">
+					<a href="<%= request.getContextPath() %>/Laydulieusanpham" class="logo">
+					    <img src="assetsquantri/img/LOGOTHE5IVE.jpg" alt="IMG-LOGO">
 					</a>
+
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
@@ -363,11 +364,13 @@
 						<div class="header-cart-item-img">
 							<img src="<%=giohang.getDuongDan()%>" alt="IMG">
 						</div>
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat </a> <span class="header-cart-item-info"> <%=giohang.getSoLuong()%>
-								x $<%=giohang.getGia()%>
-							</span>
+						<div class="header-cart-item-txt" style="padding-top: 4px;">
+							<a href="#" class="header-cart-item-name hov-cl1 trans-04" style="margin-bottom: 4px; display: inline-block;">
+								<%= giohang.getTenSanPham() %>
+							</a>
+							<div class="header-cart-item-info" style="font-size: 13px; color: #888;">
+								Số lượng: <%= giohang.getSoLuong() %> &nbsp;-&nbsp; Tổng: <%= String.format("%.2f", giohang.getGia()) %>
+							</div>
 						</div>
 					</li>
 					<%

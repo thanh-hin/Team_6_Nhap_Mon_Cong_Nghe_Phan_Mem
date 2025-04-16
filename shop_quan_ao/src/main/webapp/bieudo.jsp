@@ -122,13 +122,13 @@
 	<!-- ======= Header ======= -->
 	<header id="header" class="header fixed-top d-flex align-items-center">
 
-		<div class="d-flex align-items-center justify-content-between">
-			<div class="logo d-flex align-items-center">
-				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt=""> <span
-					class="d-none d-lg-block">Admin</span>
-			</div>
-			<i class="bi bi-list toggle-sidebar-btn"></i>
+		<div class="logo d-flex align-items-center">
+			<a href="<%=projectName%>/Bieudodoanhthu" class="d-flex align-items-center">
+				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="">
+				<span class="d-none d-lg-block">Admin</span>
+			</a>
 		</div>
+
 		<!-- End Logo -->
 
 
@@ -193,12 +193,12 @@
 	<aside id="sidebar" class="sidebar">
 
 		<ul class="sidebar-nav" id="sidebar-nav">
-			<li class="nav-heading">Tổng quan dữ liệu</li>
+			<li class="nav-heading"><strong>Tổng quan dữ liệu</strong></li>
 			<li class="nav-item"><a class="nav-link"
 				href="<%=projectName%>/Bieudodoanhthu"> <i class="fas fa-tachometer-alt"></i> <span>Biểu đồ
 						thống kê</span>
 			</a></li>
-			<li class="nav-heading">Quản lý bán hàng</li>
+			<li class="nav-heading"><strong>Quản lý bán hàng</strong></li>
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/category.jsp"> <i
 					class="bi bi-layout-text-window-reverse"></i> <span>Danh mục</span>
@@ -223,7 +223,7 @@
 				href="<%=projectName%>/Quanlibaiviet.jsp"> <i
 					class="fa fa-newspaper"></i> <span>Bài viết</span>
 			</a></li> --%>
-			<li class="nav-heading">Quản lý tài khoản</li>
+			<li class="nav-heading"><strong>Quản lý tài khoản</strong></li>
 
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/account.jsp"> <i class="bi bi-person"></i>
@@ -292,32 +292,32 @@
                 label: 'Doanh thu theo tháng',
                 data: dataMonth,
                 backgroundColor: [
-                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                   	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                   	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                   	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                   	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                   	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
+                	  '#E6F2FF', // xanh cực nhạt gần trắng
+                	  '#A3C9FF', // xanh dương pastel nhạt
+                	  '#A2D4FF', // xanh biển nhạt
+                	  '#8FC9FF', // xanh biển vừa
+                	  '#7FC1FF', // xanh nhẹ, dễ nhìn
+                	  '#6FB8FF', // xanh đậm nhẹ
+                	  '#5FAFFF', // xanh biển đậm
+                	  '#4FA6FF', // xanh đậm nhất
+                	  '#3F9EFF', // xanh dương sâu
+                	  '#BBDFFF', // xanh pastel nhẹ
+                	  '#D4E6FF', // xanh pastel pha trắng
+                	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
                   ],
                   borderColor: [
-                	  'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                  	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                   	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                   	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
+                   	  '#64A6FF', // Viền cho xanh nhạt (#E1F2FF)
+                	  '#519DFF', // Viền cho xanh dịu (#CFE8FF)
+                	  '#3D94FF', // Viền cho xanh baby (#B8DEFF)
+                	  '#298BFF', // Viền cho xanh pastel sáng (#A2D4FF)
+                	  '#1E84F7', // Viền cho xanh sky tươi (#8CCBFF)
+                	  '#127CEB', // Viền cho xanh biển sáng (#74C2FF)
+                	  '#3893D3', // Viền cho xanh băng nhạt (#BEE3FA)
+                	  '#44A1E0', // Viền cho xanh trắng dịu (#D6F0FF)
+                	  '#2898CB', // Viền cho xanh ngọc nhạt (#A5E2FF)
+                	  '#3FB0DB', // Viền cho xanh nước đá (#C4F1FF)
+                	  '#53BDE7', // Viền cho xanh băng sáng (#DAF3FF)
+                	  '#67CCF2'  // Viền cho xanh icy mát (#E6F7FF)
                   ],
                   borderWidth: 1
             }]
@@ -397,32 +397,32 @@
                     label: 'Doanh thu ',
                     data: data,
                     backgroundColor: [
-                    	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                       	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                       	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                       	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                       	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
-                       	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 0.2)',
+                    	'#E6F2FF', // xanh cực nhạt gần trắng
+                    	  '#A3C9FF', // xanh dương pastel nhạt
+                    	  '#A2D4FF', // xanh biển nhạt
+                    	  '#8FC9FF', // xanh biển vừa
+                    	  '#7FC1FF', // xanh nhẹ, dễ nhìn
+                    	  '#6FB8FF', // xanh đậm nhẹ
+                    	  '#5FAFFF', // xanh biển đậm
+                    	  '#4FA6FF', // xanh đậm nhất
+                    	  '#3F9EFF', // xanh dương sâu
+                    	  '#BBDFFF', // xanh pastel nhẹ
+                    	  '#D4E6FF', // xanh pastel pha trắng
+                    	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
                       ],
                       borderColor: [
-                    	  'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                      	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                       	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                       	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                    	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                    	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                     	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                     	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                    	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                    	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                     	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
+                    	  '#64A6FF', // Viền cho xanh nhạt (#E1F2FF)
+                    	  '#519DFF', // Viền cho xanh dịu (#CFE8FF)
+                    	  '#3D94FF', // Viền cho xanh baby (#B8DEFF)
+                    	  '#298BFF', // Viền cho xanh pastel sáng (#A2D4FF)
+                    	  '#1E84F7', // Viền cho xanh sky tươi (#8CCBFF)
+                    	  '#127CEB', // Viền cho xanh biển sáng (#74C2FF)
+                    	  '#3893D3', // Viền cho xanh băng nhạt (#BEE3FA)
+                    	  '#44A1E0', // Viền cho xanh trắng dịu (#D6F0FF)
+                    	  '#2898CB', // Viền cho xanh ngọc nhạt (#A5E2FF)
+                    	  '#3FB0DB', // Viền cho xanh nước đá (#C4F1FF)
+                    	  '#53BDE7', // Viền cho xanh băng sáng (#DAF3FF)
+                    	  '#67CCF2'  // Viền cho xanh icy mát (#E6F7FF)
                       ],
                       borderWidth: 1
                 }]
@@ -477,18 +477,18 @@
                                 label: 'Danh mục sản phẩm',
                                 data: quantities,  // Dữ liệu số lượng sản phẩm
                                 backgroundColor: [
-                                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                                 	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
+                                	'#E6F2FF', // xanh cực nhạt gần trắng
+                                	  '#A3C9FF', // xanh dương pastel nhạt
+                                	  '#A2D4FF', // xanh biển nhạt
+                                	  '#8FC9FF', // xanh biển vừa
+                                	  '#7FC1FF', // xanh nhẹ, dễ nhìn
+                                	  '#6FB8FF', // xanh đậm nhẹ
+                                	  '#5FAFFF', // xanh biển đậm
+                                	  '#4FA6FF', // xanh đậm nhất
+                                	  '#3F9EFF', // xanh dương sâu
+                                	  '#BBDFFF', // xanh pastel nhẹ
+                                	  '#D4E6FF', // xanh pastel pha trắng
+                                	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
                                  	 
                                 ],
                                 hoverOffset: 4
@@ -509,12 +509,8 @@
                     });
                 });
             </script>
-     
-
-				</div>
-			</div>
-		</div>
-		
+    
+				
 		<!-- <div class="row">
 			<div class="col-lg-6">
 				<div class="card">
@@ -600,20 +596,32 @@
                     label: 'Số lượng bán',
                     data: <%=data1.toString()%>,  // Dữ liệu là số lượng bán
                     backgroundColor: [
-                        'rgba(255, 99, 132, 0.2)', 
-                        'rgba(54, 162, 235, 0.2)', 
-                        'rgba(255, 206, 86, 0.2)', 
-                        'rgba(75, 192, 192, 0.2)',
-                        'rgba(153, 102, 255, 0.2)',
-                        'rgba(255, 159, 64, 0.2)',
+                    	  '#E6F2FF', // xanh cực nhạt gần trắng
+                    	  '#A3C9FF', // xanh dương pastel nhạt
+                    	  '#A2D4FF', // xanh biển nhạt
+                    	  '#8FC9FF', // xanh biển vừa
+                    	  '#7FC1FF', // xanh nhẹ, dễ nhìn
+                    	  '#6FB8FF', // xanh đậm nhẹ
+                    	  '#5FAFFF', // xanh biển đậm
+                    	  '#4FA6FF', // xanh đậm nhất
+                    	  '#3F9EFF', // xanh dương sâu
+                    	  '#BBDFFF', // xanh pastel nhẹ
+                    	  '#D4E6FF', // xanh pastel pha trắng
+                    	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
                     ],
                     borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                        'rgba(54, 162, 235, 1)',
-                        'rgba(255, 206, 86, 1)',
-                        'rgba(75, 192, 192, 1)',
-                        'rgba(153, 102, 255, 1)',
-                        'rgba(255, 159, 64, 1)',
+                      	'#64A6FF', // Viền cho xanh nhạt (#E1F2FF)
+                  	  	'#519DFF', // Viền cho xanh dịu (#CFE8FF)
+                  	  	'#3D94FF', // Viền cho xanh baby (#B8DEFF)
+                  	  	'#298BFF', // Viền cho xanh pastel sáng (#A2D4FF)
+                  	  	'#1E84F7', // Viền cho xanh sky tươi (#8CCBFF)
+                  	  	'#127CEB', // Viền cho xanh biển sáng (#74C2FF)
+                  	  	'#3893D3', // Viền cho xanh băng nhạt (#BEE3FA)
+                  	  	'#44A1E0', // Viền cho xanh trắng dịu (#D6F0FF)
+                  	  	'#2898CB', // Viền cho xanh ngọc nhạt (#A5E2FF)
+                  	  	'#3FB0DB', // Viền cho xanh nước đá (#C4F1FF)
+                  	  	'#53BDE7', // Viền cho xanh băng sáng (#DAF3FF)
+                  	  	'#67CCF2'  // Viền cho xanh icy mát (#E6F7FF)
                     ],
                     borderWidth: 1
                 }]
@@ -639,7 +647,10 @@
         });
     });
 </script>
-
+</div> 
+			</div>
+		</div>
+		
 			<!-- End Bar Chart -->
 
 
