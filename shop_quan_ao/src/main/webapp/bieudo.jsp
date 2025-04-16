@@ -292,18 +292,18 @@
                 label: 'Doanh thu theo tháng',
                 data: dataMonth,
                 backgroundColor: [
-                	  '#E6F2FF', // xanh cực nhạt gần trắng
-                	  '#A3C9FF', // xanh dương pastel nhạt
-                	  '#A2D4FF', // xanh biển nhạt
-                	  '#8FC9FF', // xanh biển vừa
-                	  '#7FC1FF', // xanh nhẹ, dễ nhìn
-                	  '#6FB8FF', // xanh đậm nhẹ
-                	  '#5FAFFF', // xanh biển đậm
-                	  '#4FA6FF', // xanh đậm nhất
-                	  '#3F9EFF', // xanh dương sâu
-                	  '#BBDFFF', // xanh pastel nhẹ
-                	  '#D4E6FF', // xanh pastel pha trắng
-                	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
+                	  '#20C997',
+                	  '#879EF2', // Tím/xanh lam nhạt
+                	  '#7EE45E', // Xanh lá sáng
+                	  '#36AA3B', // Xanh lá đậm
+                	  '#35C7A5', // Xanh ngọc tươi
+                	  '#3DD6C6', // Xanh ngọc nhạt
+                	  '#9EE6E1', // Xanh ngọc pha trắng
+                	  '#69B9E9', // Xanh dương nhạt
+                	  '#98CCF2', // Xanh baby pastel
+                	  '#4F91CE', // Xanh nước biển trung bình
+                	  '#267ECF', // Xanh dương đậm
+                	  '#5994C5'  // Xanh xám
                   ],
                   borderColor: [
                    	  '#64A6FF', // Viền cho xanh nhạt (#E1F2FF)
@@ -350,10 +350,12 @@
         return `rgb(${r}, ${g}, ${b})`;
     }
 </script>
-				
+				</div>
+				</div>
 					<!-- End Bar CHart -->
 
-
+  					<div class="card">
+				<div class="card-body">
 					 <h5 class="card-title">Thống kê doanh thu theo ngày</h5>
 					<canvas id="revenueChart" width="800" height="400"></canvas>
 
@@ -397,18 +399,18 @@
                     label: 'Doanh thu ',
                     data: data,
                     backgroundColor: [
-                    	'#E6F2FF', // xanh cực nhạt gần trắng
-                    	  '#A3C9FF', // xanh dương pastel nhạt
-                    	  '#A2D4FF', // xanh biển nhạt
-                    	  '#8FC9FF', // xanh biển vừa
-                    	  '#7FC1FF', // xanh nhẹ, dễ nhìn
-                    	  '#6FB8FF', // xanh đậm nhẹ
-                    	  '#5FAFFF', // xanh biển đậm
-                    	  '#4FA6FF', // xanh đậm nhất
-                    	  '#3F9EFF', // xanh dương sâu
-                    	  '#BBDFFF', // xanh pastel nhẹ
-                    	  '#D4E6FF', // xanh pastel pha trắng
-                    	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
+                    	  '#20C997',
+                    	  '#879EF2', // Tím/xanh lam nhạt
+                    	  '#7EE45E', // Xanh lá sáng
+                    	  '#36AA3B', // Xanh lá đậm
+                    	  '#35C7A5', // Xanh ngọc tươi
+                    	  '#3DD6C6', // Xanh ngọc nhạt
+                    	  '#9EE6E1', // Xanh ngọc pha trắng
+                    	  '#69B9E9', // Xanh dương nhạt
+                    	  '#98CCF2', // Xanh baby pastel
+                    	  '#4F91CE', // Xanh nước biển trung bình
+                    	  '#267ECF', // Xanh dương đậm
+                    	  '#5994C5'  // Xanh xám
                       ],
                       borderColor: [
                     	  '#64A6FF', // Viền cho xanh nhạt (#E1F2FF)
@@ -447,7 +449,10 @@
             }
         });
     </script>
-
+</div>
+</div>
+<div class="card">
+				<div class="card-body">
 
             <h5 class="card-title">Thống kê số lượng sản phẩm</h5>
 
@@ -477,18 +482,18 @@
                                 label: 'Danh mục sản phẩm',
                                 data: quantities,  // Dữ liệu số lượng sản phẩm
                                 backgroundColor: [
-                                	'#E6F2FF', // xanh cực nhạt gần trắng
-                                	  '#A3C9FF', // xanh dương pastel nhạt
-                                	  '#A2D4FF', // xanh biển nhạt
-                                	  '#8FC9FF', // xanh biển vừa
-                                	  '#7FC1FF', // xanh nhẹ, dễ nhìn
-                                	  '#6FB8FF', // xanh đậm nhẹ
-                                	  '#5FAFFF', // xanh biển đậm
-                                	  '#4FA6FF', // xanh đậm nhất
-                                	  '#3F9EFF', // xanh dương sâu
-                                	  '#BBDFFF', // xanh pastel nhẹ
-                                	  '#D4E6FF', // xanh pastel pha trắng
-                                	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
+                                	  '#20C997',
+                                	  '#879EF2', // Tím/xanh lam nhạt
+                                	  '#7EE45E', // Xanh lá sáng
+                                	  '#36AA3B', // Xanh lá đậm
+                                	  '#35C7A5', // Xanh ngọc tươi
+                                	  '#3DD6C6', // Xanh ngọc nhạt
+                                	  '#9EE6E1', // Xanh ngọc pha trắng
+                                	  '#69B9E9', // Xanh dương nhạt
+                                	  '#98CCF2', // Xanh baby pastel
+                                	  '#4F91CE', // Xanh nước biển trung bình
+                                	  '#267ECF', // Xanh dương đậm
+                                	  '#5994C5'  // Xanh xám
                                  	 
                                 ],
                                 hoverOffset: 4
@@ -509,54 +514,11 @@
                     });
                 });
             </script>
-    
+    </div>
+    </div>
 				
-		<!-- <div class="row">
-			<div class="col-lg-6">
-				<div class="card">
-					<div class="card-body">
-						<h5 class="card-title">Cơ cấu cửa hàng</h5>
-
-						Pie Chart
-						<canvas id="pieChart" style="max-height: 400px;"></canvas>
-						<script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  new Chart(document.querySelector('#pieChart'), {
-                    type: 'pie',
-                    data: {
-                      labels: [
-                    	'a','b', 'c', 'd', 'e', 'f', 'g'],
-                      datasets: [{
-                        label: 'danh mục sản phẩm',
-                        data: [130, 50, 100, 120, 110, 50],
-                        backgroundColor: [
-                        	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                        	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                        	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                         	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                         	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                        	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                        	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                         	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                         	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                        	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                        	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                         	'rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})',
-                         	 
-                        ],
-                        hoverOffset: 4
-                      }]
-                    }
-                  });
-                });
-              </script>
-						End Pie CHart
-
-					</div>
-				</div>
-			</div> -->
-			
-			
+			<div class="card">
+				<div class="card-body">
 			<!-- Bar Chart -->
 			<!--Thống kê mặt hàng bán chạy nhất  -->
 			<h5 class="card-title">Mặt hàng bán chạy nhất</h5>
@@ -596,18 +558,18 @@
                     label: 'Số lượng bán',
                     data: <%=data1.toString()%>,  // Dữ liệu là số lượng bán
                     backgroundColor: [
-                    	  '#E6F2FF', // xanh cực nhạt gần trắng
-                    	  '#A3C9FF', // xanh dương pastel nhạt
-                    	  '#A2D4FF', // xanh biển nhạt
-                    	  '#8FC9FF', // xanh biển vừa
-                    	  '#7FC1FF', // xanh nhẹ, dễ nhìn
-                    	  '#6FB8FF', // xanh đậm nhẹ
-                    	  '#5FAFFF', // xanh biển đậm
-                    	  '#4FA6FF', // xanh đậm nhất
-                    	  '#3F9EFF', // xanh dương sâu
-                    	  '#BBDFFF', // xanh pastel nhẹ
-                    	  '#D4E6FF', // xanh pastel pha trắng
-                    	  '#E2D8F5'  // tím pastel pha xanh rất nhẹ (điểm nhấn dịu)
+                    	  '#20C997',
+                    	  '#879EF2', // Tím/xanh lam nhạt
+                    	  '#7EE45E', // Xanh lá sáng
+                    	  '#36AA3B', // Xanh lá đậm
+                    	  '#35C7A5', // Xanh ngọc tươi
+                    	  '#3DD6C6', // Xanh ngọc nhạt
+                    	  '#9EE6E1', // Xanh ngọc pha trắng
+                    	  '#69B9E9', // Xanh dương nhạt
+                    	  '#98CCF2', // Xanh baby pastel
+                    	  '#4F91CE', // Xanh nước biển trung bình
+                    	  '#267ECF', // Xanh dương đậm
+                    	  '#5994C5'  // Xanh xám
                     ],
                     borderColor: [
                       	'#64A6FF', // Viền cho xanh nhạt (#E1F2FF)
@@ -647,7 +609,6 @@
         });
     });
 </script>
-</div> 
 			</div>
 		</div>
 		
