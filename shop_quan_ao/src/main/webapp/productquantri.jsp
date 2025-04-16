@@ -268,15 +268,11 @@
 							<h3 class="card-title">
 								<b>Quản lý sản phẩm</b>
 							</h3>
-							<div
-								style="display: flex; justify-content: flex-start; padding-left: 20px;">
-								<div
-									style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-									<button type="button" id="addb" class="btn btn-success">
-										<i class="bi bi-plus-lg"></i>
-									</button>
-									<p>Thêm sản phẩm</p>
-								</div>
+							<div style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 10px;">
+								<p style="margin: 0;">Thêm sản phẩm</p>
+								<button type="button" id="addb" class="btn btn-success">
+									<i class="bi bi-plus-lg"></i>
+								</button>
 							</div>
 							<div class="card">
 								<div class="card-body row hide" id="addf">
