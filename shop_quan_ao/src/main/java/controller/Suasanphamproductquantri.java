@@ -28,7 +28,7 @@ public class Suasanphamproductquantri extends HttpServlet {
     private static final long serialVersionUID = 1L;
 //    private static final String IMAGE_DIRECTORY = "D:\\locec\\ceclo\\nono\\"; // Đường dẫn thư mục lưu ảnh
     // private static final String IMAGE_DIRECTORY = "D:\\webjava\\webbanquanao\\src\\main\\webapp\\images\\";
-    private static final String IMAGE_DIRECTORY = "D:\\CNPM\\Team_6_Nhap_Mon_Cong_Nghe_Phan_Mem\\shop_quan_ao\\src\\main\\webapp\\images\\";
+    private static final String IMAGE_DIRECTORY = "C:\\Users\\Thuyen\\git\\Team_6_Nhap_Mon_Cong_Nghe_Phan_Mem\\shop_quan_ao\\src\\main\\webapp\\images\\";
 
     private LaydulieuReponsitory lg = new LaydulieuReponsitory();
 

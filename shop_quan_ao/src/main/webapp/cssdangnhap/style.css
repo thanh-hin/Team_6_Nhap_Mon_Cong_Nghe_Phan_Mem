@@ -53,8 +53,8 @@ body {
 
 h2.auth-form-title {
     text-align: center;
-    color: #2e4882;
-    font-size: 1.7rem;
+    color: #7697e3;
+    font-size: 2rem;
     align-items: center;
 }
 
@@ -76,7 +76,7 @@ h2.auth-form-title {
 
 .auth-form-outer input:focus {
     background-color: #fff;
-    border: 1px solid #fd5353;
+    border: 1px solid #544fb7;
 }
 
 
@@ -118,23 +118,28 @@ a.auth-btn-direct {
     flex: 1;
     border: 1px solid #7896ad85;
     text-align: center;
-    height: 40px;
+    height: 39px;
     border-radius: 5px;
     line-height: 40px;
     font-weight: 500;
+    min-width:110px;
     margin-left: 5px;
 }
 
 input.auth-submit {
-    background: #a7bef0;
+    background: #95ceff;
     border: none;
+    font-size: 15px;
     width: auto;
+    height: 40px;
     color: #fff;
     font-weight: 500;
     border-radius: 5px!important;
     flex: 1;
     margin-right: 5px;
+    
     cursor: pointer;
+    min-width:110px;
 }
 
 input.auth-submit:focus {
@@ -143,7 +148,7 @@ input.auth-submit:focus {
 }
 
 input.auth-submit:hover {
-    box-shadow: 3px 3px 7px 2px #59215e2b;
+    box-shadow: 3px 3px 7px 2px #0051ff2b;
 }
 a.auth-btn-direct:hover {
     box-shadow: -2px 3px 0px 0px #7d8cb5;
@@ -157,7 +162,7 @@ a.auth-btn-direct:hover {
 .footer-action {
     display: flex;
     width: 100%;
-    margin-top: 2rem;
+    margin-top: 1rem;
     box-sizing: border-box;
     overflow: hidden;
 }

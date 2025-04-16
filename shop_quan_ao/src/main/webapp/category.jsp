@@ -210,13 +210,12 @@
 
           <div class="card">
             <div class="card-body">
-              <h3 class="card-title"><b>Quản lý danh mục</b></h3>
-			  <div style="display: flex; justify-content: flex-start; padding-left: 20px;">
-				<div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-					<button type="button" id="addb" class="btn btn-success" ><i class="bi bi-plus-lg"></i></button>
-					<p> Thêm danh mục phân loại</p>
-				</div>
-			  </div>
+              <div style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 10px;">
+  <p style="margin: 0;">Thêm danh mục phân loại</p>
+  <button type="button" id="addb" class="btn btn-success">
+    <i class="bi bi-plus-lg"></i>
+  </button>
+</div>
 			  <div class="card">
             <div class="card-body row hide" id="addf" >
               <h5 class="card-title">Thêm danh mục phân loại</h5>
@@ -277,24 +276,19 @@
                     <td><%=danhmuc.getTenDanhMuc() %></td>                    
                     <td class="small-column"><%=danhmuc.getSoluong()%></td>
                     <td>
-                    <div class="d-flex justify-content-center mb-1">
-					<form onsubmit="return false;">
-					  <button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
-					  <input type="hidden" id="id-danhmuc-<%=danhmuc.getMaDanhmuc()%>" value="<%=danhmuc.getMaDanhmuc()%>">
-					  <button type="button" class="btn btn-outline-danger" onclick="confirmDelete(<%=danhmuc.getMaDanhmuc()%>)">Xoá</button>
-					</form>
-                    </div>
-					<%-- <form>
-					<button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
-					</form>
-					<form action="Xoadanhmuc" method="get">
-					<input type="hidden" value=<%=danhmuc.getMaDanhmuc()%> name="id">
-					<button class="btn btn-outline-danger" type="submit">Xoá</button>
-					</form> --%>
-					<form action="Chitietdanhmuc" method="get">
-					<input type="hidden" value=<%=danhmuc.getMaDanhmuc()%> name="id">
-					<button  type="submit" class="btn btn-outline-info">Chi tiết</button>
-					</form>
+                    <button type="button" class="btn btn-outline-warning btn-sm" data-id="1" onclick="editForm(this)">Sửa</button>
+  									<!-- Xoá Button -->
+    								<form action="Xoasanphamproductqt" method="post" class="d-inline-block" onsubmit="return confirm('Bạn có chắc chắn muốn xóa không?');">
+      										<input type="hidden" value="1" name="id">
+      										<button class="btn btn-outline-danger btn-sm" type="submit">Xoá</button>
+    								</form>
+
+    								<!-- Chi tiết Button -->
+    								<form action="LayidSanPhamquantri" method="post" class="d-inline-block">
+      										<input type="hidden" value="1" name="idd">
+      										<button type="submit" class="btn btn-outline-info btn-sm" id="detailB">Chi tiết</button>
+    								</form>
+  									</div>
 					</td>
                   </tr>
                   <%} %>
