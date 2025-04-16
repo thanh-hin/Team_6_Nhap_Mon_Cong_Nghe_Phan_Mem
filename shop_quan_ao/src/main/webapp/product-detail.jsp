@@ -180,9 +180,10 @@
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="#" class="logo"> <img src="assetsquantri/img/LOGOTHE5IVE.jpg"
-						alt="IMG-LOGO">
+					<a href="<%= request.getContextPath() %>/Laydulieusanpham" class="logo">
+					    <img src="assetsquantri/img/LOGOTHE5IVE.jpg" alt="IMG-LOGO">
 					</a>
+
 
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
