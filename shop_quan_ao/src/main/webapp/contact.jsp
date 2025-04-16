@@ -140,34 +140,36 @@
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
-					  <!-- Icon kính lúp -->
-					  <div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-					    <i class="zmdi zmdi-search"></i>
-					  </div>
-
+						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
+							<i class="zmdi zmdi-search"></i>
+						</div>
 
 						<div
-							<%Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
-List<GioHang> gh = lgn.LayHetThongTinGioHang();
-HttpSession tk = request.getSession(false);
-List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
-int soluong = 0;
-float tongTien = 0;
-if (user != null) {
-	for (GioHang gioHang : gh) {
-		for (User u : user)
-			if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
-				soluong += gioHang.getSoLuong();
-				tongTien += gioHang.getGia();
-			}
-	}
-
-}%>
+						<%
+						Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
+							List<GioHang> gh = lgn.LayHetThongTinGioHang();
+							HttpSession tk = request.getSession(false);
+							List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
+							
+								int soluong = 0;
+								float tongTien = 0;
+								if(user != null){
+								for(GioHang gioHang:gh){
+									for(User u : user)
+										if(u.getMaTaiKhoan()==gioHang.getMaNguoiDung()){
+									soluong += gioHang.getSoLuong();
+									tongTien += gioHang.getGia();
+										}
+								}
+							}
+							
+							
+						%>
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=soluong%>">
 							<i class="zmdi zmdi-shopping-cart"></i>
 						</div>
-
+						
 						<div class="icon-header-dropdown">
 							<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" onclick="toggleDropdown(event)">
 							    <i class="fa fa-user"></i>
@@ -183,6 +185,7 @@ if (user != null) {
 							</div>
 						</div>
 					</div>
+					
 					</div>
 				</nav>
 			</div>	
@@ -324,60 +327,41 @@ if (user != null) {
 			</div>
 			
 			<div class="header-cart-content flex-w js-pscroll">
+				
 				<ul class="header-cart-wrapitem w-full">
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-01.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-02.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Converse All Star
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $39.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-03.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Nixon Porter Leather
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $17.00
-							</span>
-						</div>
-					</li>
+				<%
+				if (user != null) {
+				    for (GioHang giohang : gh) {
+				        for (User u : user) {
+				            if (u.getMaTaiKhoan() == giohang.getMaNguoiDung()) {
+				%>
+				    <li class="header-cart-item flex-w flex-t m-b-12">
+				        <div class="header-cart-item-img">
+				            <img src="<%=giohang.getDuongDan()%>" alt="IMG">
+				        </div>
+				        <div class="header-cart-item-txt p-t-8">
+				            <a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
+				                <%=giohang.getTenSanPham()%>
+				            </a>
+				            <span class="header-cart-item-info">
+				                <%=giohang.getSoLuong()%> x $<%=giohang.getGia()%>
+				            </span>
+				        </div>
+				    </li>
+				<%
+				            }
+				        }
+				    }
+				}
+				%>
 				</ul>
+
 				
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-						Tổng: $75.00
+					    Tổng tiền: <%=tongTien%>đ
 					</div>
+
 
 					<div class="header-cart-buttons flex-w w-full">
 						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
