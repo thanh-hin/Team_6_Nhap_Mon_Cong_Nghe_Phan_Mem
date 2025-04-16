@@ -135,13 +135,13 @@
   <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
-<li class="nav-heading">Tổng quan dữ liệu</li>
+<li class="nav-heading"><strong>Tổng quan dữ liệu</strong></li>
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/Bieudodoanhthu"> <i class="fas fa-tachometer-alt"></i> <span>Biểu đồ
 						thống kê</span>
 			</a></li>
      
-	  <li class="nav-heading">Quản lý bán hàng</li>
+	  <li class="nav-heading"><strong>Quản lý bán hàng</strong></li>
 	  <li class="nav-item">
         <a class="nav-link " href="<%=projectName%>/category.jsp">
           <i class="bi bi-layout-text-window-reverse"></i>
@@ -169,7 +169,7 @@
 				href="<%=projectName%>/Quanlibaiviet.jsp"> <i
 					class="fa fa-newspaper"></i> <span>Bài viết</span>
 			</a></li> --%>
-      <li class="nav-heading">Quản lý tài khoản</li>
+      <li class="nav-heading"><strong>Quản lý tài khoản</strong></li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="<%=projectName%>/account.jsp">
