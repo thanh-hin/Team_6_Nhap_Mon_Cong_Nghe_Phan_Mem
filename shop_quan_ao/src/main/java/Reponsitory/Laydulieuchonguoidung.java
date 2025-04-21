@@ -1030,7 +1030,8 @@ public class Laydulieuchonguoidung implements Thaotacvoigiaodiennguoidung {
 				String mota = rs.getString("MoTa");
 				String duongdananh = rs.getString("DuongDanAnh");
 				float g = rs.getFloat("Gia");
-				SanPham us = new SanPham(masp, madanhmuc, tenSp, mota, duongdananh, g);
+				String daXoa = rs.getString("daxoa");
+				SanPham us = new SanPham(masp, madanhmuc, tenSp, mota, duongdananh, g,daXoa);
 				listSanPham.add(us);
 			}
 

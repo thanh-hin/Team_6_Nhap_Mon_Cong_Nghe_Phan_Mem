@@ -491,7 +491,9 @@ form input, .styled-select {
 		%>
 		<%
 		for (ChiTietSanPham c : chitiet) {
+			
 			if (c.getMaSanPham() == id) {
+				if(!c.getDaXoa().equals("1")){
 		%>
 		<div class="variants">
 			<!-- Các sản phẩm với màu sắc và kích cỡ khác nhau -->
@@ -534,6 +536,7 @@ form input, .styled-select {
 			<!-- Các variant khác tương tự... -->
 		</div>
 		<%
+				}
 		}
 		}
 		%>

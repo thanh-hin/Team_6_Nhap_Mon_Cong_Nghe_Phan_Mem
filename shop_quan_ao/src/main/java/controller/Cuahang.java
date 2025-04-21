@@ -11,6 +11,7 @@ import Reponsitory.LaydulieuReponsitory;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @WebServlet("/Cuahang")
@@ -19,7 +20,13 @@ public class Cuahang extends HttpServlet {
 	private LaydulieuReponsitory lg = new LaydulieuReponsitory();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<DanhMuc> listDanhMuc = lg.Laythongtidanhmuc();
+		List<DanhMuc> listDanhMuc = new ArrayList<DanhMuc>();
+		List<DanhMuc> l = lg.Laythongtidanhmuc();
+		for(DanhMuc danhMuc : l) {
+			if(!danhMuc.getDaXoa().equals("1")) {
+				listDanhMuc.add(danhMuc);
+			}
+		}
 		request.setAttribute("listDanhMuc", listDanhMuc);
 
 		// Nhận các tham số lọc
@@ -28,26 +35,21 @@ public class Cuahang extends HttpServlet {
 		String mau = request.getParameter("mau");   // VD: Đen, Trắng, Xanh...
 
 		List<SanPham> list;
-
+		
 		// 1. Lọc theo danh mục
 		if (loai != null && !loai.isEmpty()) {
-			switch (loai) {
-				case "nu":
-					list = lg.LaythongtinsanphamTheoDanhMuc(1);
-					break;
-				case "nam":
-					list = lg.LaythongtinsanphamTheoDanhMuc(2);
-					break;
-				case "tui":
-					list = lg.LaythongtinsanphamTheoDanhMuc(3);
-					break;
-				case "giay":
-					list = lg.LaythongtinsanphamTheoDanhMuc(4);
-					break;
-				default:
-					list = lg.Laythongtinsanpham();
+			
+
+			int idDM = 0;
+			for(DanhMuc d : listDanhMuc) {
+				if(d.getTenDanhMuc().equalsIgnoreCase(loai)) {
+					idDM = d.getMaDanhmuc();
+				}
 			}
+			list = lg.LaythongtinsanphamTheoDanhMuc(idDM);
+			
 		} else {
+			
 			list = lg.Laythongtinsanpham();
 			loai = "";
 		}

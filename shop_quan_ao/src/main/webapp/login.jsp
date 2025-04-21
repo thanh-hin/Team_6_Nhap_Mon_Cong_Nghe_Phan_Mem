@@ -14,7 +14,7 @@
     <div class="auth-wrapper">
         <div class="auth-container">
             <div class="auth-action-left">
-                <div class="auth-form-outer">
+<div class="auth-form-outer" style="margin-top: 100px;">
                     <h2 class="auth-form-title">
                         Đăng nhập
                     </h2>

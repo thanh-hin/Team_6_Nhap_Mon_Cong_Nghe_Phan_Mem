@@ -4,8 +4,9 @@ public class SanPham {
 	private int maSanpham, soLuong, maDanhMuc;
 	private String tenSanPham, moTa, duongDanAnh, maKhuyeMai;
 	private float gia;
+	private String daXoa;
 	public SanPham(int maSanpham, int maDanhMuc, String tenSanPham, String moTa, String duongDanAnh,
-			float gia) {
+			float gia, String daXoa) {
 		super();
 		this.maSanpham = maSanpham;
 		
@@ -14,7 +15,17 @@ public class SanPham {
 		this.moTa = moTa;
 		this.duongDanAnh = duongDanAnh;
 		this.gia = gia;
+		this.daXoa = daXoa;
 	}
+	
+	public String getDaXoa() {
+		return daXoa;
+	}
+
+	public void setDaXoa(String daXoa) {
+		this.daXoa = daXoa;
+	}
+
 	public SanPham() {
 		super();
 	}

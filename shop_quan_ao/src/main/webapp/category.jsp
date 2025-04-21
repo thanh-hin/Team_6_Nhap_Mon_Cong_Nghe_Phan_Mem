@@ -4,39 +4,49 @@
 <%@page import="java.util.List"%>
 <%@page import="Reponsitory.LaydulieuReponsitory"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin/Category</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+<title>Admin/Category</title>
+<meta content="" name="description">
+<meta content="" name="keywords">
 
-  <!-- Favicons -->
-  <link href="assetsquantri/img/LOGOTHE5IVE.png" rel="icon">
-  <link href="assetsquantri/img/apple-touch-icon.png" rel="apple-touch-icon">
+<!-- Favicons -->
+<link href="assetsquantri/img/LOGOTHE5IVE.png" rel="icon">
+<link href="assetsquantri/img/apple-touch-icon.png"
+	rel="apple-touch-icon">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.gstatic.com" rel="preconnect">
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+	rel="stylesheet">
 
-  <!-- Vendor CSS Files -->
-  <link href="assetsquantri/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assetsquantri/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assetsquantri/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assetsquantri/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="assetsquantri/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="assetsquantri/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assetsquantri/vendor/simple-datatables/style.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <!-- Template Main CSS File -->
-  <link href="assetsquantri/css/style.css" rel="stylesheet">
+<!-- Vendor CSS Files -->
+<link href="assetsquantri/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="assetsquantri/vendor/bootstrap-icons/bootstrap-icons.css"
+	rel="stylesheet">
+<link href="assetsquantri/vendor/boxicons/css/boxicons.min.css"
+	rel="stylesheet">
+<link href="assetsquantri/vendor/quill/quill.snow.css" rel="stylesheet">
+<link href="assetsquantri/vendor/quill/quill.bubble.css"
+	rel="stylesheet">
+<link href="assetsquantri/vendor/remixicon/remixicon.css"
+	rel="stylesheet">
+<link href="assetsquantri/vendor/simple-datatables/style.css"
+	rel="stylesheet">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Template Main CSS File -->
+<link href="assetsquantri/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
+<!-- =======================================================
   * Template Name: NiceAdmin
   * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
   * Updated: Apr 20 2024 with Bootstrap v5.3.3
@@ -46,7 +56,7 @@
 </head>
 
 <body>
-	<%
+<%
 	String projectName = request.getContextPath(); // Lấy tên dự án
 	HttpSession s = request.getSession(false);
 	List<User> listt = (List<User>) session.getAttribute("Ghinhotaikhoan");
@@ -67,23 +77,22 @@
                 window.location.href = "login.jsp";
               </script>
 	<%}}} %>
-  <!-- ======= Header ======= -->
-  <header id="header" class="header fixed-top d-flex align-items-center">
 
-    <div class="d-flex align-items-center justify-content-between">
-      	<div class="logo d-flex align-items-center">
-			<a href="<%=projectName%>/Bieudodoanhthu" class="d-flex align-items-center">
+	<!-- ======= Header ======= -->
+	<header id="header" class="header fixed-top d-flex align-items-center">
+
+		<div class="d-flex align-items-center justify-content-between">
+			<a href="<%=projectName%>/Bieudodoanhthu" class="logo d-flex align-items-center">
 				<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="">
 				<span class="d-none d-lg-block">Admin</span>
 			</a>
+
 		</div>
+		<!-- End Logo -->
 
-      <i class="bi bi-list toggle-sidebar-btn"></i>
-    </div><!-- End Logo -->
 
-   
 
-    <nav class="header-nav ms-auto">
+	<nav class="header-nav ms-auto">
 			<ul class="d-flex align-items-center">
 
 				<li class="nav-item dropdown pe-3">
@@ -131,38 +140,37 @@
 
 			</ul>
 		</nav>
+		<!-- End Icons Navigation -->
 
-  </header><!-- End Header -->
+	</header>
+	<!-- End Header -->
 
-  <!-- ======= Sidebar ======= -->
-  <aside id="sidebar" class="sidebar">
+	<!-- ======= Sidebar ======= -->
+	<aside id="sidebar" class="sidebar">
 
-    <ul class="sidebar-nav" id="sidebar-nav">
-<li class="nav-heading"><strong>Tổng quan dữ liệu</strong></li>
+		<ul class="sidebar-nav" id="sidebar-nav">
+			<li class="nav-heading"><strong>Tổng quan dữ liệu</strong></li>
 			<li class="nav-item"><a class="nav-link collapsed"
-				href="<%=projectName%>/Bieudodoanhthu"> <i class="fas fa-tachometer-alt"></i> <span>Biểu đồ
-						thống kê</span>
+				href="<%=projectName%>/Bieudodoanhthu"> <i
+					class="fas fa-tachometer-alt"></i> <span>Biểu đồ thống kê</span>
 			</a></li>
-     
-	  <li class="nav-heading"><strong>Quản lý bán hàng</strong></li>
-	  <li class="nav-item">
-        <a class="nav-link " href="<%=projectName%>/category.jsp">
-          <i class="bi bi-layout-text-window-reverse"></i>
-          <span>Danh mục</span>
-        </a>
-      </li>
-      <li class="nav-item"><a class="nav-link collapsed" href="<%=projectName%>/Donhangquantri.jsp">
-					<i class="bi bi-cart"></i> <span>Đơn hàng</span>
+
+			<li class="nav-heading"><strong>Quản lý bán hàng</strong></li>
+			<li class="nav-item"><a class="nav-link "
+				href="<%=projectName%>/category.jsp"> <i
+					class="bi bi-layout-text-window-reverse"></i> <span>Danh mục</span>
 			</a></li>
-	  <li class="nav-item">
-        <a class="nav-link collapsed" href="<%=projectName%>/productquantri.jsp">
-          <i class="bi bi-grid"></i>
-          <span>Sản phẩm</span>
-        </a>
-      </li>
-      <li class="nav-item"><a class="nav-link collapsed"
-				href="<%=projectName%>/Quanlidanhgia.jsp"> <i
-					class="fa fa-star"></i> <span>Đánh giá</span>
+			<li class="nav-item"><a class="nav-link collapsed"
+				href="<%=projectName%>/Donhangquantri.jsp"> <i
+					class="bi bi-cart"></i> <span>Đơn hàng</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link collapsed"
+				href="<%=projectName%>/productquantri.jsp"> <i
+					class="bi bi-grid"></i> <span>Sản phẩm</span>
+			</a></li>
+			<li class="nav-item"><a class="nav-link collapsed"
+				href="<%=projectName%>/Quanlidanhgia.jsp"> <i class="fa fa-star"></i>
+					<span>Đánh giá</span>
 			</a></li>
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/Quantrikhuyenmai.jsp"> <i
@@ -172,239 +180,263 @@
 				href="<%=projectName%>/Quanlibaiviet.jsp"> <i
 					class="fa fa-newspaper"></i> <span>Bài viết</span>
 			</a></li> --%>
-      <li class="nav-heading"><strong>Quản lý tài khoản</strong></li>
+			<li class="nav-heading"><strong>Quản lý tài khoản</strong></li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="<%=projectName%>/account.jsp">
-          <i class="bi bi-person"></i>
-          <span>Tài khoản</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
+			<li class="nav-item"><a class="nav-link collapsed"
+				href="<%=projectName%>/account.jsp"> <i class="bi bi-person"></i>
+					<span>Tài khoản</span>
+			</a></li>
+			<!-- End Profile Page Nav -->
 
-      <%-- <li class="nav-item">
+			<%-- <li class="nav-item">
         <a class="nav-link collapsed" href="<%=projectName%>/group.jsp">
           <i class="bi bi-question-circle"></i>
           <span>Phân quyền</span>
         </a>
       </li><!-- End F.A.Q Page Nav --> --%>
 
-    </ul>
+		</ul>
 
-  </aside><!-- End Sidebar-->
+	</aside>
+	<!-- End Sidebar-->
 
-  <main id="main" class="main">
+	<main id="main" class="main">
 
-    <div class="pagetitle">
-      <h1>Danh mục</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Quản lý bán hàng</a></li>
-          <li class="breadcrumb-item active">Danh mục</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
+		<div class="pagetitle">
+			<h1>Danh mục</h1>
+			<nav>
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="index.html">Quản lý
+							bán hàng</a></li>
+					<li class="breadcrumb-item active">Danh mục</li>
+				</ol>
+			</nav>
+		</div>
+		<!-- End Page Title -->
 
-    <section class="section">
-      <div class="row">
-        <div class="col-lg-12">
+		<section class="section">
+			<div class="row">
+				<div class="col-lg-12">
 
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title"><b>Quản lý danh mục</b></h3>
-			  <div style="display: flex; justify-content: flex-start; padding-left: 20px;">
-				<div style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-					<button type="button" id="addb" class="btn btn-success" ><i class="bi bi-plus-lg"></i></button>
-					<p> Thêm danh mục phân loại</p>
+					<div class="card">
+						<div class="card-body">
+						          <h3 class="card-title"><b>Quản lý danh mục</b></h3>
+							<div
+								style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 10px;">
+								<p style="margin: 0;">Thêm danh mục phân loại</p>
+								<button type="button" id="addb" class="btn btn-success">
+									<i class="bi bi-plus-lg"></i>
+								</button>
+							</div>
+							<div class="card">
+								<div class="card-body row hide" id="addf">
+									<h5 class="card-title">Thêm danh mục phân loại</h5>
+									<%
+									String msg = request.getParameter("success");
+									String err = request.getParameter("error");
+
+									if ("true".equals(msg)) {
+									%>
+									<div class="alert alert-success">Thêm danh mục thành
+										công!</div>
+									<%
+									} else if ("fail".equals(err)) {
+									%>
+									<div class="alert alert-danger">Thêm danh mục thất bại!</div>
+									<%
+									} else if ("empty".equals(err)) {
+									%>
+									<div class="alert alert-warning">Tên danh mục không được
+										để trống.</div>
+									<%
+									} else if ("duplicate".equals(err)) {
+									%>
+									<div class="alert alert-warning">Tên danh mục đã tồn tại!</div>
+									<%
+									}
+									%>
+
+									<!-- Vertical Form -->
+									<form id="form-them-danh-muc">
+										<div class="col-12">
+											<label for="inputName" class="form-label">Tên danh
+												mục</label> <input type="text" class="form-control" id="inputName"
+												name="addThemSanPham">
+										</div>
+
+										<div class="text-center">
+											<button type="submit" class="btn btn-primary">Thêm</button>
+										</div>
+									</form>
+									<!-- Vertical Form -->
+
+								</div>
+
+								<!-- Thanh tìm kiếm -->
+								<div class="search-container" style="padding: 20px;">
+									<input type="text" id="search-input" class="form-control"
+										placeholder="Tìm kiếm danh mục..." />
+								</div>
+
+							</div>
+							<!-- Table with stripped rows -->
+							<table class="table datatable">
+								<thead>
+									<tr>
+										<th>Mã số</th>
+										<th>Phân loại</th>
+										<th class="small-column">Số lượng sản phẩm</th>
+										<th>Hành động</th>
+									</tr>
+								</thead>
+								<tbody>
+									<%
+									LaydulieuReponsitory lg = new LaydulieuReponsitory();
+									List<DanhMuc> l = lg.SelectDanhMuc();
+									for (DanhMuc danhmuc : l) {
+										
+									%>
+									<tr>
+										<td><%=danhmuc.getMaDanhmuc()%></td>
+										<td><%=danhmuc.getTenDanhMuc()%></td>
+										<td class="small-column"><%=danhmuc.getSoluong()%></td>
+										<td>
+											<button type="button" class="btn btn-outline-warning btn-sm"
+												data-id="1" onclick="editForm(this)">Sửa</button> <!-- Xoá Button -->
+											<form action="Xoadanhmuc" method="post"
+												class="d-inline-block" 
+												onsubmit="return confirm('Bạn có chắc chắn muốn xóa không?');">
+												<input type="hidden" value="<%=danhmuc.getMaDanhmuc()%>" name="id">
+												<button class="btn btn-outline-danger btn-sm" type="submit">Xoá</button>
+											</form> <!-- Chi tiết Button -->
+											<form action="Chitietdanhmuc" method="get"
+												class="d-inline-block">
+												<input type="hidden" value="<%=danhmuc.getMaDanhmuc()%>" name="id">
+												<button type="submit" class="btn btn-outline-info btn-sm"
+													id="detailB">Chi tiết</button>
+											</form>
+											</div>
+										</td>
+									</tr>
+									<%
+									}
+									
+									%>
+
+
+								</tbody>
+							</table>
+							<!-- End Table with stripped rows -->
+
+						</div>
+					</div>
+
 				</div>
-			  </div>
-			  <div class="card">
-            <div class="card-body row hide" id="addf" >
-              <h5 class="card-title">Thêm danh mục phân loại</h5>
-              	<% String msg = request.getParameter("success");
-				   String err = request.getParameter("error");
-				
-				   if ("true".equals(msg)) { %>
-				       <div class="alert alert-success">Thêm danh mục thành công!</div>
-				<% } else if ("fail".equals(err)) { %>
-				       <div class="alert alert-danger">Thêm danh mục thất bại!</div>
-				<% } else if ("empty".equals(err)) { %>
-				       <div class="alert alert-warning">Tên danh mục không được để trống.</div>
-				<% } else if ("duplicate".equals(err)) { %>
-				       <div class="alert alert-warning">Tên danh mục đã tồn tại!</div>
-				<% } %>
-              
-              <!-- Vertical Form -->
-             	<form id="form-them-danh-muc">
-				  <div class="col-12">
-				    <label for="inputName" class="form-label">Tên danh mục</label>
-				    <input type="text" class="form-control" id="inputName" name="addThemSanPham">
-				  </div>
-				
-				  <div class="text-center">
-				    <button type="submit" class="btn btn-primary">Thêm</button>
-				  </div>
-				</form>
-				<!-- Vertical Form -->
-
-            </div>
-            
-            <!-- Thanh tìm kiếm -->
-<div class="search-container" style="padding: 20px;">
-    <input type="text" id="search-input" class="form-control" placeholder="Tìm kiếm danh mục..." />
-</div>
-
-          </div>
-              <!-- Table with stripped rows -->
-              <table class="table datatable">
-                <thead>
-                  <tr>
-					<th>Mã số</th>
-                    <th>
-                      Phân loại
-                    </th>                   
-                    <th class="small-column">Số lượng sản phẩm</th>                  
-                    <th>Hành động</th>
-                  </tr>
-                </thead>
-                <tbody>
-                <%
-                LaydulieuReponsitory lg = new LaydulieuReponsitory();
-                List<DanhMuc> l = lg.SelectDanhMuc();
-                for(DanhMuc danhmuc : l){
-                		  %>
-                  <tr>
-					<td><%= danhmuc.getMaDanhmuc() %></td>
-                    <td><%=danhmuc.getTenDanhMuc() %></td>                    
-                    <td class="small-column"><%=danhmuc.getSoluong()%></td>
-                    <td>
-                    <div class="d-flex justify-content-center mb-1">
-					<form onsubmit="return false;">
-					  <button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
-					  <input type="hidden" id="id-danhmuc-<%=danhmuc.getMaDanhmuc()%>" value="<%=danhmuc.getMaDanhmuc()%>">
-					  <button type="button" class="btn btn-outline-danger" onclick="confirmDelete(<%=danhmuc.getMaDanhmuc()%>)">Xoá</button>
-					</form>
-                    </div>
-					<%-- <form>
-					<button id="editB" type="button" class="btn btn-outline-warning" data-id="<%=danhmuc.getMaDanhmuc()%>" onclick="editForm(this)">Sửa</button>
-					</form>
-					<form action="Xoadanhmuc" method="get">
-					<input type="hidden" value=<%=danhmuc.getMaDanhmuc()%> name="id">
-					<button class="btn btn-outline-danger" type="submit">Xoá</button>
-					</form> --%>
-					<form action="Chitietdanhmuc" method="get">
-					<input type="hidden" value=<%=danhmuc.getMaDanhmuc()%> name="id">
-					<button  type="submit" class="btn btn-outline-info">Chi tiết</button>
-					</form>
-					</td>
-                  </tr>
-                  <%} %>
-                  
-				  
-                </tbody>
-              </table>
-              <!-- End Table with stripped rows -->
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-    <%
-    String loi = (String) request.getAttribute("loi");
-    if(loi != null){
-    %>
-    <script>
+			</div>
+		</section>
+		<%
+		String loi = (String) request.getAttribute("loi");
+		if (loi != null) {
+		%>
+		<script>
     alert("Lỗi sửa sản phẩm");
     </script>
-    <%} %>
-	<div class="card editForm hide" id="editF">
-	    <div class="card-body row">
-	        <h5 class="card-title">Sửa danh mục</h5>
-	
-	        <!-- Vertical Form -->
-	        <form action="UpdateDanhMuc" method="post" id="form-sua-danh-muc">
-	            <input type="hidden" id="product-id" name="product-id" readonly>
-	            
-	            <div class="col-12">
-	                <label for="inputName" class="form-label">Tên danh mục mới</label>
-	                <input type="text" class="form-control" id="inputUpdate" name="updateDanhMuc">
-	            </div>
-	
-	            <!-- Error Message Box -->
-	            <div id="edit-error-msg" class="text-danger"></div> <!-- This will show error messages -->
-	
-	            <div class="text-center">
-	                <button type="submit" class="btn btn-primary">Sửa</button>
-	                <button type="button" class="btn btn-secondary" id="cancelBtn">Hủy</button>
-	            </div>
-	        </form>
-	        <!-- End Vertical Form -->
-	    </div>
-	</div>
-	
-	<div class="card detailForm hide" id="detailF">
-		<div class="card-body row "  >
-              <h5 class="card-title">Chi tiết danh mục</h5>
+		<%
+		}
+		%>
+		<div class="card editForm hide" id="editF">
+			<div class="card-body row">
+				<h5 class="card-title">Sửa danh mục</h5>
 
-              <!-- Vertical Form -->
-              <form >
-                <div class="col-12">
-                  <table class="table datatable">
-                <thead>
-                  <tr>
-					<th>Mã sản phẩm</th>
-                    <th>Tên sản phẩm</th>                                    
-                    <th>Giá</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-					<td>01</td>
-                    <td>Mini Silver Mesh Watch</td>                    
-                    <td>$86.85</td> 
-                  </tr>
-				  <tr>
-					<td>01</td>
-                    <td>Mini Silver Mesh Watch</td>                    
-                    <td>$86.85</td> 
-                  </tr>
-				  <tr>
-					<td>01</td>
-                    <td>Mini Silver Mesh Watch</td>                    
-                    <td>$86.85</td> 
-                  </tr>
-				  <tr>
-					<td>01</td>
-                    <td>Mini Silver Mesh Watch</td>                    
-                    <td>$86.85</td> 
-                  </tr>
-				  <tr>
-					<td>01</td>
-                    <td>Mini Silver Mesh Watch</td>                    
-                    <td>$86.85</td> 
-                  </tr>
-				  <tr>
-					<td>01</td>
-                    <td>Mini Silver Mesh Watch</td>                    
-                    <td>$86.85</td> 
-                  </tr>
-				  </tbody>
-              </table>
-              </form><!-- Vertical Form -->
+				<!-- Vertical Form -->
+				<form action="UpdateDanhMuc" method="post" id="form-sua-danh-muc">
+					<input type="hidden" id="product-id" name="product-id" readonly>
+
+					<div class="col-12">
+						<label for="inputName" class="form-label">Tên danh mục mới</label>
+						<input type="text" class="form-control" id="inputUpdate"
+							name="updateDanhMuc">
+					</div>
+
+					<!-- Error Message Box -->
+					<div id="edit-error-msg" class="text-danger"></div>
+					<!-- This will show error messages -->
+
+					<div class="text-center">
+						<button type="submit" class="btn btn-primary">Sửa</button>
+						<button type="button" class="btn btn-secondary" id="cancelBtn">Hủy</button>
+					</div>
+				</form>
+				<!-- End Vertical Form -->
+			</div>
 		</div>
-    </div>
-    
-	</div>
-  </main><!-- End #main -->
-<div id="smoke" class="smoke hide"></div>
-  <!-- ======= Footer ======= -->
+
+		<div class="card detailForm hide" id="detailF">
+			<div class="card-body row ">
+				<h5 class="card-title">Chi tiết danh mục</h5>
+
+				<!-- Vertical Form -->
+				<form>
+					<div class="col-12">
+						<table class="table datatable">
+							<thead>
+								<tr>
+									<th>Mã sản phẩm</th>
+									<th>Tên sản phẩm</th>
+									<th>Giá</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>01</td>
+									<td>Mini Silver Mesh Watch</td>
+									<td>$86.85</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td>Mini Silver Mesh Watch</td>
+									<td>$86.85</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td>Mini Silver Mesh Watch</td>
+									<td>$86.85</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td>Mini Silver Mesh Watch</td>
+									<td>$86.85</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td>Mini Silver Mesh Watch</td>
+									<td>$86.85</td>
+								</tr>
+								<tr>
+									<td>01</td>
+									<td>Mini Silver Mesh Watch</td>
+									<td>$86.85</td>
+								</tr>
+							</tbody>
+						</table>
+				</form>
+				<!-- Vertical Form -->
+			</div>
+		</div>
+
+		</div>
+	</main>
+	<!-- End #main -->
+	<div id="smoke" class="smoke hide"></div>
+	<!-- ======= Footer ======= -->
 
 
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+	<a href="#"
+		class="back-to-top d-flex align-items-center justify-content-center"><i
+		class="bi bi-arrow-up-short"></i></a>
 
-  <!-- Vendor JS Files -->
- <!--  <script src="assetsquantri/vendor/apexcharts/apexcharts.min.js"></script>
+	<!-- Vendor JS Files -->
+	<!--  <script src="assetsquantri/vendor/apexcharts/apexcharts.min.js"></script>
   <script src="assetsquantri/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assetsquantri/vendor/chart.js/chart.umd.js"></script>
   <script src="assetsquantri/vendor/echarts/echarts.min.js"></script>
@@ -412,10 +444,12 @@
   <script src="assetsquantri/vendor/simple-datatables/simple-datatables.js"></script>
   <script src="assetsquantri/vendor/tinymce/tinymce.min.js"></script>
   <script src="assetsquantri/vendor/php-email-form/validate.js"></script> -->
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Template Main JS File -->
-  <script src="assetsquantri/js/main.js"></script>
-  <script> 
+	<!-- Template Main JS File -->
+	<script src="assetsquantri/js/main.js"></script>
+	<script> 
 	document.getElementById('addb').addEventListener('click', () => {toggleUpload();});
 	function toggleUpload() {
 		const addForm = document.getElementById('addf');
@@ -467,7 +501,7 @@ function editForm(button) {
 	});
 	
   </script>
-  
+
 	<script>
 	document.addEventListener("DOMContentLoaded", function () {
 	  const form = document.getElementById("form-them-danh-muc");
@@ -526,7 +560,7 @@ function editForm(button) {
 	  });
 	});
 	</script>
-	
+
 	<script>
 	function confirmDelete(id) {
 	  if (confirm("Bạn có chắc chắn muốn xoá danh mục này không?")) {
@@ -534,7 +568,7 @@ function editForm(button) {
 	  }
 	}
 	</script>
-	
+
 	<script>
 	document.addEventListener("DOMContentLoaded", function () {
 	    const form = document.getElementById("form-sua-danh-muc");
@@ -620,7 +654,7 @@ function editForm(button) {
 
 	});
 	</script>
-	
+
 	<script>
 	document.getElementById('search-input').addEventListener('input', function() {
 	    const filter = this.value.toLowerCase(); // Lấy giá trị tìm kiếm và chuyển sang chữ thường
@@ -645,6 +679,7 @@ function editForm(button) {
 	        }
 	    });
 	});
+	
 	</script>
 </body>
 

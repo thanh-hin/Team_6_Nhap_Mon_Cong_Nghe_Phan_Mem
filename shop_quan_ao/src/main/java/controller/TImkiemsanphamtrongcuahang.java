@@ -9,6 +9,7 @@ import model.DanhMuc;
 import model.SanPham;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import Reponsitory.LaydulieuReponsitory;
@@ -44,7 +45,14 @@ public class TImkiemsanphamtrongcuahang extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String timKiem = request.getParameter("timKiem");
 		List<SanPham> list = lgn.TimKiemSanPham(timKiem);
-		List<DanhMuc> listDanhMuc = lg.Laythongtidanhmuc();
+		List<DanhMuc> listDanhMuc = new ArrayList<DanhMuc>();
+		List<DanhMuc> l = lg.Laythongtidanhmuc();
+		for(DanhMuc danhMuc : l) {
+			if(!danhMuc.getDaXoa().equals("1")) {
+				listDanhMuc.add(danhMuc);
+			}
+		}
+		
 		request.setAttribute("listDanhMuc", listDanhMuc);
 		request.setAttribute("listHome", list);
 		request.getRequestDispatcher("/product.jsp").forward(request, response);

@@ -33,13 +33,13 @@ public class Xoadanhmuc extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("id"));
 		
-		List<SanPham> sp = lg.Laythongtinsanpham();
-		for(SanPham sanpham: sp) {
-			if(sanpham.getMaDanhMuc()==id) {
-				// xóa thông tin chi tiết sản phẩm
-				boolean c = lg.deleteChiSPIdDanhMuc(sanpham.getMaSanpham());
-			}
-		}
+//		List<SanPham> sp = lg.Laythongtinsanpham();
+//		for(SanPham sanpham: sp) {
+//			if(sanpham.getMaDanhMuc()==id) {
+//				// xóa thông tin chi tiết sản phẩm
+//				boolean c = lg.deleteChiSPIdDanhMuc(sanpham.getMaSanpham());
+//			}
+//		}
 		// xóa sản phẩm
 		boolean s = lg.deleteSPIdDanhMuc(id);
 		// xóa đanh mục

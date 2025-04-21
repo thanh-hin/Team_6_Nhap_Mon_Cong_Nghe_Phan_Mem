@@ -504,7 +504,8 @@ public class LaydulieuReponsitory implements Thaotac {
 				String mota = rs.getString("MoTa");
 				String duongdananh = rs.getString("DuongDanAnh");
 				float g = rs.getFloat("Gia");
-				SanPham us = new SanPham(masp, madanhmuc, tenSp, mota, duongdananh, g);
+				String daXoa = rs.getString("daxoa");
+				SanPham us = new SanPham(masp, madanhmuc, tenSp, mota, duongdananh, g,daXoa);
 				list.add(us);
 			}
 		} catch (SQLException e) {
@@ -558,6 +559,7 @@ public class LaydulieuReponsitory implements Thaotac {
 				DanhMuc q = new DanhMuc();
 				q.setMaDanhmuc(rs.getInt("MaDanhMuc"));
 				q.setTenDanhMuc(rs.getString("TenDanhMuc"));
+				q.setDaXoa(rs.getString("daxoa"));
 				list.add(q);
 			}
 		} catch (SQLException e) {
@@ -608,7 +610,7 @@ public class LaydulieuReponsitory implements Thaotac {
 			// Xử lý kết quả trả về
 			while (rs.next()) {
 				ChiTietSanPham chitiet = new ChiTietSanPham(rs.getInt("id"), rs.getInt("MaSanPham"),
-						rs.getInt("soLuong"), rs.getString("mauSac"), rs.getString("kichCo"));
+						rs.getInt("soLuong"), rs.getString("mauSac"), rs.getString("kichCo"),rs.getString("daxoa"));
 				list.add(chitiet);
 
 			}
@@ -651,7 +653,7 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
 			// Câu truy vấn SQL
-			String query = "DELETE FROM chitietsanpham WHERE id = ?";
+			String query = "UPDATE chitietsanpham SET daxoa = TRUE WHERE id = ?";
 
 			ps = conn.prepareStatement(query);
 
@@ -797,7 +799,7 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
 			// Câu truy vấn SQL
-			String query = "delete from sanpham where MaSanPham = ?";
+			String query = "UPDATE sanpham SET DaXoa = TRUE WHERE MaSanPham = ?";
 
 			ps = conn.prepareStatement(query);
 
@@ -1077,9 +1079,11 @@ public class LaydulieuReponsitory implements Thaotac {
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
 
 			// Câu truy vấn SQL
-			String query = "SELECT dm.TenDanhMuc, dm.MaDanhMuc, COUNT(sp.MaSanPham) AS SoSanPham "
-					+ "FROM danhmucsanpham dm " + "LEFT JOIN sanpham sp ON dm.MaDanhMuc = sp.MaDanhMuc "
-					+ "GROUP BY dm.MaDanhMuc, dm.TenDanhMuc";
+			String query = "SELECT dm.TenDanhMuc, dm.MaDanhMuc, COUNT(sp.MaSanPham) AS SoSanPham \r\n"
+					+ "FROM danhmucsanpham dm \r\n"
+					+ "LEFT JOIN sanpham sp ON dm.MaDanhMuc = sp.MaDanhMuc \r\n"
+					+ "WHERE dm.DaXoa = FALSE\r\n"
+					+ "GROUP BY dm.MaDanhMuc, dm.TenDanhMuc;";
 
 			// Chuẩn bị câu lệnh SQL
 			ps = conn.prepareStatement(query);
@@ -1093,6 +1097,7 @@ public class LaydulieuReponsitory implements Thaotac {
 				d.setMaDanhmuc(rs.getInt("MaDanhMuc"));
 				d.setTenDanhMuc(rs.getString("TenDanhMuc"));
 				d.setSoluong(rs.getInt("SoSanPham"));
+//				d.setDaXoa(rs.getString("daxoa"));
 				list.add(d);
 			}
 		} catch (SQLException e) {
@@ -1125,7 +1130,7 @@ public class LaydulieuReponsitory implements Thaotac {
 		try {
 			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool
-			String xoaDanhMuc = "delete from danhmucsanpham where MaDanhMuc = ?";
+			String xoaDanhMuc = "UPDATE danhmucsanpham SET DaXoa = TRUE WHERE MaDanhMuc = ?";
 			ps = conn.prepareStatement(xoaDanhMuc);
 			ps.setInt(1, id);
 			ktra = ps.executeUpdate() > 0 ? true : false;
@@ -1157,7 +1162,7 @@ public class LaydulieuReponsitory implements Thaotac {
 		ResultSet rs = null;
 		ConnectionSql connectionSql = null;
 		boolean t = false;
-		String xoaSanPham = "delete from sanpham where MaDanhMuc = ?";
+		String xoaSanPham = "UPDATE sanpham SET DaXoa = TRUE WHERE MaDanhMuc = ?";
 		try {
 			connectionSql = new ConnectionSql();
 			conn = connectionSql.getConnection(); // Lấy kết nối từ pool

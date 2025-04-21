@@ -98,7 +98,6 @@
 	color: #007bff;
 }
 
-
 .icon-header-dropdown:hover .dropdown-menu {
 	display: block; /* Hiển thị menu khi hover */
 }
@@ -115,29 +114,26 @@ body {
 .custom-title {
 	font-size: 1.5rem; /* Điều chỉnh kích thước chữ */
 	font-weight: bold; /* Đặt chữ đậm */
-	font-family:  'Material-Design-Iconic-Font';
-	color: #8d8b98; 
-	text-align: center; /* Căn giữa */f
-	margin-top: 20px; /* Thêm khoảng cách phía trên */
+	font-family: 'Material-Design-Iconic-Font';
+	color: #8d8b98;
+	text-align: center; /* Căn giữa */
+	f margin-top: 20px; /* Thêm khoảng cách phía trên */
 }
 
 #more-products {
-  display: none;
-  flex-wrap: wrap;
-  width: 100%;
-  margin-top: 30px;
-  margin-bottom: 200px; /* đẩy xa footer hơn */
-  gap: 20px;
+	display: none;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-top: 30px;
+	margin-bottom: 200px; /* đẩy xa footer hơn */
+	gap: 20px;
 }
 
 section.bg0 {
-  overflow: visible;
-  position: relative;
-  padding-bottom: 280px; /* Tăng đủ để không bị footer đè */
+	overflow: visible;
+	position: relative;
+	padding-bottom: 280px; /* Tăng đủ để không bị footer đè */
 }
-
-
-
 </style>
 </head>
 <body class="animsition">
@@ -193,30 +189,28 @@ section.bg0 {
 						</div>
 
 						<div
-							<%
-								Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
-								List<GioHang> gh = lgn.LayHetThongTinGioHang();
-								HttpSession tk = request.getSession(false);
-								List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
-								int soluong = 0;
-								float tongTien = 0;
-								boolean isUser = false; // Biến kiểm tra quyền người dùng
-								
-								if (user != null) {
-									for (GioHang gioHang : gh) {
-										for (User u : user) {
-											if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
-												soluong += gioHang.getSoLuong();
-												tongTien += gioHang.getGia();
-											}
-										}
-									}
-									// Kiểm tra quyền của người dùng đầu tiên trong session
-									if (user.get(0).getMaQuyen() == 3) {
-										isUser = true;
-									}
-								}
-							%>
+							<%Laydulieuchonguoidung lgn = new Laydulieuchonguoidung();
+List<GioHang> gh = lgn.LayHetThongTinGioHang();
+HttpSession tk = request.getSession(false);
+List<User> user = (List<User>) tk.getAttribute("Ghinhotaikhoan");
+int soluong = 0;
+float tongTien = 0;
+boolean isUser = false; // Biến kiểm tra quyền người dùng
+
+if (user != null) {
+	for (GioHang gioHang : gh) {
+		for (User u : user) {
+			if (u.getMaTaiKhoan() == gioHang.getMaNguoiDung()) {
+				soluong += gioHang.getSoLuong();
+				tongTien += gioHang.getGia();
+			}
+		}
+	}
+	// Kiểm tra quyền của người dùng đầu tiên trong session
+	if (user.get(0).getMaQuyen() == 3) {
+		isUser = true;
+	}
+}%>
 							class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart"
 							data-notify="<%=soluong%>">
 							<i class="zmdi zmdi-shopping-cart"></i>
@@ -224,10 +218,11 @@ section.bg0 {
 
 
 						<div class="icon-header-dropdown">
-							<a href="#" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11" onclick="toggleDropdown(event)">
-							    <i class="fa fa-user"></i>
+							<a href="#"
+								class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11"
+								onclick="toggleDropdown(event)"> <i class="fa fa-user"></i>
 							</a>
-							
+
 							<!-- Thẻ con chứa thông tin cá nhân và đơn hàng -->
 							<div class="dropdown-menu">
 								<ul>
@@ -247,7 +242,7 @@ section.bg0 {
 								</ul>
 							</div>
 						</div>
-					
+
 					</div>
 				</nav>
 			</div>
@@ -349,9 +344,11 @@ section.bg0 {
 		</div>
 
 		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
+		<div
+			class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
 			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
+				<button
+					class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
 					<img src="images/icons/icon-close2.png" alt="CLOSE">
 				</button>
 
@@ -359,7 +356,8 @@ section.bg0 {
 					<button class="flex-c-m trans-04">
 						<i class="zmdi zmdi-search"></i>
 					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
+					<input class="plh3" type="text" name="search"
+						placeholder="Search...">
 				</form>
 			</div>
 		</div>
@@ -392,11 +390,15 @@ section.bg0 {
 							<img src="<%=giohang.getDuongDan()%>" alt="IMG">
 						</div>
 						<div class="header-cart-item-txt" style="padding-top: 4px;">
-							<a href="#" class="header-cart-item-name hov-cl1 trans-04" style="margin-bottom: 4px; display: inline-block;">
-								<%= giohang.getTenSanPham() %>
+							<a href="#" class="header-cart-item-name hov-cl1 trans-04"
+								style="margin-bottom: 4px; display: inline-block;"> <%=giohang.getTenSanPham()%>
 							</a>
-							<div class="header-cart-item-info" style="font-size: 13px; color: #888;">
-								Số lượng: <%= giohang.getSoLuong() %> &nbsp;-&nbsp; Tổng: <%= String.format("%.2f", giohang.getGia()) %>
+							<div class="header-cart-item-info"
+								style="font-size: 13px; color: #888;">
+								Số lượng:
+								<%=giohang.getSoLuong()%>
+								&nbsp;-&nbsp; Tổng:
+								<%=String.format("%.2f", giohang.getGia())%>
 							</div>
 						</div>
 
@@ -412,9 +414,8 @@ section.bg0 {
 
 				<div class="w-full">
 					<div class="header-cart-total w-full p-tb-40">
-  <strong>Tổng tiền:</strong> 
-  <span style="font-weight: normal;"><%= tongTien %>đ</span>
-</div>
+						<strong>Tổng tiền:</strong> <span style="font-weight: normal;"><%=tongTien%>đ</span>
+					</div>
 					<div class="header-cart-buttons flex-w w-full">
 						<a href="Giohang"
 							class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
@@ -517,55 +518,53 @@ section.bg0 {
 	<div class="sec-banner bg0 p-t-80 p-b-50">
 		<div class="container">
 			<div class="row">
-				 <div class="col-lg-3 p-b-30">
-  				<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
- 	    			<a href="Cuahang?loai=nu" class="d-flex align-items-center text-decoration-none">
-					    <img src="images/icongirl.jpg" alt="IMG-BANNER" style="width: 60px; height: auto; margin-right: 15px;">
-					    <div>
-					        <div class="block1-name ltext-102 text-dark">Nữ</div>
-					        <div class="block1-info stext-102 text-secondary">2024</div>
-					    </div>
+				<div class="col-lg-3 p-b-30">
+					<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
+					<a href="Cuahang?loai=nu"
+						class="d-flex align-items-center text-decoration-none"> <img
+						src="images/icongirl.jpg" alt="IMG-BANNER"
+						style="width: 60px; height: auto; margin-right: 15px;">
+						<div>
+							<div class="block1-name ltext-102 text-dark">Nữ</div>
+							<div class="block1-info stext-102 text-secondary">2024</div>
+						</div>
 					</a>
 				</div>
 				<div class="col-lg-3 p-b-30">
-  				<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
- 	    			<a href="Cuahang?loai=nam" class="d-flex align-items-center text-decoration-none">
-    				<!-- Ảnh bên trái -->
-   						<img src="images/iconboy.jpg" alt="IMG-BANNER"
-     				    			style="width: 60px; height: auto; margin-right: 15px;">
-
-  					<!-- Text bên phải -->
-   					<div>
-    					<div class="block1-name ltext-102 text-dark">Nam</div>
-      					<div class="block1-info stext-102 text-secondary">2024</div>
-    				</div>
+					<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
+					<a href="Cuahang?loai=nam"
+						class="d-flex align-items-center text-decoration-none"> <!-- Ảnh bên trái -->
+						<img src="images/iconboy.jpg" alt="IMG-BANNER"
+						style="width: 60px; height: auto; margin-right: 15px;"> <!-- Text bên phải -->
+						<div>
+							<div class="block1-name ltext-102 text-dark">Nam</div>
+							<div class="block1-info stext-102 text-secondary">2024</div>
+						</div>
 					</a>
 				</div>
 				<div class="col-6 col-lg-3 p-b-30">
- 					<a href="Cuahang?loai=giay" class="d-flex align-items-center text-decoration-none">
-    				<!-- Ảnh bên trái -->
-    					<img src="images/iconshoe.jpg" alt="IMG-BANNER"
-         							style="width: 60px; height: auto; margin-right: 15px;">
-    
-    				<!-- Text bên phải -->
-    				<div>
-      					<div class="block1-name ltext-102 text-dark">Giày</div>
-      					<div class="block1-info stext-102 text-secondary">Xu hướng mới</div>
-    				</div>
-  					</a>
-					</div>
+					<a href="Cuahang?loai=giay"
+						class="d-flex align-items-center text-decoration-none"> <!-- Ảnh bên trái -->
+						<img src="images/iconshoe.jpg" alt="IMG-BANNER"
+						style="width: 60px; height: auto; margin-right: 15px;"> <!-- Text bên phải -->
+						<div>
+							<div class="block1-name ltext-102 text-dark">Giày</div>
+							<div class="block1-info stext-102 text-secondary">Xu hướng
+								mới</div>
+						</div>
+					</a>
+				</div>
 				<div class="col-6 col-lg-3 p-b-30">
-  					<a href="Cuahang?loai=tui" class="d-flex align-items-center text-decoration-none">
-   		 			<!-- Ảnh bên trái -->
-    					<img src="images/iconbag.jpg" alt="IMG-BANNER"
-        							style="width: 60px; height: auto; margin-right: 15px;">
-    
-    				<!-- Text bên phải -->
-    				<div>
-      					<div class="block1-name ltext-102 text-dark">Túi Xách</div>
-      					<div class="block1-info stext-102 text-secondary">Xu hướng mới</div>
-    				</div>
-  					</a>
+					<a href="Cuahang?loai=tui"
+						class="d-flex align-items-center text-decoration-none"> <!-- Ảnh bên trái -->
+						<img src="images/iconbag.jpg" alt="IMG-BANNER"
+						style="width: 60px; height: auto; margin-right: 15px;"> <!-- Text bên phải -->
+						<div>
+							<div class="block1-name ltext-102 text-dark">Túi Xách</div>
+							<div class="block1-info stext-102 text-secondary">Xu hướng
+								mới</div>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -575,9 +574,11 @@ section.bg0 {
 	<!-- Product -->
 	<section class="bg0 p-t-23 p-b-140">
 		<div class="container">
-			<div class="p-b-10">
-				<p class="custom-title">Tổng quan sản phẩm</p>
+			<div class="p-b-10" style="margin-top: 20px; margin-bottom: 20px;">
+				<p class="custom-title">Sản Phẩm Nổi Bật</p>
 			</div>
+			<div
+				style="height: 2px; background-color: #ccc; margin-bottom: 20px;"></div>
 
 			<div class="flex-w flex-sb-m p-b-52">
 				<%-- <div class="flex-w flex-l-m filter-tope-group m-tb-10">
@@ -619,6 +620,7 @@ section.bg0 {
  --%>
 				<%
 				List<DanhMuc> listDanhMuc = (List<DanhMuc>) request.getAttribute("listDanhMuc");
+				
 				%>
 				<div class="flex-w flex-l-m filter-tope-group m-tb-10">
 					<button
@@ -626,6 +628,7 @@ section.bg0 {
 						data-filter="*">Tất cả</button>
 					<%
 					for (DanhMuc d : listDanhMuc) {
+						if(!d.getDaXoa().equals("1")){
 					%>
 					<button class="stext-106 cl6 hov1 bor3 trans-04 m-r-32 m-tb-5"
 						data-filter=".<%=d.getTenDanhMuc()%>">
@@ -633,31 +636,8 @@ section.bg0 {
 					</button>
 					<%
 					}
+					}
 					%>
-				</div>
-				<div class="flex-w flex-c-m m-tb-10">
-					<div
-						class="flex-c-m stext-106 cl6 size-105 bor4 pointer hov-btn3 trans-04 m-tb-4 js-show-search">
-						<i class="icon-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-search"></i>
-						<i
-							class="icon-close-search cl2 m-r-6 fs-15 trans-04 zmdi zmdi-close dis-none"></i>
-						Tìm kiếm
-					</div>
-				</div>
-
-				<!-- Search product -->
-				<div class="dis-none panel-search w-full p-t-10 p-b-15">
-					<form action="Timkiemsanpham" method="post">
-						<div class="bor8 dis-flex p-l-15">
-							<button class="size-113 flex-c-m fs-16 cl2 hov-cl1 trans-04">
-								<i class="zmdi zmdi-search"></i>
-							</button>
-
-							<input class="mtext-107 cl2 size-114 plh2 p-r-15" type="text"
-								name="timKiem" placeholder="Tìm kiếm">
-						</div>
-					</form>
-
 				</div>
 
 				<!-- Filter -->
@@ -668,261 +648,284 @@ section.bg0 {
 						<div class="filter-col1col1 p-r-15 p-b-27 pl-4">
 							<div class="mtext-102 cl2 p-b-15">Giá</div>
 							<ul>
-								<li class="p-b-6"><a href="#"
+								<li class="p-b-6"><a href="Cuahang?loai="
 									class="filter-link stext-106 trans-04 filter-link-active">
 										Tất cả </a></li>
 
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $0.00 - $50.00 </a></li>
 
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $50.00 - $100.00 </a></li>
+								<li class="p-b-6"><a href="Cuahang?loai=&amp;gia=0-50"
+									class="filter-link stext-106 trans-04 "> 0đ - 50.000đ </a></li>
 
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $100.00 - $150.00 </a>
-								</li>
+								<li class="p-b-6"><a href="Cuahang?loai=&amp;gia=50-100"
+									class="filter-link stext-106 trans-04 "> 50.000đ - 100.00đ
 
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $150.00 - $200.00 </a>
-								</li>
+								</a></li>
 
-								<li class="p-b-6"><a href="#"
-									class="filter-link stext-106 trans-04"> $200.00+ </a></li>
+								<li class="p-b-6"><a href="Cuahang?loai=&amp;gia=100-150"
+									class="filter-link stext-106 trans-04 "> 100.000đ -
+										150.000đ </a></li>
+
+								<li class="p-b-6"><a href="Cuahang?loai=&amp;gia=150-200"
+									class="filter-link stext-106 trans-04 "> 150.000đ -
+										200.000đ </a></li>
+
+								<li class="p-b-6"><a href="Cuahang?loai=&amp;gia=200+"
+									class="filter-link stext-106 trans-04 "> 200.00đ+ </a></li>
+
 							</ul>
 						</div>
 
-						<div class="filter-col2 p-r-15 p-b-27">
+						<div class="filter-col2 p-r-15 p-b-27 pl-10"
+							style="min-width: 220px;">
 							<div class="mtext-102 cl2 p-b-15">Màu</div>
-
 							<ul>
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #222;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Đen </a></li>
+								<li class="p-b-6"><span
+									class="fs-15 lh-12 m-r-6 inline-block" style="color: #222;">
+										<i class="zmdi zmdi-circle"></i>
+								</span> <a href="Cuahang?loai=&amp;mau=Đen"
+									class="filter-link stext-106 trans-04 inline-block"> Đen </a></li>
 
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #4272d7;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#"
-									class="filter-link stext-106 trans-04 filter-link-active">
-										Xanh </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #b3b3b3;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Xám </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #00ad5f;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Xanh lá
-								</a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #fa4251;"> <i class="zmdi zmdi-circle"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Đỏ </a></li>
-
-								<li class="p-b-6"><span class="fs-15 lh-12 m-r-6"
-									style="color: #aaa;"> <i class="zmdi zmdi-circle-o"></i>
-								</span> <a href="#" class="filter-link stext-106 trans-04"> Trắng </a>
+								<li class="p-b-6"><span
+									class="fs-15 lh-12 m-r-6 inline-block" style="color: #4272d7;">
+										<i class="zmdi zmdi-circle"></i>
+								</span> <a href="Cuahang?loai=&amp;mau=Xanh"
+									class="filter-link stext-106 trans-04 inline-block"> Xanh </a>
 								</li>
+
+								<li class="p-b-6"><span
+									class="fs-15 lh-12 m-r-6 inline-block" style="color: #b3b3b3;">
+										<i class="zmdi zmdi-circle"></i>
+								</span> <a href="Cuahang?loai=&amp;mau=Xám"
+									class="filter-link stext-106 trans-04 inline-block"> Xám </a></li>
+
+								<li class="p-b-6"><span
+									class="fs-15 lh-12 m-r-6 inline-block" style="color: #00ad5f;">
+										<i class="zmdi zmdi-circle"></i>
+								</span> <a href="Cuahang?loai=&amp;mau=Xanh lá"
+									class="filter-link stext-106 trans-04 inline-block"> Xanh
+										lá </a></li>
+
+								<li class="p-b-6"><span
+									class="fs-15 lh-12 m-r-6 inline-block" style="color: #fa4251;">
+										<i class="zmdi zmdi-circle"></i>
+								</span> <a href="Cuahang?loai=&amp;mau=Đỏ"
+									class="filter-link stext-106 trans-04 inline-block"> Đỏ </a></li>
+
+								<li class="p-b-6"><span
+									class="fs-15 lh-12 m-r-6 inline-block" style="color: #aaa;">
+										<i class="zmdi zmdi-circle"></i>
+								</span> <a href="Cuahang?loai=&amp;mau=Trắng"
+									class="filter-link stext-106 trans-04 inline-block"> Trắng
+								</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 			</div>
 
-<div class="row isotope-grid">
-<%
-    List<SanPham> list = (List<SanPham>) request.getAttribute("listHome");
-    for (SanPham sp : list) {
-        String tenDanhMuc = "";
-        for (DanhMuc d : listDanhMuc) {
-            if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
-                tenDanhMuc = d.getTenDanhMuc();
-                break; // Thoát khỏi vòng for khi đã tìm đúng danh mục
-            }
-        }
-%>
-    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=tenDanhMuc%>">
-        <div class="block2">
-            <div class="block2-pic hov-img0">
-                <img src="<%=sp.getDuongDanAnh()%>" alt="IMG-PRODUCT" style="height: 300px;">
-                <a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
-                   class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-                    Xem sản phẩm
-                </a>
-            </div>
-
-            <div class="block2-txt flex-w flex-t p-t-14">
-                <div class="block2-txt-child1 flex-col-l">
-                    <a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
-                       class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                        <%=sp.getTenSanPham()%>
-                    </a>
-                    <span class="stext-105 cl3"><%=sp.getGia()%>đ</span>
-                </div>
-                <div class="block2-txt-child2 flex-r p-t-3">
-                    <a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                        <img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png" alt="ICON">
-                        <img class="icon-heart2 dis-block trans-04 ab-t-l" src="images/icons/icon-heart-02.png" alt="ICON">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-<%
-    }
-%>
-</div>
-
-
-			
-			<div class="row isotope-grid" id="more-products" style="display: none;">
-<%
-    List<SanPham> listMore = (List<SanPham>) request.getAttribute("listMore");
-    for (SanPham sp : listMore) {
-        String tenDanhMuc = "";
-        for (DanhMuc d : listDanhMuc) {
-            if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
-                tenDanhMuc = d.getTenDanhMuc();
-                break;
-            }
-        }
-%>
-    <div class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=tenDanhMuc%>">
-       <div class="block2">
+			<div class="row isotope-grid">
+				<%
+				List<SanPham> list = (List<SanPham>) request.getAttribute("listHome");
+				for (SanPham sp : list) {
+					String tenDanhMuc = "";
+					for (DanhMuc d : listDanhMuc) {
+						if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
+					tenDanhMuc = d.getTenDanhMuc();
+					break; // Thoát khỏi vòng for khi đã tìm đúng danh mục
+						}
+					}
+				%>
+				<div
+					class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=tenDanhMuc%>">
+					<div class="block2">
 						<div class="block2-pic hov-img0">
-							<img src="<%=sp.getDuongDanAnh() %>" alt="IMG-PRODUCT" style="height: 300px;">
-
-							<a href="Giohangproducttail?id=<%=sp.getMaSanpham() %>"
-								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
-								Xem sản phẩm
-							</a>
+							<img src="<%=sp.getDuongDanAnh()%>" alt="IMG-PRODUCT"
+								style="height: 300px;"> <a
+								href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
+								Xem sản phẩm </a>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
-							<div class="block2-txt-child1 flex-col-l ">
-								<a href="Giohangproducttail?id=<%=sp.getMaSanpham() %>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6" >
-									<%=sp.getTenSanPham() %>
-								</a>
-
-								<span class="stext-105 cl3">
-									<%=sp.getGia() %>
-								</span>
+							<div class="block2-txt-child1 flex-col-l">
+								<a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> <%=sp.getTenSanPham()%>
+								</a> <span class="stext-105 cl3"><%=sp.getGia()%>đ</span>
 							</div>
-
 							<div class="block2-txt-child2 flex-r p-t-3">
-								<a href="#" class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-									<img class="icon-heart1 dis-block trans-04" src="images/icons/icon-heart-01.png"
-										alt="ICON">
-									<img class="icon-heart2 dis-block trans-04 ab-t-l"
-										src="images/icons/icon-heart-02.png" alt="ICON">
+								<a href="#"
+									class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04"
+									src="images/icons/icon-heart-01.png" alt="ICON"> <img
+									class="icon-heart2 dis-block trans-04 ab-t-l"
+									src="images/icons/icon-heart-02.png" alt="ICON">
 								</a>
 							</div>
 						</div>
 					</div>
-    </div>
-<% } %>
-</div>
+				</div>
+				<%
+				}
+				%>
+			</div>
 
-			
+
+
+			<div class="row isotope-grid" id="more-products"
+				style="display: none;">
+				<%
+				List<SanPham> listMore = (List<SanPham>) request.getAttribute("listMore");
+				for (SanPham sp : listMore) {
+					String tenDanhMuc = "";
+					for (DanhMuc d : listDanhMuc) {
+						if (sp.getMaDanhMuc() == d.getMaDanhmuc()) {
+					tenDanhMuc = d.getTenDanhMuc();
+					break;
+						}
+					}
+				%>
+				<div
+					class="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item <%=tenDanhMuc%>">
+					<div class="block2">
+						<div class="block2-pic hov-img0">
+							<img src="<%=sp.getDuongDanAnh()%>" alt="IMG-PRODUCT"
+								style="height: 300px;"> <a
+								href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+								class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 ">
+								Xem sản phẩm </a>
+						</div>
+
+						<div class="block2-txt flex-w flex-t p-t-14">
+							<div class="block2-txt-child1 flex-col-l ">
+								<a href="Giohangproducttail?id=<%=sp.getMaSanpham()%>"
+									class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6"> <%=sp.getTenSanPham()%>
+								</a> <span class="stext-105 cl3"> <%=sp.getGia()%>
+								</span>
+							</div>
+
+							<div class="block2-txt-child2 flex-r p-t-3">
+								<a href="#"
+									class="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
+									<img class="icon-heart1 dis-block trans-04"
+									src="images/icons/icon-heart-01.png" alt="ICON"> <img
+									class="icon-heart2 dis-block trans-04 ab-t-l"
+									src="images/icons/icon-heart-02.png" alt="ICON">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<%
+				}
+				%>
+			</div>
+
+
 		</div>
 	</section>
 
 
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
-		 <div class="container">
-<div class="row">
-    <!-- LIÊN HỆ VỚI CHÚNG TÔI -->
-    <div class="col-sm-6 col-lg-4 p-b-50">
-    <h4 class="stext-301 cl0 p-b-30"><strong>The 5ive</strong></h4>
-        <p class="stext-107 cl7 size-201">
-          The 5ive là thương hiệu thời trang hiện đại, kết hợp sự tối giản và cá tính, đề cao tự do thể hiện bản thân. Với chúng tôi, thời trang là tuyên ngôn cá nhân.
-        </p><p class="stext-107 cl7 size-201 p-t-10">
-        <em>"Define Your Style – Live The 5ive."</em>
-    </p>
-        
-    </div>
+		<div class="container">
+			<div class="row">
+				<!-- LIÊN HỆ VỚI CHÚNG TÔI -->
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						<strong>The 5ive</strong>
+					</h4>
+					<p class="stext-107 cl7 size-201">The 5ive là thương hiệu thời
+						trang hiện đại, kết hợp sự tối giản và cá tính, đề cao tự do thể
+						hiện bản thân. Với chúng tôi, thời trang là tuyên ngôn cá nhân.</p>
+					<p class="stext-107 cl7 size-201 p-t-10">
+						<em>"Define Your Style – Live The 5ive."</em>
+					</p>
 
-<!-- HỖ TRỢ KHÁCH HÀNG -->
-<div class="col-sm-6 col-lg-4 p-b-50">
-    <h4 class="stext-301 cl0 p-b-30"><strong>Hỗ trợ khách hàng</strong></h4>
-    <p class="stext-107 cl7 size-201">
-        <strong>Tổng đài chăm sóc khách hàng:</strong>
-    </p>
-    <p class="stext-107 cl7 size-201">
-        <strong>Thời trang/Nhận hàng:</strong> 1800 6789
-    </p>
-    <p class="stext-107 cl7 size-201">
-        <strong>Đổi trả/Bảo hành:</strong> 1800 1234
-    </p>
-    <p class="stext-107 cl7 size-201">
-        <strong>Email CSKH:</strong> support@the5ive.vn
-    </p>
-</div>
-
-
-    <!-- THEO DÕI CHÚNG TÔI -->
-    <div class="col-sm-6 col-lg-4 p-b-50">
-    <h4 class="stext-301 cl0 p-b-30"><strong>Theo dõi chúng tôi</strong></h4>
-         <div class="auth-external-list">
-        <div class="row social-icons-custom">
-            <div class="col-2 d-flex justify-content-right">
-                <a href="#" class="social-icon">
-                    <i class="fa fa-facebook"></i>
-                </a>
-            </div>
-            <div class="col-2 d-flex justify-content-right">
-                <a href="#" class="social-icon">
-                    <i class="fa fa-instagram"></i>
-                </a>
-            </div>
-            <div class="col-2 d-flex justify-content-right">
-                <a href="#" class="social-icon">
-                    <i class="fa fa-pinterest-p"></i>
-                </a>
-            </div>
-            <div class="col-2 d-flex justify-content-right">
-                <a href="#" class="social-icon">
-                    <i class="fa fa-twitter"></i> <!-- Icon thêm nếu muốn đủ 4 -->
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-
-    </div>
-</div>
-
-			</div>
-
-			<div class="p-t-40">
-				<div class="flex-c-m flex-w p-b-18">
-					<a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-01.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-02.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-03.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-04.png" alt="ICON-PAY">
-					</a> <a href="#" class="m-all-1"> <img
-						src="images/icons/icon-pay-05.png" alt="ICON-PAY">
-					</a>
 				</div>
 
-				<p class="stext-107 cl6 txt-center">
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-					Copyright &copy;
-					<script>
+				<!-- HỖ TRỢ KHÁCH HÀNG -->
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						<strong>Hỗ trợ khách hàng</strong>
+					</h4>
+					<p class="stext-107 cl7 size-201">
+						<strong>Tổng đài chăm sóc khách hàng:</strong>
+					</p>
+					<p class="stext-107 cl7 size-201">
+						<strong>Thời trang/Nhận hàng:</strong> 1800 6789
+					</p>
+					<p class="stext-107 cl7 size-201">
+						<strong>Đổi trả/Bảo hành:</strong> 1800 1234
+					</p>
+					<p class="stext-107 cl7 size-201">
+						<strong>Email CSKH:</strong> support@the5ive.vn
+					</p>
+				</div>
+
+
+				<!-- THEO DÕI CHÚNG TÔI -->
+				<div class="col-sm-6 col-lg-4 p-b-50">
+					<h4 class="stext-301 cl0 p-b-30">
+						<strong>Theo dõi chúng tôi</strong>
+					</h4>
+					<div class="auth-external-list">
+						<div class="row social-icons-custom">
+							<div class="col-2 d-flex justify-content-right">
+								<a href="#" class="social-icon"> <i class="fa fa-facebook"></i>
+								</a>
+							</div>
+							<div class="col-2 d-flex justify-content-right">
+								<a href="#" class="social-icon"> <i class="fa fa-instagram"></i>
+								</a>
+							</div>
+							<div class="col-2 d-flex justify-content-right">
+								<a href="#" class="social-icon"> <i
+									class="fa fa-pinterest-p"></i>
+								</a>
+							</div>
+							<div class="col-2 d-flex justify-content-right">
+								<a href="#" class="social-icon"> <i class="fa fa-twitter"></i>
+									<!-- Icon thêm nếu muốn đủ 4 -->
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		</div>
+
+		<div class="p-t-40">
+			<div class="flex-c-m flex-w p-b-18">
+				<a href="#" class="m-all-1"> <img
+					src="images/icons/icon-pay-01.png" alt="ICON-PAY">
+				</a> <a href="#" class="m-all-1"> <img
+					src="images/icons/icon-pay-02.png" alt="ICON-PAY">
+				</a> <a href="#" class="m-all-1"> <img
+					src="images/icons/icon-pay-03.png" alt="ICON-PAY">
+				</a> <a href="#" class="m-all-1"> <img
+					src="images/icons/icon-pay-04.png" alt="ICON-PAY">
+				</a> <a href="#" class="m-all-1"> <img
+					src="images/icons/icon-pay-05.png" alt="ICON-PAY">
+				</a>
+			</div>
+
+			<p class="stext-107 cl6 txt-center">
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				Copyright &copy;
+				<script>
 						document.write(new Date().getFullYear());
 					</script>
-					All rights reserved | Made with <i class="fa fa-heart-o"
-						aria-hidden="true"></i> by <a href="https://colorlib.com"
-						target="_blank">Colorlib</a> &amp; distributed by <a
-						href="https://themewagon.com" target="_blank">ThemeWagon</a>
-					<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+				All rights reserved | Made with <i class="fa fa-heart-o"
+					aria-hidden="true"></i> by <a href="https://colorlib.com"
+					target="_blank">Colorlib</a> &amp; distributed by <a
+					href="https://themewagon.com" target="_blank">ThemeWagon</a>
+				<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
-				</p>
-			</div>
+			</p>
+		</div>
 		</div>
 	</footer>
 
@@ -1059,7 +1062,7 @@ section.bg0 {
 	</script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
-		<script>
+	<script>
 	  // Mở modal khi click icon tìm kiếm
 	  document.querySelectorAll('.js-show-modal-search').forEach(btn => {
 	    btn.addEventListener('click', () => {
@@ -1081,8 +1084,8 @@ section.bg0 {
 	    }
 	  });
 	</script>
-	
-	
+
+
 	<script>
 	// điều hướng icon hợp lý
 	// Hàm để mở và đóng dropdown
@@ -1110,14 +1113,14 @@ section.bg0 {
 	document.addEventListener('click', closeDropdown);
 
     </script>
-    
-    <script>
-		const isUser = <%= isUser %>; // truyền biến từ JSP sang JS
+
+	<script>
+		const isUser = <%=isUser%>; // truyền biến từ JSP sang JS
 	</script>
-    
-    
-    
-	
+
+
+
+
 </body>
 
 </html>

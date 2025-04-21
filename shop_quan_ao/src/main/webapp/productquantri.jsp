@@ -268,15 +268,11 @@
 							<h3 class="card-title">
 								<b>Quản lý sản phẩm</b>
 							</h3>
-							<div
-								style="display: flex; justify-content: flex-start; padding-left: 20px;">
-								<div
-									style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
-									<button type="button" id="addb" class="btn btn-success">
-										<i class="bi bi-plus-lg"></i>
-									</button>
-									<p>Thêm sản phẩm</p>
-								</div>
+							<div style="display: flex; justify-content: flex-end; align-items: center; gap: 8px; margin-bottom: 10px;">
+								<p style="margin: 0;">Thêm sản phẩm</p>
+								<button type="button" id="addb" class="btn btn-success">
+									<i class="bi bi-plus-lg"></i>
+								</button>
 							</div>
 							<div class="card">
 								<div class="card-body row hide" id="addf">
@@ -355,6 +351,7 @@
 							List<ChiTietSanPham> chitiet = ldl.Laythongtinchitietsanpham();
 							int idxd = 0;
 							for (SanPham sp : sanpham) {
+								if(!sp.getDaXoa().equals("1")){
 								soluong = 0; // Khởi tạo lại mỗi lần lặp qua sản phẩm mới
 							%>
 							<tr>
@@ -384,39 +381,27 @@
 								}
 								%>
 
-								<td><%=sp.getGia()%></td>
-								<td>
-									<div class="d-flex justify-content-center mt-2">
-										<!-- Sửa Button -->
-										<button type="button" class="btn btn-outline-warning"
-											data-id="<%=sp.getMaSanpham()%>" onclick="editForm(this)">Sửa</button>
+								<td><%=sp.getGia()%>đ</td>
+								<td><div class="d-flex flex-wrap justify-content-center gap-2 mt-2">
+    								<!-- Sửa Button -->
+    								<button type="button" class="btn btn-outline-warning btn-sm" data-id="1" onclick="editForm(this)">Sửa</button>
+  									<!-- Xoá Button -->
+    								<form action="Xoasanphamproductqt" method="post" class="d-inline-block" onsubmit="return confirm('Bạn có chắc chắn muốn xóa không?');">
+      										<input type="hidden" value="1" name="id">
+      										<button class="btn btn-outline-danger btn-sm" type="submit">Xoá</button>
+    								</form>
 
-										<!-- Xoá Button -->
-										<!-- <form action="Xoasanphamproductqt" method="post" class="ml-3">
-											<input type="hidden" value="<%=sp.getMaSanpham()%>" name="id">
-											<button class="btn btn-outline-danger" type="submit">Xoá</button>
-										</form> -->
-										<!-- Xoá Button -->
-										<form action="Xoasanphamproductqt" method="post" class="ml-3" 
-										onsubmit="return confirm('Bạn có chắc chắn muốn xóa không?');">
-										<input type="hidden" value="<%=sp.getMaSanpham()%>" name="id">
-										<button class="btn btn-outline-danger" type="submit">Xoá</button>
-										</form>
-
-									</div> <!-- Chi tiết Button on a new line -->
-									<div class="mt-1">
-										<form action="LayidSanPhamquantri" method="post">
-											<input type="hidden" value="<%=sp.getMaSanpham()%>"
-												name="idd">
-											<button type="submit" class="btn btn-outline-info"
-												id="detailB">Chi tiết</button>
-										</form>
-									</div>
-
-
+    								<!-- Chi tiết Button -->
+    								<form action="LayidSanPhamquantri" method="post" class="d-inline-block">
+      										<input type="hidden" value="1" name="idd">
+      										<button type="submit" class="btn btn-outline-info btn-sm" id="detailB">Chi tiết</button>
+    								</form>
+  									</div>
 								</td>
+
 							</tr>
 							<%
+							}
 							}
 							%>
 						</tbody>
