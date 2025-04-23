@@ -249,7 +249,7 @@ if (user != null) {
 
 		<!-- Menu Mobile -->
 		<div class="menu-mobile">
-			<ul class="topbar-mobile">
+			<!-- <ul class="topbar-mobile">
 				<li>
 					<div class="left-top-bar">Miễn phí giao hàng cho đơn từ
 						500.000đ</div>
@@ -263,7 +263,7 @@ if (user != null) {
 							href="#" class="flex-c-m p-lr-10 trans-04"> USD </a>
 					</div>
 				</li>
-			</ul>
+			</ul> -->
 
 			<ul class="main-menu-m">
 				<li><a href="Laydulieusanpham">Trang chủ</a> <span
