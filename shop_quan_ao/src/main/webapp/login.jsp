@@ -25,7 +25,7 @@
                             <i class="fa fa-eye show-password"></i>
                         </div>
                         <label class="btn active">
-                            <input type="checkbox" name='email1' checked>
+                            <input type="checkbox" name='email' checked>
                             <i class="fa fa-square-o"></i><i class="fa fa-check-square-o"></i> 
                             <span> Lưu mật khẩu</span>
                         </label>

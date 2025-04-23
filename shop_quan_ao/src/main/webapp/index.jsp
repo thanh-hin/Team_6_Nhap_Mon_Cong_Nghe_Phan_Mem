@@ -517,8 +517,8 @@ if (user != null) {
 
 	<div class="sec-banner bg0 p-t-80 p-b-50">
 		<div class="container">
-			<div class="row">
-				<div class="col-lg-3 p-b-30">
+			<div class="row text-center">
+				<div class="col-6 col-lg-3 p-b-30">
 					<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
 					<a href="Cuahang?loai=nu"
 						class="d-flex align-items-center text-decoration-none"> <img
@@ -530,7 +530,7 @@ if (user != null) {
 						</div>
 					</a>
 				</div>
-				<div class="col-lg-3 p-b-30">
+				<div class="col-6 col-lg-3 p-b-30">
 					<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
 					<a href="Cuahang?loai=nam"
 						class="d-flex align-items-center text-decoration-none"> <!-- Ảnh bên trái -->

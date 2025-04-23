@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
-<link rel="icon" type="image/png" href="assetsquantri/img/LOGOTHE5IVE.jpg" />
+<link rel="icon" type="image/png" href="assetsquantri/img/LOGOTHE5IVE.png" />
 <!--===============================================================================================-->
 <link rel="stylesheet" type="text/css"
 	href="vendor/bootstrap/css/bootstrap.min.css">
@@ -372,7 +372,7 @@ button.btn-remove:hover {
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/aaaaaaaaaaaaaaaaaaaaa.jpg"
+				<a href="index.html"><img src="images/icons/LOGOTHE5IVE-removebg.png"
 					alt="IMG-LOGO"></a>
 			</div>
 

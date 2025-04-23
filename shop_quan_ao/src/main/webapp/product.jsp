@@ -434,8 +434,6 @@ if (user != null) {
 				</div>
 
 				<!-- Filter -->
-				<!-- Filter -->
-				<!-- Filter -->
 				<div class="dis-none panel-filter w-full p-t-10">
 					<div
 						class="wrap-filter flex-w bg6 p-t-30 p-lr-30 ml-auto rounded-md w-full max-w-md"
@@ -487,7 +485,7 @@ if (user != null) {
 									String m = mauList[i];
 									String color = mauColor[i];
 								%>
-								<li class="p130px><span class="fs-15 lh-12 m-r-6"
+								<li class="p130px"><span class="fs-15 lh-12 m-r-6"
 									style="color: <%=color%>;"> <i class="zmdi zmdi-circle"></i>
 								</span> <a
 									href="Cuahang?loai=<%=request.getAttribute("currentLoai")%><%=request.getAttribute("currentGia") != null ? "&gia=" + request.getAttribute("currentGia") : ""%>&mau=<%=m%>"
