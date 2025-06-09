@@ -7,8 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ConnectionSql {
+
 //    private String url = "jdbc:mysql://localhost:3306/webbanhangthoitrang";
 	private String url = "jdbc:mysql://localhost:3306/shop_quan_ao";
+
     private String user = "root";
     private String password = "minh123@";
     private String driverClass = "com.mysql.cj.jdbc.Driver";
