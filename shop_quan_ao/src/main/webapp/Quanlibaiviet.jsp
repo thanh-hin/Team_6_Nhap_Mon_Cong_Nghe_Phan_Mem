@@ -1,4 +1,4 @@
-<%-- <%@page import="model.User"%>
+<%@page import="model.User"%>
 <%@page import="model.BaiViet"%>
 <%@page import="java.util.List"%>
 <%@page import="Reponsitory.LaydulieuReponsitory"%>
@@ -401,11 +401,11 @@ button.add:hover {
 					<span>Tài khoản</span>
 			</a></li>
 			<!-- End Profile Page Nav -->
-
+			<%--
 			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/group.jsp"> <i
 					class="bi bi-question-circle"></i> <span>Phân quyền</span>
-			</a></li>
+			</a></li>--%>
 			<!-- End F.A.Q Page Nav -->
 
 
@@ -639,4 +639,4 @@ button.add:hover {
 
 </body>
 
-</html> --%>
+</html> 

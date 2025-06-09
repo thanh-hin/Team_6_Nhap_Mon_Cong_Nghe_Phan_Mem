@@ -125,12 +125,15 @@
 					<!-- Menu desktop -->
 					<div class="menu-desktop">
 						<ul class="main-menu">
-							<li><a href="Laydulieusanpham">Trang chủ</a></li>
+							<li class="active-menu"><a href="Laydulieusanpham">Trang
+									chủ</a></li>
 
-							<li class="active-menu"><a href="Cuahang">Cửa hàng</a></li>
+							<li><a href="Cuahang">Cửa hàng</a></li>
 
 							<li class="label1" data-label1="hot"><a href="Giohang">Giỏ
 									hàng</a></li>
+									
+							<li><a href="blog.html">Blog</a></li>
 
 							<li><a href="about.jsp">Giới thiệu</a></li>
 
