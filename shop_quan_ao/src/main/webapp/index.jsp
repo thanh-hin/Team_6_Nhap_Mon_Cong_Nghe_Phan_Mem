@@ -522,13 +522,15 @@ if (user != null) {
 			<div class="row">
 				<div class="col-lg-3 p-b-30">
 					<!-- Thẻ <a> bao cả khối để có thể click chuyển hướng -->
-					<a href="Cuahang?loai=nu"
+					<a href="Cuahang?loai=Nữ"
 						class="d-flex align-items-center text-decoration-none"> <img
 						src="images/icongirl.jpg" alt="IMG-BANNER"
 						style="width: 60px; height: auto; margin-right: 15px;">
 						<div>
 							<div class="block1-name ltext-102 text-dark">Nữ</div>
-							<div class="block1-info stext-102 text-secondary">2024</div>
+							<!-- <div class="block1-info stext-102 text-secondary">2024</div> -->
+							<div class="block1-info stext-102 text-secondary">Xu hướng
+								mới</div>
 						</div>
 					</a>
 				</div>
@@ -540,7 +542,9 @@ if (user != null) {
 						style="width: 60px; height: auto; margin-right: 15px;"> <!-- Text bên phải -->
 						<div>
 							<div class="block1-name ltext-102 text-dark">Nam</div>
-							<div class="block1-info stext-102 text-secondary">2024</div>
+							<!-- <div class="block1-info stext-102 text-secondary">2024</div> -->
+							<div class="block1-info stext-102 text-secondary">Xu hướng
+								mới</div>
 						</div>
 					</a>
 				</div>

@@ -72,31 +72,58 @@ public class Cuahang extends HttpServlet {
 		}
 
 		// 3. Lọc theo giá
+//		if (gia != null && !gia.isEmpty()) {
+//			List<SanPham> filteredByPrice = new ArrayList<>();
+//			double min = 0;
+//			double max = Double.MAX_VALUE;
+//
+//			try {
+//				if (gia.contains("-")) {
+//					String[] parts = gia.split("-");
+//					min = Double.parseDouble(parts[0]);
+//					max = Double.parseDouble(parts[1]);
+//				} else if (gia.endsWith("+")) {
+//					min = Double.parseDouble(gia.replace("+", ""));
+//				}
+//
+//				for (SanPham sp : list) {
+//					if (sp.getGia() >= min && sp.getGia() <= max) {
+//						filteredByPrice.add(sp);
+//					}
+//				}
+//
+//				list = filteredByPrice;
+//			} catch (NumberFormatException e) {
+//				e.printStackTrace(); // log lỗi nếu giá không hợp lệ
+//			}
+//		}// 3. Lọc theo giá
 		if (gia != null && !gia.isEmpty()) {
-			List<SanPham> filteredByPrice = new ArrayList<>();
-			double min = 0;
-			double max = Double.MAX_VALUE;
+		    List<SanPham> filteredByPrice = new ArrayList<>();
+		    double min = 0;
+		    double max = Double.MAX_VALUE;
 
-			try {
-				if (gia.contains("-")) {
-					String[] parts = gia.split("-");
-					min = Double.parseDouble(parts[0]);
-					max = Double.parseDouble(parts[1]);
-				} else if (gia.endsWith("+")) {
-					min = Double.parseDouble(gia.replace("+", ""));
-				}
+		    try {
+		        if (gia.contains("-")) {
+		            String[] parts = gia.split("-");
+		            min = Double.parseDouble(parts[0]) * 1000;
+		            max = Double.parseDouble(parts[1]) * 1000;
+		        } else if (gia.endsWith("+")) {
+		            min = Double.parseDouble(gia.replace("+", "")) * 1000;
+		            max = Double.MAX_VALUE;
+		        }
 
-				for (SanPham sp : list) {
-					if (sp.getGia() >= min && sp.getGia() <= max) {
-						filteredByPrice.add(sp);
-					}
-				}
+		        for (SanPham sp : list) {
+		            if (sp.getGia() >= min && sp.getGia() <= max) {
+		                filteredByPrice.add(sp);
+		            }
+		        }
 
-				list = filteredByPrice;
-			} catch (NumberFormatException e) {
-				e.printStackTrace(); // log lỗi nếu giá không hợp lệ
-			}
+		        list = filteredByPrice;
+		    } catch (NumberFormatException e) {
+		        e.printStackTrace(); // log lỗi nếu giá không hợp lệ
+		    }
 		}
+
 
 		// 4. Gửi dữ liệu sang JSP
 		request.setAttribute("listHome", list);

@@ -502,7 +502,7 @@ if (user != null) {
 									String m = mauList[i];
 									String color = mauColor[i];
 								%>
-								<li class="p130px><span class="fs-15 lh-12 m-r-6"
+								<li class="p130px"><span class="fs-15 lh-12 m-r-6"
 									style="color: <%=color%>;"> <i class="zmdi zmdi-circle"></i>
 								</span> <a
 									href="Cuahang?loai=<%=request.getAttribute("currentLoai")%><%=request.getAttribute("currentGia") != null ? "&gia=" + request.getAttribute("currentGia") : ""%>&mau=<%=m%>"
