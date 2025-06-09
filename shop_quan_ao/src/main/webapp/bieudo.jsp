@@ -120,11 +120,11 @@
               </script>
 	<%}}} %>
 
-<header id="header" class="header fixed-top d-flex align-items-center">
+		<header id="header" class="header fixed-top d-flex align-items-center">
 
 		<div class="d-flex align-items-center justify-content-between">
 			<div class="logo d-flex align-items-center">
-				<a href="/webbanquanao/Bieudodoanhthu" class="d-flex align-items-center">
+				<a href="<%=projectName%>/Bieudodoanhthu" class="d-flex align-items-center">
 					<img src="assetsquantri/img/LOGOTHE5IVE-removebg.png" alt="">
 					<span class="d-none d-lg-block">Admin</span>
 				</a>
@@ -139,39 +139,56 @@
 		<nav class="header-nav ms-auto">
 			<ul class="d-flex align-items-center">
 
-				<li class="nav-item dropdown pe-3"><a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown"> <i class="bi bi-person-circle"></i> <span class="d-none d-md-block dropdown-toggle ps-2">Nguyễn Ngọc Tuấn
+				<li class="nav-item dropdown pe-3"><a
+					class="nav-link nav-profile d-flex align-items-center pe-0"
+					href="#" data-bs-toggle="dropdown"> <i
+						class="bi bi-person-circle"></i> <span
+						<%if (listt != null) {
+	for (User u : listt) {%>
+						class="d-none d-md-block dropdown-toggle ps-2"><%=u.getHoTen()%>
 					</span>
 				</a> <!-- End Profile Iamge Icon -->
 
-					<ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+					<ul
+						class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
 						<li class="dropdown-header">
-							<h6>tuanne</h6>  <span>Quản
-								trị viên</span> 
+							<h6><%=u.getTenTaiKhoan()%></h6> <%
+ if (u.getMaQuyen() == 1) {
+ %> <span>Quản
+								trị viên</span> <%
+ } else {
+ %> <span>Khách hàng</span> <%
+ }
+ %>
 						</li>
 
 						<li>
 							<hr class="dropdown-divider">
 						</li>
 
-						<li><a class="dropdown-item d-flex align-items-center" href="Thongtincanhan.jsp"> <i class="bi bi-person"></i> <span>Thông
+						<li><a class="dropdown-item d-flex align-items-center"
+							href="Thongtincanhan.jsp"> <i class="bi bi-person"></i> <span>Thông
 									tin cá nhân </span>
 						</a></li>
 						<li>
 							<hr class="dropdown-divider">
 						</li>
-						<li><a class="dropdown-item d-flex align-items-center" href="Dangxuat"> <i class="bi bi-box-arrow-right"></i> <span>Đăng
+						<li><a class="dropdown-item d-flex align-items-center"
+							href="Dangxuat"> <i class="bi bi-box-arrow-right"></i> <span>Đăng
 									xuất</span>
 						</a></li>
 
 					</ul> <!-- End Profile Dropdown Items --></li>
-				
+				<%
+				}
+				}
+				%>
 				<!-- End Profile Nav -->
 
 			</ul>
 		</nav>
 
 	</header>
-
 	<!-- ======= Sidebar ======= -->
 
 	<aside id="sidebar" class="sidebar">

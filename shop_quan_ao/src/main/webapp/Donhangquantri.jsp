@@ -292,20 +292,20 @@
                             <td><%=h.getNgayDatHang()%></td>
                             <td><%=h.getDiaChiGiaoHang()%></td>
                             <td><span class="badge bg-warning"><%=h.getTrangThai()%></span></td>
-                            <!-- <td>
+                             <td>
                                 <button class="btn btn-warning btn-sm" onclick="editStatus('<%=h.getMaDonHang() %>')">Sửa</button>
                                 <form action="SuavaXoaDonHanQuanTri">
                                     <input type="hidden" value="<%=h.getMaDonHang()%>" name="idDonHang">
                                     <button class="btn btn-danger btn-sm" name="Xoa" value="Xoa" onclick="confirmDelete()">Xóa</button>
                                 </form>
-                            </td> -->
-							<td>
+                            </td> 
+							<%-- <td>
 								<button class="btn btn-warning btn-sm" onclick="editStatus('<%=h.getMaDonHang() %>')">Sửa</button>
 								<form action="SuavaXoaDonHanQuanTri" style="display: inline;">
 								  <input type="hidden" value="<%=h.getMaDonHang()%>" name="idDonHang">
 								  <!-- <button class="btn btn-danger btn-sm" name="Xoa" value="Xoa" onclick="return confirm('Bạn có chắc chắn muốn xóa đơn hàng này?')">Xóa</button> -->
 								</form>
-							  </td>
+							  </td> --%>
                         </tr>
                         <%
                         }
