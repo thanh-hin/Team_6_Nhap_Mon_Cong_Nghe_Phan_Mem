@@ -123,7 +123,7 @@
 
 							<li><a class="dropdown-item d-flex align-items-center"
 							href="Thongtincanhan.jsp"> <i class="bi bi-person"></i> <span>Thông tin cá nhân
-									</span>
+</span>
 						</a></li>
 						<li>
 							<hr class="dropdown-divider">
@@ -176,10 +176,10 @@
 				href="<%=projectName%>/Quantrikhuyenmai.jsp"> <i
 					class="fas fa-gift"></i> <span>Khuyến mãi</span>
 			</a></li>
-			<%-- <li class="nav-item"><a class="nav-link collapsed"
+			<li class="nav-item"><a class="nav-link collapsed"
 				href="<%=projectName%>/Quanlibaiviet.jsp"> <i
 					class="fa fa-newspaper"></i> <span>Bài viết</span>
-			</a></li> --%>
+			</a></li> 
 			<li class="nav-heading"><strong>Quản lý tài khoản</strong></li>
 
 			<li class="nav-item"><a class="nav-link collapsed"
