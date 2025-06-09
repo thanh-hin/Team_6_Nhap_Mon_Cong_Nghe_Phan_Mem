@@ -18,6 +18,7 @@ public class LoginReponsitory {
         Connection conn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
+        System.out.println("Co bi loi dau");
 
         try {
             // Tạo đối tượng ConnectionSql để lấy kết nối

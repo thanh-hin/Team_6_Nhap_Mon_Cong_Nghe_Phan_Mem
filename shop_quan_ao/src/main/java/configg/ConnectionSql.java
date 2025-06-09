@@ -7,9 +7,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class ConnectionSql {
-    private String url = "jdbc:mysql://localhost:3306/webbanhangthoitrang";
+//    private String url = "jdbc:mysql://localhost:3306/webbanhangthoitrang";
+	private String url = "jdbc:mysql://localhost:3306/shop_quan_ao";
     private String user = "root";
-    private String password = "2542004Tuan@";
+    private String password = "minh123@";
     private String driverClass = "com.mysql.cj.jdbc.Driver";
 
     private int poolSize = 5; // Số lượng kết nối tối đa trong pool

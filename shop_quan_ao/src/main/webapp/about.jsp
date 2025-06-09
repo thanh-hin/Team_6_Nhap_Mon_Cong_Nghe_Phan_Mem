@@ -118,6 +118,8 @@
 							<li  class="label1" data-label1="hot">
 								<a href="Giohang">Giỏ hàng</a>
 							</li>
+							
+							<li><a href="blog.html">Blog</a></li>
 
 							<li class="active-menu">
 								<a href="about.jsp">Giới thiệu</a>

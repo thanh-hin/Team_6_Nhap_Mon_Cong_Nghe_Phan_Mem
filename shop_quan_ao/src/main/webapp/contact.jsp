@@ -128,6 +128,10 @@
 								<a href="Giohang">Giỏ hàng</a>
 							</li>
 							
+							<li class="active-menu">
+								<a href="blog.html">Blog</a>
+							</li>
+							
 							<li>
 								<a href="about.jsp">Giới thiệu</a>
 							</li>
